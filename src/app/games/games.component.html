@@ -1,0 +1,24 @@
+<app-header>
+
+</app-header>
+
+<div class="content-center brand">
+    <div class="container">
+        <h2> Games List</h2>
+        <ul>
+        <div *ngFor = "let game of games.results">
+<li>
+
+
+    {{game.name}}
+
+
+</li>
+
+        </div>
+
+    </ul>
+        
+</div>
+</div>
+<app-footer></app-footer>
