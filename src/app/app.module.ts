@@ -16,7 +16,8 @@ import { AlertModule } from "ngx-bootstrap/alert";
 import { BsDatepickerModule } from "ngx-bootstrap/datepicker";
 import { CarouselModule } from "ngx-bootstrap/carousel";
 import { ModalModule } from "ngx-bootstrap/modal";
-
+import { NgxPaginationModule } from 'ngx-pagination';
+import { JwPaginationComponent } from 'jw-angular-pagination';
 import { PagesModule } from "./pages/pages.module";
 import {ToolsComponent} from "./pages/examples/tools/tools.component"
 import { IndexComponent } from "./pages/examples/index/index.component";
@@ -24,20 +25,22 @@ import { ProfilepageComponent } from "./pages/examples/profilepage/profilepage.c
 import { RegisterpageComponent } from "./pages/examples/registerpage/registerpage.component";
 import { LandingpageComponent } from "./pages/examples/landingpage/landingpage.component";
 import { BooksComponent } from './books/books.component';
-import { BooksService } from './books.service';
+import { BooksService } from './books/books.service';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { MoviesComponent } from './movies/movies.component';
 import { GamesComponent } from './games/games.component';
 import { SeriesComponent } from './series/series.component';
 import { MusicComponent } from './music/music.component';
-import { MoviesService } from './movies.service';
-import { SeriesService } from './series.service';
-import { GamesService } from './games.service';
-import { MusicService } from './music.service';
+import { MoviesService } from './movies/movies.service';
+import { SeriesService } from './series/series.service';
+import { GamesService } from './games/games.service';
+import { MusicService } from './music/music.service';
+
 @NgModule({
   declarations: [
     AppComponent,
+    JwPaginationComponent,
    // MoviesComponent,
     //GamesComponent,
    // SeriesComponent,
@@ -55,7 +58,7 @@ import { MusicService } from './music.service';
     HttpClientModule,
     RouterModule,
     AppRoutingModule,
-   
+    
     // BsDropdownModule.forRoot(),
     // ProgressbarModule.forRoot(),
     // TooltipModule.forRoot(),

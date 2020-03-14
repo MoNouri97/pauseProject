@@ -5,20 +5,35 @@
 <div class="content-center brand">
     <div class="container">
         <h2> Games List</h2>
+                <ul>
+                    
+                    <div *ngFor = "let game of games.results">
+                            <li>
+
+
+                                {{game.name}}
+
+
+                            </li>
+
+                    </div>
+            
+            </ul>
+   <!-- <div class="list">
         <ul>
-        <div *ngFor = "let game of games.results">
-<li>
-
-
-    {{game.name}}
-
-
-</li>
-
-        </div>
-
-    </ul>
-        
+        <li *ngFor="let item of collection | paginate: config">{{ item }}</li>
+        </ul>
+        <pagination-controls (pageChange)="pageChange($event)" class="my-pagination"></pagination-controls>
+    </div>-->
+   
+    <pagination
+    class="pagination-danger"
+    [(ngModel)]="pagination1"
+    [totalItems]="100"
+   
+  >
+  </pagination>
+  
 </div>
 </div>
 <app-footer></app-footer>
