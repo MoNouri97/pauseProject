@@ -11,7 +11,11 @@ describe("workspace-project App", () => {
   it("should display welcome message", () => {
     page.navigateTo();
     expect(page.getTitleText()).toEqual(
+<<<<<<< HEAD
       "Welcome to blk-design-system-angular!"
+=======
+      "Welcome to pause Entertaiment website"
+>>>>>>> 24f974b9a98391a9152f85eb8de6cc37d982e5d1
     );
   });
 
