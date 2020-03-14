@@ -16,8 +16,6 @@ import { AlertModule } from "ngx-bootstrap/alert";
 import { BsDatepickerModule } from "ngx-bootstrap/datepicker";
 import { CarouselModule } from "ngx-bootstrap/carousel";
 import { ModalModule } from "ngx-bootstrap/modal";
-import { NgxPaginationModule } from 'ngx-pagination';
-import { JwPaginationComponent } from 'jw-angular-pagination';
 import { PagesModule } from "./pages/pages.module";
 import {ToolsComponent} from "./pages/examples/tools/tools.component"
 import { IndexComponent } from "./pages/examples/index/index.component";
@@ -40,7 +38,6 @@ import { MusicService } from './music/music.service';
 @NgModule({
   declarations: [
     AppComponent,
-    JwPaginationComponent,
    // MoviesComponent,
     //GamesComponent,
    // SeriesComponent,

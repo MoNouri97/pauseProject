@@ -22,7 +22,7 @@ id;
     this.activatedRoute.params.subscribe(paramsId => {
       this.id = paramsId.id;
   });
-   this.items = Array(150).fill(0).map((x, i) => ({ id: (i + 1), name: `Item ${i + 1}`}));
+   
 
 
     this._GamesService.getGames(this.id)
@@ -30,9 +30,9 @@ id;
     data => {  this.games = data;},err => console.error(err),()=>console.log('done') 
      ) }
 
-     onChangePage(pageOfItems: Array<any>) {
-      // update current page of items
-      this.pageOfItems = pageOfItems;
+     pageChange(ind: any) {
+      //alert(ind);
+      window.location.href = `/games/${ind}`;
   }
     
 

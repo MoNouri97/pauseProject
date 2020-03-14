@@ -9,29 +9,16 @@
                     
                     <div *ngFor = "let game of games.results">
                             <li>
-
-
                                 {{game.name}}
-
-
                             </li>
-
                     </div>
-            
             </ul>
-   <!-- <div class="list">
-        <ul>
-        <li *ngFor="let item of collection | paginate: config">{{ item }}</li>
-        </ul>
-        <pagination-controls (pageChange)="pageChange($event)" class="my-pagination"></pagination-controls>
-    </div>-->
    
     <pagination
     class="pagination-danger"
-    [(ngModel)]="pagination1"
+    [(ngModel)]="pagination"
     [totalItems]="100"
-   
-  >
+    (click)= "pageChange(3)">
   </pagination>
   
 </div>
