@@ -16,47 +16,37 @@ import { AlertModule } from "ngx-bootstrap/alert";
 import { BsDatepickerModule } from "ngx-bootstrap/datepicker";
 import { CarouselModule } from "ngx-bootstrap/carousel";
 import { ModalModule } from "ngx-bootstrap/modal";
-<<<<<<< HEAD
 
+import { ToolsComponent } from "./pages/examples/tools/tools.component";
+
+import { BooksComponent } from "./books/books.component";
+import { BooksService } from "./books/books.service";
+import { HeaderComponent } from "./header/header.component";
+import { FooterComponent } from "./footer/footer.component";
+import { MoviesComponent } from "./movies/movies.component";
+import { GamesComponent } from "./games/games.component";
+import { SeriesComponent } from "./series/series.component";
+import { MusicComponent } from "./music/music.component";
+import { MoviesService } from "./movies/movies.service";
+import { SeriesService } from "./series/series.service";
+import { GamesService } from "./games/games.service";
+import { MusicService } from "./music/music.service";
 import { PagesModule } from "./pages/pages.module";
 
 import { IndexComponent } from "./pages/index/index.component";
 import { ProfilepageComponent } from "./pages/examples/profilepage/profilepage.component";
 import { RegisterpageComponent } from "./pages/examples/registerpage/registerpage.component";
 import { LandingpageComponent } from "./pages/examples/landingpage/landingpage.component";
-@NgModule({
-  declarations: [
-    AppComponent
-=======
-import { PagesModule } from "./pages/pages.module";
-import {ToolsComponent} from "./pages/examples/tools/tools.component"
-import { IndexComponent } from "./pages/examples/index/index.component";
-import { ProfilepageComponent } from "./pages/examples/profilepage/profilepage.component";
-import { RegisterpageComponent } from "./pages/examples/registerpage/registerpage.component";
-import { LandingpageComponent } from "./pages/examples/landingpage/landingpage.component";
-import { BooksComponent } from './books/books.component';
-import { BooksService } from './books/books.service';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
-import { MoviesComponent } from './movies/movies.component';
-import { GamesComponent } from './games/games.component';
-import { SeriesComponent } from './series/series.component';
-import { MusicComponent } from './music/music.component';
-import { MoviesService } from './movies/movies.service';
-import { SeriesService } from './series/series.service';
-import { GamesService } from './games/games.service';
-import { MusicService } from './music/music.service';
 
 @NgModule({
   declarations: [
-    AppComponent,
-   // MoviesComponent,
+    AppComponent
+    // MoviesComponent,
     //GamesComponent,
-   // SeriesComponent,
-   // MusicComponent,
-   //FooterComponent,
+    // SeriesComponent,
+    // MusicComponent,
+    //FooterComponent,
     //HeaderComponent,
->>>>>>> 24f974b9a98391a9152f85eb8de6cc37d982e5d1
     // IndexComponent,
     // ProfilepageComponent,
     // RegisterpageComponent,
@@ -68,10 +58,6 @@ import { MusicService } from './music/music.service';
     HttpClientModule,
     RouterModule,
     AppRoutingModule,
-<<<<<<< HEAD
-=======
-    
->>>>>>> 24f974b9a98391a9152f85eb8de6cc37d982e5d1
     // BsDropdownModule.forRoot(),
     // ProgressbarModule.forRoot(),
     // TooltipModule.forRoot(),
@@ -84,15 +70,14 @@ import { MusicService } from './music/music.service';
     // CarouselModule.forRoot(),
     // ModalModule.forRoot()
   ],
-<<<<<<< HEAD
-  providers: [],
-=======
-  providers: [BooksService,
-  MoviesService,
-  SeriesService,
-  GamesService,
-  MusicService],
->>>>>>> 24f974b9a98391a9152f85eb8de6cc37d982e5d1
+
+  providers: [
+    BooksService,
+    MoviesService,
+    SeriesService,
+    GamesService,
+    MusicService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
