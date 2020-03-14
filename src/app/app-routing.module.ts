@@ -13,7 +13,17 @@ const routes: Routes = [
   { path: "home", component: IndexComponent },
   { path: "profile", component: ProfilepageComponent },
   { path: "register", component: RegisterpageComponent },
+<<<<<<< HEAD
   { path: "landing", component: LandingpageComponent }
+=======
+  { path: "landing", component: LandingpageComponent },
+  { path :"tools", component : ToolsComponent},
+  { path :"books", component : BooksComponent},
+  { path :"movies", component : MoviesComponent},
+  { path :"series", component : SeriesComponent},
+  { path :"music", component : MusicComponent},
+  { path :"games/:id", component : GamesComponent},
+>>>>>>> parent of 24f974b... fifth commit
 ];
 
 @NgModule({
