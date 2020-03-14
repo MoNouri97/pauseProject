@@ -56,7 +56,7 @@
         <li class="nav-item p-0">
           <a
             class="nav-link"
-            [routerLink]="['/movies']"
+            [routerLink]="['/books']"
             placement="bottom"
             
             tooltip="View Our Movies Selection"
@@ -68,7 +68,7 @@
         <li class="nav-item p-0">
           <a
             class="nav-link"
-            [routerLink]="['/series']"
+            [routerLink]="['/Series']"
             placement="bottom"
             
             tooltip="View Our Series Selection"
@@ -80,7 +80,7 @@
         <li class="nav-item p-0">
           <a
             class="nav-link"
-            [routerLink]="['/music']"
+            [routerLink]="['/Music']"
             placement="bottom"
             
             tooltip="View Our Music Selection"
@@ -92,7 +92,7 @@
         <li class="nav-item p-0">
           <a
             class="nav-link"
-            routerLink="/games"
+            routerLink="/Games"
             placement="bottom"
             
             tooltip="View Our Games Selection"
@@ -116,7 +116,7 @@
 
         <li class="dropdown nav-item" dropdown>
           <a
-           
+           [routerLink]="['/landing']"
             class="dropdown-toggle nav-link dropdown-toggle"
             data-toggle="dropdown"
             dropdownToggle
@@ -125,17 +125,20 @@
             <i class="fa fa-cogs d-lg-none d-xl-none"> </i> Your Account
           </a>
           <div class="dropdown-menu dropdown-with-icons" *dropdownMenu>
-           
-            <a class="dropdown-item" [routerLink]="['/register']">
-              <i class="tim-icons icon-bullet-list-67"> </i> Register 
+            <a
+              class="dropdown-item"
+              href="https://demos.creative-tim.com/blk-design-system-angular/#/documentation/overview"
+            >
+              <i class="tim-icons icon-paper"> </i> Documentation
             </a>
-          <!--
+            <a class="dropdown-item" [routerLink]="['/register']">
+              <i class="tim-icons icon-bullet-list-67"> </i> Register Page
+            </a>
             <a class="dropdown-item" [routerLink]="['/landing']">
               <i class="tim-icons icon-image-02"> </i> Landing Page
             </a>
-            -->
             <a class="dropdown-item" [routerLink]="['/profile']">
-              <i class="tim-icons icon-single-02"> </i> Profile 
+              <i class="tim-icons icon-single-02"> </i> Profile Page
             </a>
           </div>
         </li>
