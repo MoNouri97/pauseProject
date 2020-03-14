@@ -16,26 +16,20 @@ import { CarouselModule } from "ngx-bootstrap/carousel";
 import { ModalModule } from "ngx-bootstrap/modal";
 import { JwBootstrapSwitchNg2Module } from "jw-bootstrap-switch-ng2";
 import { PopoverModule } from "ngx-bootstrap/popover";
-<<<<<<< HEAD
 
 import { IndexComponent } from "./index/index.component";
 import { ProfilepageComponent } from "./examples/profilepage/profilepage.component";
 import { RegisterpageComponent } from "./examples/registerpage/registerpage.component";
 import { LandingpageComponent } from "./examples/landingpage/landingpage.component";
-=======
-import {ToolsComponent } from "./examples/tools/tools.component";
-import { IndexComponent } from "./examples/index/index.component";
-import { ProfilepageComponent } from "./examples/profilepage/profilepage.component";
-import { RegisterpageComponent } from "./examples/registerpage/registerpage.component";
-import { LandingpageComponent } from "./examples/landingpage/landingpage.component";
-import { BooksComponent } from '../books/books.component';
-import { HeaderComponent } from '../header/header.component';
-import { FooterComponent } from '../footer/footer.component';
-import { MoviesComponent } from '../movies/movies.component';
-import { SeriesComponent } from '../series/series.component';
-import { GamesComponent } from '../games/games.component';
-import { MusicComponent } from '../music/music.component';
->>>>>>> 24f974b9a98391a9152f85eb8de6cc37d982e5d1
+
+import { ToolsComponent } from "./examples/tools/tools.component";
+import { BooksComponent } from "../books/books.component";
+import { HeaderComponent } from "../header/header.component";
+import { FooterComponent } from "../footer/footer.component";
+import { MoviesComponent } from "../movies/movies.component";
+import { SeriesComponent } from "../series/series.component";
+import { GamesComponent } from "../games/games.component";
+import { MusicComponent } from "../music/music.component";
 
 @NgModule({
   imports: [
@@ -60,9 +54,6 @@ import { MusicComponent } from '../music/music.component';
     IndexComponent,
     ProfilepageComponent,
     RegisterpageComponent,
-<<<<<<< HEAD
-    LandingpageComponent
-=======
     LandingpageComponent,
     ToolsComponent,
     BooksComponent,
@@ -72,16 +63,11 @@ import { MusicComponent } from '../music/music.component';
     SeriesComponent,
     GamesComponent,
     MusicComponent
-    
->>>>>>> 24f974b9a98391a9152f85eb8de6cc37d982e5d1
   ],
   exports: [
     IndexComponent,
     ProfilepageComponent,
     RegisterpageComponent,
-<<<<<<< HEAD
-    LandingpageComponent
-=======
     LandingpageComponent,
     ToolsComponent,
     BooksComponent,
@@ -91,7 +77,6 @@ import { MusicComponent } from '../music/music.component';
     SeriesComponent,
     GamesComponent,
     MusicComponent
->>>>>>> 24f974b9a98391a9152f85eb8de6cc37d982e5d1
   ],
   providers: []
 })
