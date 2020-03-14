@@ -74,15 +74,11 @@
     "@angular/router": "8.2.7",
     "chart.js": "2.8.0",
     "core-js": "3.2.1",
-<<<<<<< HEAD
-    "jw-bootstrap-switch-ng2": "2.0.5",
-    "ngx-bootstrap": "5.1.2",
-=======
+
     "jw-angular-pagination": "^1.1.0",
     "jw-bootstrap-switch-ng2": "2.0.5",
     "ngx-bootstrap": "5.1.2",
     "ngx-pagination": "^5.0.0",
->>>>>>> 24f974b9a98391a9152f85eb8de6cc37d982e5d1
     "nouislider": "11.1.0",
     "npm-install-missing": "^0.1.4",
     "rxjs": "6.5.3",
