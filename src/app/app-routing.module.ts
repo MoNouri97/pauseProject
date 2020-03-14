@@ -26,7 +26,7 @@ const routes: Routes = [
   { path :"movies", component : MoviesComponent},
   { path :"series", component : SeriesComponent},
   { path :"music", component : MusicComponent},
-  { path :"games/:id", component : GamesComponent},
+  { path :"games", component : GamesComponent},
 ];
 
 @NgModule({
