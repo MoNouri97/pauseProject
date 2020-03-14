@@ -37,8 +37,12 @@ const routes: Routes = [
   { path :"movies", component : MoviesComponent},
   { path :"series", component : SeriesComponent},
   { path :"music", component : MusicComponent},
+<<<<<<< HEAD
   { path :"games", component : GamesComponent},
 >>>>>>> 24f974b9a98391a9152f85eb8de6cc37d982e5d1
+=======
+  { path :"games/:id", component : GamesComponent},
+>>>>>>> parent of 24f974b... fifth commit
 ];
 
 @NgModule({
