@@ -25,17 +25,15 @@ id;
    
 
 
-    this._GamesService.getGames(1)
+    this._GamesService.getGames(this.id)
     .subscribe(
     data => {  this.games = data;},err => console.error(err),()=>console.log('done') 
      ) }
 
-     pageChange(ind) {
+     pageChange(ind: any) {
       //alert(ind);
-      this._GamesService.getGames(ind)
-      .subscribe(
-      data => {  this.games = data;},err => console.error(err),()=>console.log('done') 
-       ) }
+      window.location.href = `/games/${ind}`;
+  }
     
 
 }
