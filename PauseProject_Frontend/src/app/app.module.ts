@@ -16,41 +16,38 @@ import { AlertModule } from "ngx-bootstrap/alert";
 import { BsDatepickerModule } from "ngx-bootstrap/datepicker";
 import { CarouselModule } from "ngx-bootstrap/carousel";
 import { ModalModule } from "ngx-bootstrap/modal";
-
-import { ToolsComponent } from "./pages/examples/tools/tools.component";
-
-import { BooksComponent } from "./books/books.component";
-import { BooksService } from "./books/books.service";
-import { HeaderComponent } from "./header/header.component";
-import { FooterComponent } from "./footer/footer.component";
-import { MoviesComponent } from "./movies/movies.component";
-import { GamesComponent } from "./games/games.component";
-import { SeriesComponent } from "./series/series.component";
-import { MusicComponent } from "./music/music.component";
-import { MoviesService } from "./movies/movies.service";
-import { SeriesService } from "./series/series.service";
-import { GamesService } from "./games/games.service";
-import { MusicService } from "./music/music.service";
 import { PagesModule } from "./pages/pages.module";
-
-import { IndexComponent } from "./pages/index/index.component";
+import {ToolsComponent} from "./pages/examples/tools/tools.component"
+import { IndexComponent } from "./pages/examples/index/index.component";
 import { ProfilepageComponent } from "./pages/examples/profilepage/profilepage.component";
 import { RegisterpageComponent } from "./pages/examples/registerpage/registerpage.component";
 import { LandingpageComponent } from "./pages/examples/landingpage/landingpage.component";
+import { BooksComponent } from './books/books.component';
+import { BooksService } from './books/books.service';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { MoviesComponent } from './movies/movies.component';
+import { GamesComponent } from './games/games.component';
+import { SeriesComponent } from './series/series.component';
+import { MusicComponent } from './music/music.component';
+import { MoviesService } from './movies/movies.service';
+import { SeriesService } from './series/series.service';
+import { GamesService } from './games/games.service';
+import { MusicService } from './music/music.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MoviesComponent,
-    GamesComponent,
-    SeriesComponent,
-    MusicComponent,
-    FooterComponent,
-    HeaderComponent,
-    IndexComponent,
-    ProfilepageComponent,
-    RegisterpageComponent,
-    LandingpageComponent
+   // MoviesComponent,
+    //GamesComponent,
+   // SeriesComponent,
+   // MusicComponent,
+   //FooterComponent,
+    //HeaderComponent,
+    // IndexComponent,
+    // ProfilepageComponent,
+    // RegisterpageComponent,
+    // LandingpageComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -58,6 +55,7 @@ import { LandingpageComponent } from "./pages/examples/landingpage/landingpage.c
     HttpClientModule,
     RouterModule,
     AppRoutingModule,
+    
     // BsDropdownModule.forRoot(),
     // ProgressbarModule.forRoot(),
     // TooltipModule.forRoot(),
@@ -70,14 +68,11 @@ import { LandingpageComponent } from "./pages/examples/landingpage/landingpage.c
     // CarouselModule.forRoot(),
     // ModalModule.forRoot()
   ],
-
-  providers: [
-    BooksService,
-    MoviesService,
-    SeriesService,
-    GamesService,
-    MusicService
-  ],
+  providers: [BooksService,
+  MoviesService,
+  SeriesService,
+  GamesService,
+  MusicService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
