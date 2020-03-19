@@ -40,17 +40,17 @@ import { LandingpageComponent } from "./pages/examples/landingpage/landingpage.c
 
 @NgModule({
   declarations: [
-    AppComponent
-    // MoviesComponent,
-    //GamesComponent,
-    // SeriesComponent,
-    // MusicComponent,
-    //FooterComponent,
-    //HeaderComponent,
-    // IndexComponent,
-    // ProfilepageComponent,
-    // RegisterpageComponent,
-    // LandingpageComponent
+    AppComponent,
+    MoviesComponent,
+    GamesComponent,
+    SeriesComponent,
+    MusicComponent,
+    FooterComponent,
+    HeaderComponent,
+    IndexComponent,
+    ProfilepageComponent,
+    RegisterpageComponent,
+    LandingpageComponent
   ],
   imports: [
     BrowserAnimationsModule,
