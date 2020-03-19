@@ -18,26 +18,17 @@
                   src="assets/img/square1-red.png"
                 />
 
-                <h4 class="card-title">Register</h4>
+                <h4 class="card-title">&nbsp;Login</h4>
               </div>
               <div class="card-body">
+
                 <form class="form">
                   <div
                     class="input-group"
                     [ngClass]="{ 'input-group-focus': focus === true }"
                   >
-                    <div class="input-group-prepend">
-                      <div class="input-group-text">
-                        <i class="tim-icons icon-single-02"> </i>
-                      </div>
-                    </div>
-                    <input
-                      class="form-control"
-                      placeholder="Full Name"
-                      type="text"
-                      (focus)="focus = true"
-                      (blur)="focus = false"
-                    />
+                    
+                   
                   </div>
                   <div
                     class="input-group"
@@ -77,10 +68,17 @@
                 </form>
               </div>
               <div class="card-footer">
-                <input type="button" class="btn btn-danger btn-round btn-lg" value="Sign Up" (click)="authenticationService.SignUp(userEmail.value, userPwd.value)">
+                <input type="button" class="btn btn-danger btn-round btn-lg" value="Sign In" (click)="authenticationService.SignIn(userEmail.value, userPwd.value)">
 
                 
               </div>
+              
+                
+
+                
+              
+              
+              <p>Don't have an account?<a [routerLink]="['/register']">Sign Up</a></p>
             </div>
           </div>
         </div>
@@ -96,3 +94,4 @@
   </div>
   <app-footer></app-footer>
 </div>
+

@@ -101,8 +101,27 @@
             <p class="">Books</p>
           </a>
         </li>
-
-        <li class="dropdown nav-item" dropdown>
+       
+        <li class="dropdown nav-item" dropdown *ngIf="authenticationService.isLoggedIn()">
+          <a
+            class="dropdown-toggle nav-link dropdown-toggle"
+            data-toggle="dropdown"
+            dropdownToggle
+            href="javascript:void(0)"
+          >
+            <i class="fa fa-cogs d-lg-none d-xl-none"> </i> Your Account
+          </a>
+          <div class="dropdown-menu dropdown-with-icons" *dropdownMenu>
+            <a class="dropdown-item" [routerLink]="['/profile']">
+              <i> </i> Profile
+            </a>
+            
+            <a class="dropdown-item" (click)="authenticationService.SignOut()">
+              <i> </i> log out
+            </a>
+          </div>
+        </li>
+        <li class="dropdown nav-item" dropdown *ngIf="!authenticationService.isLoggedIn()">
           <a
             class="dropdown-toggle nav-link dropdown-toggle"
             data-toggle="dropdown"
@@ -113,15 +132,11 @@
           </a>
           <div class="dropdown-menu dropdown-with-icons" *dropdownMenu>
             <a class="dropdown-item" [routerLink]="['/register']">
-              <i class="tim-icons icon-bullet-list-67"> </i> Register
+              <i> </i> Register
             </a>
-            <!--
-            <a class="dropdown-item" [routerLink]="['/landing']">
-              <i class="tim-icons icon-image-02"> </i> Landing Page
-            </a>
-            -->
-            <a class="dropdown-item" [routerLink]="['/profile']">
-              <i class="tim-icons icon-single-02"> </i> Sign In
+            
+            <a class="dropdown-item" [routerLink]="['/login']">
+              <i> </i> Sign In
             </a>
           </div>
         </li>
@@ -201,7 +216,7 @@
     </div>
   </div>
 </nav>
-<div class="wrapper">
+<!-- <div class="wrapper">
   <div class="page-header header-filter">
     <div class="squares square1"></div>
     <div class="squares square2"></div>
@@ -212,4 +227,4 @@
     <div class="squares square7"></div>
     <div class="container"></div>
   </div>
-</div>
+</div> -->

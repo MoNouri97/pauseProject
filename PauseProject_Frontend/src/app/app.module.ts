@@ -5,6 +5,9 @@ import { RouterModule } from "@angular/router";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { HttpClientModule } from "@angular/common/http";
+import {AngularFireModule}from'angularfire2'
+import{AngularFirestoreModule} from 'angularfire2/firestore';
+import{AngularFireAuthModule} from 'angularfire2/auth';
 
 import { BsDropdownModule } from "ngx-bootstrap/dropdown";
 import { ProgressbarModule } from "ngx-bootstrap/progressbar";
@@ -34,10 +37,13 @@ import { MoviesService } from './movies/movies.service';
 import { SeriesService } from './series/series.service';
 import { GamesService } from './games/games.service';
 import { MusicService } from './music/music.service';
+import { environment } from 'src/environments/environment';
+import { LoginComponent } from './loginpage/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    LoginComponent,
    // MoviesComponent,
     //GamesComponent,
    // SeriesComponent,
@@ -55,6 +61,9 @@ import { MusicService } from './music/music.service';
     HttpClientModule,
     RouterModule,
     AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule,
+    AngularFirestoreModule,
     
     // BsDropdownModule.forRoot(),
     // ProgressbarModule.forRoot(),

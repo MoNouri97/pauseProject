@@ -15,6 +15,7 @@ import { MoviesComponent } from './movies/movies.component';
 import { SeriesComponent } from './series/series.component';
 import { MusicComponent } from './music/music.component';
 import { GamesComponent } from './games/games.component';
+import { LoginComponent } from './loginpage/login/login.component';
 const routes: Routes = [
   { path: "", redirectTo: "home", pathMatch: "full" },
   { path: "home", component: IndexComponent },
@@ -27,6 +28,7 @@ const routes: Routes = [
   { path :"series", component : SeriesComponent},
   { path :"music", component : MusicComponent},
   { path :"games", component : GamesComponent},
+  { path :"login", component : LoginComponent},
 ];
 
 @NgModule({

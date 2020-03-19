@@ -1,11 +1,12 @@
-import { Component, OnInit, OnDestroy, HostListener } from "@angular/core";
+import { Component, OnInit, HostListener, OnDestroy } from '@angular/core';
 import { AuthenticationService } from 'src/app/authentication.service';
 
 @Component({
-  selector: "app-registerpage",
-  templateUrl: "registerpage.component.html"
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.scss']
 })
-export class RegisterpageComponent implements OnInit, OnDestroy {
+export class LoginComponent implements OnInit, OnDestroy {
   isCollapsed = true;
   focus;
   focus1;
@@ -86,3 +87,4 @@ export class RegisterpageComponent implements OnInit, OnDestroy {
     body.classList.remove("register-page");
   }
 }
+
