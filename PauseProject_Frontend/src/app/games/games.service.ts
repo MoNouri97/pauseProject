@@ -14,7 +14,7 @@ export class GamesService {
 
   getGames(i: any): any {
     let j = 2;
-    let URL = `http://localhost:5000/api/Games/${i}`;
+    let URL = `http://localhost:5000/api/Games/${i} `;
 
     this.data1 = this.http.get(URL, httpOptions);
 
