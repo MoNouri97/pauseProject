@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\USER\\source\\repos\\PauseProject\\PauseProject\\PauseProject.csproj": {}
+    "C:\\Users\\USER\\Desktop\\Project\\pauseProject\\PauseProject_Backend\\PauseProject.csproj": {}
   },
   "projects": {
-    "C:\\Users\\USER\\source\\repos\\PauseProject\\PauseProject\\PauseProject.csproj": {
+    "C:\\Users\\USER\\Desktop\\Project\\pauseProject\\PauseProject_Backend\\PauseProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\USER\\source\\repos\\PauseProject\\PauseProject\\PauseProject.csproj",
+        "projectUniqueName": "C:\\Users\\USER\\Desktop\\Project\\pauseProject\\PauseProject_Backend\\PauseProject.csproj",
         "projectName": "PauseProject",
-        "projectPath": "C:\\Users\\USER\\source\\repos\\PauseProject\\PauseProject\\PauseProject.csproj",
+        "projectPath": "C:\\Users\\USER\\Desktop\\Project\\pauseProject\\PauseProject_Backend\\PauseProject.csproj",
         "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\USER\\source\\repos\\PauseProject\\PauseProject\\obj\\",
+        "outputPath": "C:\\Users\\USER\\Desktop\\Project\\pauseProject\\PauseProject_Backend\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "c:\\program files\\dotnet\\sdk\\NuGetFallbackFolder"
