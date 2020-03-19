@@ -22,6 +22,15 @@ import { ProfilepageComponent } from "./examples/profilepage/profilepage.compone
 import { RegisterpageComponent } from "./examples/registerpage/registerpage.component";
 import { LandingpageComponent } from "./examples/landingpage/landingpage.component";
 
+import { ToolsComponent } from "./examples/tools/tools.component";
+import { BooksComponent } from "../books/books.component";
+import { HeaderComponent } from "../header/header.component";
+import { FooterComponent } from "../footer/footer.component";
+import { MoviesComponent } from "../movies/movies.component";
+import { SeriesComponent } from "../series/series.component";
+import { GamesComponent } from "../games/games.component";
+import { MusicComponent } from "../music/music.component";
+
 @NgModule({
   imports: [
     CommonModule,
@@ -45,13 +54,29 @@ import { LandingpageComponent } from "./examples/landingpage/landingpage.compone
     IndexComponent,
     ProfilepageComponent,
     RegisterpageComponent,
-    LandingpageComponent
+    LandingpageComponent,
+    ToolsComponent,
+    BooksComponent,
+    HeaderComponent,
+    FooterComponent,
+    MoviesComponent,
+    SeriesComponent,
+    GamesComponent,
+    MusicComponent
   ],
   exports: [
     IndexComponent,
     ProfilepageComponent,
     RegisterpageComponent,
-    LandingpageComponent
+    LandingpageComponent,
+    ToolsComponent,
+    BooksComponent,
+    HeaderComponent,
+    FooterComponent,
+    MoviesComponent,
+    SeriesComponent,
+    GamesComponent,
+    MusicComponent
   ],
   providers: []
 })
