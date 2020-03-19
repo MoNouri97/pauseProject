@@ -20,7 +20,7 @@
     "PauseProject": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "api/Games",
+      "launchUrl": "api/Musics/1",
       "applicationUrl": "http://localhost:5000",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
