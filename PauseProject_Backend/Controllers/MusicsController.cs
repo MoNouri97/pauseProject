@@ -68,8 +68,8 @@ namespace PauseProject.Controllers
 
                         var stringResult = await response.Content.ReadAsStringAsync();
                         var rawMusic = JsonConvert.DeserializeObject<MusicDTO>(stringResult);
-                        /*if (rawMusic.MusicID != 0)
-                        {*/
+                        if (rawMusic.MusicID != 0)
+                        {
                             i++;
                             Objects.Add(new
                             {
@@ -80,7 +80,7 @@ namespace PauseProject.Controllers
                                 rawMusic.Artist,
                                 rawMusic.Album
                             });
-                        /*}*/
+                        }
                         
                     } while (i < 20 );
                     return Ok (Objects);
