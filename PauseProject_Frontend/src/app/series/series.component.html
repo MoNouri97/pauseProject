@@ -1,7 +1,24 @@
 <app-header>
 
 </app-header>
-<div class="container">
-<p>series works!</p>
+<div class="content-center brand">
+    <div class="container">
+        <h2> Series List</h2>
+        
+        <ul *ngFor="let serie of series">
+            <li>
+                {{serie.data.attributes.canonicalTitle}}
+              
+            </li>
+        </ul>
+
+        <pagination
+    class="pagination-danger"
+    [(ngModel)]="pagination"
+    [totalItems]="100"
+    (click)= "pageChange($event.target.text)">
+  </pagination>
+        </div>
 </div>
+
 <app-footer></app-footer>

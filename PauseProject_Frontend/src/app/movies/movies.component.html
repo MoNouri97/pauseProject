@@ -1,6 +1,25 @@
 <app-header>
 </app-header>
+<div class="content-center brand">
 <div class="container">
-<p>movies works!</p>
+    <h2> Movies List</h2>
+    <ul>
+        
+        <div *ngFor = "let movie of movies">
+                <li>
+                    {{movie.title}}
+                    <img src="{{movie.img}}" height="60">
+                </li>
+        </div>
+</ul>
+
+<pagination
+class="pagination-danger"
+[(ngModel)]="pagination"
+[totalItems]="100"
+(click)= "pageChange($event.target.text)">
+</pagination>
+
+</div>
 </div>
 <app-footer> </app-footer>
