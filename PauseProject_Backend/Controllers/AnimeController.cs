@@ -14,17 +14,7 @@ namespace PauseProject.Controllers
     [ApiController]
     public class AnimeController : ControllerBase
     {
-        const int startingID = 1000000;
-        private void setParamaters(HttpClient client)
-        {
-            //client.DefaultRequestHeaders.Add("x-rapidapi-host", "google-books.p.rapidapi.com");
-            // client.DefaultRequestHeaders.Add("x-rapidapi-key", "152e4b8f2emsh7bd97e060f8e6dfp12e0d7jsn99b7a5df88e5");
-            client.BaseAddress = new Uri("https://www.googleapis.com/books/v1"); // ?key=AIzaSyB2xuV04xn61GB5TIzB0mfKUPHIRH6K_Fc");
-            //client.DefaultRequestHeaders.Add("q", "d");
-            client.DefaultRequestHeaders.Add("key", "AIzaSyB2xuV04xn61GB5TIzB0mfKUPHIRH6K_Fc");
-
-
-        }
+        
         // GET: api/Anime
         [HttpGet]
         public async Task<IActionResult> Get()
@@ -33,12 +23,13 @@ namespace PauseProject.Controllers
             {
                 try
                 {
-                    setParamaters(client);
-                    var response = await client.GetAsync("/volumes?q=doni");
+                    //setParamaters(client);
+                    client.BaseAddress = new Uri("https://kitsu.io/api/edge/anime/1");
+                    var response = await client.GetAsync("");
                     response.EnsureSuccessStatusCode();
 
                     var stringResult = await response.Content.ReadAsStringAsync();
-                    var rawBooks = JsonConvert.DeserializeObject<AnimeDTO>(stringResult);
+                    var rawBooks = JsonConvert.DeserializeObject<BooksDTO>(stringResult);
 
                     return Ok(new
                     {
@@ -51,8 +42,8 @@ namespace PauseProject.Controllers
                 }
             }
         }
-     
-       
+
+
 
 
 
@@ -60,45 +51,58 @@ namespace PauseProject.Controllers
         [HttpGet("{id}", Name = "GetAnimes")]
         public async Task<IActionResult> Get(int id)
         {
-            using (var client = new HttpClient())
-            {
-
-                try
+            
+                using (var client = new HttpClient())
                 {
-                    setParamaters(client);
+
+                    // try
+                    //  {
+                    // setParamaters(client);
+                    client.BaseAddress = new Uri("https://kitsu.io");
+
                     List<Object> Objects = new List<Object>();
-                    int i = 0;
+                    int i = (id - 1) * 20;
+                    int j = 0;
+
                     do
                     {
-                        var response = await client.GetAsync("/volumes?q=doni" + (i + startingID + (id - 1) * 20));
-                        response.EnsureSuccessStatusCode();
+                        var response = await client.GetAsync("/api/edge/anime/" + i);
+                        //
+                        if (response.IsSuccessStatusCode)
+                        {
+                            Console.Write(response.StatusCode);
 
-                        var stringResult = await response.Content.ReadAsStringAsync();
-                        var rawBook = JsonConvert.DeserializeObject<AnimeDTO>(stringResult);
-                        //if (rawBook.MusicID != 0)
-                        //{
-                        i++;
-                       // Objects.Add(new
-                       // {
-                            //rawBook.MusicID,
-                            //rawBook.title,
-                            //rawBook.release_date,
-                            //rawBook.Duration,
-                            //rawBook.Artist,
-                            //rawBook.Album
-                       // });
-                        //}
+                            var stringResult = await response.Content.ReadAsStringAsync();
 
-                    } while (i < 20);
+                            var rawBook = JsonConvert.DeserializeObject<BooksDTO>(stringResult);
+                            //if (rawBook.MusicID != 0)
+                            //{
+                            i++;
+                            j++;
+                            Objects.Add(new
+                            {
+                                rawBook.data,
+
+
+                            });
+                            //}
+                        }
+                        else
+                        {
+                            i++;
+                        }
+                    } while (j < 20);
+
                     return Ok(Objects);
-                }
-                catch (HttpRequestException http)
-                {
-                    return BadRequest("bad request : " + http.Message);
+                    // }
+
+                    // catch (HttpRequestException http)
+                    // {
+                    //     return BadRequest("bad request : " + http.Message);
+                    //}
                 }
             }
+
+
         }
-
-
     }
-}

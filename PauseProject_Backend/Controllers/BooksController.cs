@@ -14,7 +14,7 @@ namespace PauseProject.Controllers
     [ApiController]
     public class BooksController : ControllerBase
     {
-        const int startingID = 1000000;
+       
         private void setParamaters(HttpClient client)
         {
            
