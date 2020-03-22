@@ -1,0 +1,25 @@
+<app-header>
+
+</app-header>
+<div class="content-center brand">
+    <div class="container">
+        <h2> Music List</h2>
+                <ul>
+                    
+                    <div *ngFor = "let mus of music">
+                            <li>
+                                {{mus.title}}
+                            </li>
+                    </div>
+            </ul>
+   
+    <pagination
+    class="pagination-danger"
+    [(ngModel)]="pagination"
+    [totalItems]="100"
+    (click)= "pageChange($event.target.text)">
+  </pagination>
+  
+</div>
+</div>
+<app-footer></app-footer>

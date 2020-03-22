@@ -1,0 +1,25 @@
+<app-header>
+
+</app-header>
+
+<div class="content-center brand">
+    <div class="container">
+        <h2> Books List</h2>
+        
+        <ul *ngFor="let book of books">
+            <li>
+                {{book.data.attributes.canonicalTitle}}
+              
+            </li>
+        </ul>
+
+        <pagination
+    class="pagination-danger"
+    [(ngModel)]="pagination"
+    [totalItems]="100"
+    (click)= "pageChange($event.target.text)">
+  </pagination>
+        </div>
+</div>
+
+<app-footer></app-footer>
