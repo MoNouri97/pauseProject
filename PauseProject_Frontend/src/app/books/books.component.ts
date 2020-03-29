@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BooksService } from './books.service';
 import {ActivatedRoute , Router} from '@angular/router';
-
+import {BookComponent} from  '../book/book.component';
 @Component({
   selector: 'app-books',
   templateUrl: './books.component.html',
@@ -12,7 +12,8 @@ public books = [];
 items = [];
 pageOfItems: Array<any>;
 id;
-  constructor(private _BooksService : BooksService, private activatedRoute: ActivatedRoute ) { }
+show = false;
+  constructor(private _BooksService : BooksService, private activatedRoute: ActivatedRoute, private router : Router ) { }
 
   ngOnInit() {
     this.activatedRoute.params.subscribe(paramsId => {
@@ -29,5 +30,11 @@ id;
         data => {  this.books = data;},err => console.error(err),()=>console.log('done') 
          ) }
 
+onSelect(book) {
+  this.router.navigate(['/book', book.id]);
+  //this._BookComponent.setInfo(book);
 
+
+
+}
 }

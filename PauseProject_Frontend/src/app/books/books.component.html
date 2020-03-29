@@ -1,17 +1,62 @@
 <app-header>
 
 </app-header>
-
+<div class="wrapper">
+    <div class="page-header header-filter">
+      <div class="squares square1"></div>
+      <div class="squares square2"></div>
+      <div class="squares square3"></div>
+      <div class="squares square4"></div>
+      <div class="squares square5"></div>
+      <div class="squares square6"></div>
+      <div class="squares square7"></div>
+      <div class="container">
+        <div class="content-center brand">
+          <h1 class="h1-seo">Books</h1>
+          <h3>
+          exploce our Books Selection
+          </h3>
+        </div>
+      </div>
+    </div>
+     <div class="main">
+      <div class="section section-basic" id="basic-elements">
+  </div>
+  </div>
 <div class="content-center brand">
     <div class="container">
         <h2> Books List</h2>
-        
-        <ul *ngFor="let book of books">
-            <li>
-                {{book.data.attributes.canonicalTitle}}
-              
-            </li>
-        </ul>
+        <div class="row">
+        <div class="col-md-6" *ngFor="let book of books">
+            
+
+              <div class="card zoom">
+                <div (click)=onSelect(book.data) class="container">
+                <div class="card-header">
+                    {{book.data.attributes.canonicalTitle}}
+                </div>
+                <div class="card-body" style=" overflow: auto;">
+                <img
+                  alt="book img"
+                  class="img-fluid rounded shadow-lg "
+                  src="{{book.data.attributes.img.medium}}"
+                  style="width: 150px; float: left; margin-right:15px;"
+                />
+                <p class="cont">
+                  {{book.data.attributes.synopsis}}
+                </p>
+                
+            </div>
+                </div>
+             </div>
+            
+           
+            
+            <div>
+</div>
+</div>
+
+
 
         <pagination
     class="pagination-danger"

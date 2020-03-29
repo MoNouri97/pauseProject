@@ -36,7 +36,8 @@ namespace PauseProject.DTOs
         [JsonProperty("averageRating")]
 
         public string averageRating { set; get; }
-
+        [JsonProperty("synopsis")]
+        public string synopsis { get; set; }
         [JsonProperty("posterImage")]
         public Image img { set; get; }
     }
@@ -47,12 +48,10 @@ namespace PauseProject.DTOs
     }
    public class Image
     {
-        [JsonProperty("small")]
-        public string small { set; get; }
+       
         [JsonProperty("medium")]
         public string medium { set; get; }
-        [JsonProperty("large")]
-        public string large { set; get; }
-
+        
+         
     }
 }

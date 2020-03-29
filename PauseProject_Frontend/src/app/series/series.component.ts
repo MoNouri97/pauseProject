@@ -11,7 +11,7 @@ export class SeriesComponent implements OnInit {
   items = [];
   pageOfItems: Array<any>;
   id;
-    constructor(private _SeriesService : SeriesService, private activatedRoute: ActivatedRoute ) { }
+    constructor( private router : Router,private _SeriesService : SeriesService, private activatedRoute: ActivatedRoute ) { }
   
     ngOnInit() {
       this.activatedRoute.params.subscribe(paramsId => {
@@ -27,6 +27,8 @@ export class SeriesComponent implements OnInit {
           .subscribe(
           data => {  this.series = data;},err => console.error(err),()=>console.log('done') 
            ) }
-  
+           onSelect(serie) {
+            this.router.navigate(['/serie', serie.id]);
+           }
 
 }

@@ -15,15 +15,10 @@ items = [];
 pageOfItems: Array<any>;
 id;
 
-  constructor(private _GamesService : GamesService, private activatedRoute: ActivatedRoute ) { 
+  constructor( private router : Router ,private _GamesService : GamesService, private activatedRoute: ActivatedRoute ) { 
 }
 
   ngOnInit() {
-    this.activatedRoute.params.subscribe(paramsId => {
-      this.id = paramsId.id;
-  });
-   
-
 
     this._GamesService.getGames(1)
     .subscribe(
@@ -37,5 +32,7 @@ id;
       data => {  this.games = data;},err => console.error(err),()=>console.log('done') 
        ) }
     
-
+       onSelect(id,game) {
+        this.router.navigate(['/game',id, game.gameID]);
+       }
 }

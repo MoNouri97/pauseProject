@@ -12,7 +12,7 @@ export class MusicComponent implements OnInit {
   items = [];
   pageOfItems: Array<any>;
   id;
-  constructor(private _MusicService : MusicService, private activatedRoute: ActivatedRoute ) { }
+  constructor(private router : Router,private _MusicService : MusicService, private activatedRoute: ActivatedRoute ) { }
 
   ngOnInit() {
     this.activatedRoute.params.subscribe(paramsId => {
@@ -29,6 +29,9 @@ export class MusicComponent implements OnInit {
         data => {  this.music = data;},err => console.error(err),()=>console.log('done') 
          ) }
 
+         onSelect(music) {
+          this.router.navigate(['/music/item', music]);
 
-}
-//hope it works damm 
+         }
+
+        }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MoviesService } from './movies.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-movies',
@@ -13,7 +13,7 @@ export class MoviesComponent implements OnInit {
   items = [];
   pageOfItems: Array<any>;
   id;
-  constructor(private _MoviesService : MoviesService, private activatedRoute: ActivatedRoute ) { }
+  constructor(private router : Router,private _MoviesService : MoviesService, private activatedRoute: ActivatedRoute ) { }
 
   ngOnInit() {
     this.activatedRoute.params.subscribe(paramsId => {
@@ -29,6 +29,9 @@ export class MoviesComponent implements OnInit {
         .subscribe(
         data => {  this.movies = data;},err => console.error(err),()=>console.log('done') 
          ) }
-  
+         
+       onSelect(movie) {
+          this.router.navigate(['/movie', movie]);
 
-}
+         }
+        }
