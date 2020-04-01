@@ -65,7 +65,7 @@ namespace PauseProject.Controllers
                     var rawGame = JsonConvert.DeserializeObject<GameDTO>(stringResult);
 
                     return Ok(new
-                    {
+                    {   page= id,
                         Count = rawGame.Count,
                         Results = rawGame.Results
                     });

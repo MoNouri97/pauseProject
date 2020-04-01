@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\USER\\Desktop\\Project\\pauseProject\\PauseProject_Backend\\PauseProject.csproj": {}
+    "E:\\pauseProject-master2\\pauseProject-master\\PauseProject_Backend\\PauseProject.csproj": {}
   },
   "projects": {
-    "C:\\Users\\USER\\Desktop\\Project\\pauseProject\\PauseProject_Backend\\PauseProject.csproj": {
+    "E:\\pauseProject-master2\\pauseProject-master\\PauseProject_Backend\\PauseProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\USER\\Desktop\\Project\\pauseProject\\PauseProject_Backend\\PauseProject.csproj",
+        "projectUniqueName": "E:\\pauseProject-master2\\pauseProject-master\\PauseProject_Backend\\PauseProject.csproj",
         "projectName": "PauseProject",
-        "projectPath": "C:\\Users\\USER\\Desktop\\Project\\pauseProject\\PauseProject_Backend\\PauseProject.csproj",
-        "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\USER\\Desktop\\Project\\pauseProject\\PauseProject_Backend\\obj\\",
+        "projectPath": "E:\\pauseProject-master2\\pauseProject-master\\PauseProject_Backend\\PauseProject.csproj",
+        "packagesPath": "C:\\Users\\adad1\\.nuget\\packages\\",
+        "outputPath": "E:\\pauseProject-master2\\pauseProject-master\\PauseProject_Backend\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "c:\\program files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\adad1\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -45,9 +45,31 @@
               "target": "Package",
               "version": "[2.2.0, )"
             },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.2, )"
+            },
+            "Microsoft.Extensions.Logging.Debug": {
+              "target": "Package",
+              "version": "[3.1.2, )"
+            },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[3.1.1, )"
+            },
+            "NuGet.Frameworks": {
+              "target": "Package",
+              "version": "[5.5.0, )"
+            },
+            "NuGet.VisualStudio": {
+              "target": "Package",
+              "version": "[5.5.0, )"
             }
           },
           "imports": [
@@ -68,7 +90,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "c:\\program files\\dotnet\\sdk\\3.1.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
         }
       }
     }

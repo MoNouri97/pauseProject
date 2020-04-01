@@ -15,6 +15,11 @@ import { MoviesComponent } from './movies/movies.component';
 import { SeriesComponent } from './series/series.component';
 import { MusicComponent } from './music/music.component';
 import { GamesComponent } from './games/games.component';
+import { BookComponent } from './book/book.component';
+import { GameComponent } from './game/game.component';
+import { MovieComponent } from './movie/movie.component';
+import { SerieComponent } from './serie/serie.component';
+import { MusicElementComponent } from './music-element/music-element.component';
 const routes: Routes = [
   { path: "", redirectTo: "home", pathMatch: "full" },
   { path: "home", component: IndexComponent },
@@ -23,10 +28,15 @@ const routes: Routes = [
   { path: "landing", component: LandingpageComponent },
   { path :"tools", component : ToolsComponent},
   { path :"books", component : BooksComponent},
+  { path :"book/:id", component : BookComponent},
   { path :"movies", component : MoviesComponent},
   { path :"series", component : SeriesComponent},
   { path :"music", component : MusicComponent},
+  { path :"movie/:id", component : MovieComponent},
+  { path :"serie/:id", component : SerieComponent},
+  { path :"music/item/:id", component : MusicElementComponent},
   { path :"games", component : GamesComponent},
+  { path :"game/:id/:index", component : GameComponent},
 ];
 
 @NgModule({

@@ -34,10 +34,25 @@ import { MoviesService } from './movies/movies.service';
 import { SeriesService } from './series/series.service';
 import { GamesService } from './games/games.service';
 import { MusicService } from './music/music.service';
+import { BookComponent } from './book/book.component';
+import { SerieComponent } from './serie/serie.component';
+import { MovieComponent } from './movie/movie.component';
+import { GameComponent } from './game/game.component';
+import { MusicElementComponent } from './music-element/music-element.component';
+import { BookService } from './book/book.service';
+import { MovieService } from './movie/movie.service';
+import { SerieService } from './serie/serie.service';
+import { GameService } from './game/game.service';
+import { MusicElementService } from './music-element/music.service';
 
 @NgModule({
   declarations: [
     AppComponent,
+    BookComponent,
+    SerieComponent,
+    MovieComponent,
+    GameComponent,
+    MusicElementComponent,
    // MoviesComponent,
     //GamesComponent,
    // SeriesComponent,
@@ -72,7 +87,13 @@ import { MusicService } from './music/music.service';
   MoviesService,
   SeriesService,
   GamesService,
-  MusicService],
+  MusicService,
+  BookService,
+  MovieService,
+  SerieService,
+  GameService,
+  MusicElementService,
+],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
