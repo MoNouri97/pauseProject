@@ -1,38 +1,40 @@
 import { Component, OnInit } from '@angular/core';
 import { GamesService } from './games.service';
-import {ActivatedRoute , Router} from '@angular/router';
-
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-games',
-  templateUrl: './games.component.html',
-  styleUrls: ['./games.component.scss']
+	selector: 'app-games',
+	templateUrl: './games.component.html',
+	styleUrls: ['./games.component.scss'],
 })
 export class GamesComponent implements OnInit {
-public games=[];
+	public games = [];
+	page: Number;
 
-items = [];
-pageOfItems: Array<any>;
-id;
+	constructor(
+		private router: Router,
+		private _GamesService: GamesService,
+		private activatedRoute: ActivatedRoute,
+	) {}
 
-  constructor( private router : Router ,private _GamesService : GamesService, private activatedRoute: ActivatedRoute ) { 
-}
+	ngOnInit() {
+		this.pageChange(1);
+	}
 
-  ngOnInit() {
+	pageChange(pageIndex: number) {
+		this._GamesService.getGames(pageIndex).subscribe(
+			data => {
+				this.games = data.results;
+				this.page = pageIndex;
+			},
+			err => console.error(err),
+			() => console.log('done', pageIndex),
+		);
+	}
 
-    this._GamesService.getGames(1)
-    .subscribe(
-    data => {  this.games = data;},err => console.error(err),()=>console.log('done') 
-     ) }
+	onSelect(page, game) {
+		console.log('/game', page, game.gameID);
 
-     pageChange(ind) {
-      
-      this._GamesService.getGames(ind)
-      .subscribe(
-      data => {  this.games = data;},err => console.error(err),()=>console.log('done') 
-       ) }
-    
-       onSelect(id,game) {
-        this.router.navigate(['/game',id, game.gameID]);
-       }
+		this.router.navigate(['/game', page, game.gameID]);
+	}
 }

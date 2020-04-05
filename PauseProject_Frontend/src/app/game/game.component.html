@@ -1,41 +1,62 @@
-<app-header>
-
-</app-header>
+<app-header> </app-header>
 <div class="wrapper">
-    <div class="page-header header-filter">
-      <div class="squares square1"></div>
-      <div class="squares square2"></div>
-      <div class="squares square3"></div>
-      <div class="squares square4"></div>
-      <div class="squares square5"></div>
-      <div class="squares square6"></div>
-      <div class="squares square7"></div>
-      <div class="container">
-        <div class="content-center brand">
-          <h1 class="h1-seo">Games</h1>
-          <h3>
-          Explore our Games Selection
-          </h3>
-        </div>
-      </div>
-    </div>
-     <div class="main">
-      <div class="section section-basic" id="basic-elements">
-  </div>
-  </div>
-<div class="content-center brand">
-    <div class="container">
-        
-                <ul>
-                    
-                    <div *ngFor = "let gam of game">
-                            <li>
-                                <h2>{{gam.results.name}}</h2>
-                            </li>
-                    </div>
-            </ul>
-   
-  
+	<div class="page-header header-filter">
+		<div class="squares square1"></div>
+		<div class="squares square2"></div>
+		<div class="squares square3"></div>
+		<div class="squares square4"></div>
+		<div class="squares square5"></div>
+		<div class="squares square6"></div>
+		<div class="squares square7"></div>
+		<div class="container">
+			<div class="content-center brand">
+				<h1 class="h1-seo">Games</h1>
+				<h3>
+					Explore our Games Selection
+				</h3>
+			</div>
+		</div>
+	</div>
+	<div class="main">
+		<div class="section section-basic" id="basic-elements"></div>
+	</div>
+	<div class="content-center brand">
+		<div class="container">
+			<div class="row justify-content-between">
+				<div class="col-md-6">
+					<img class="img-fluid" src="{{ game.background_image }}" />
+					<div class="row justify-content-between align-items-center"></div>
+				</div>
+				<div class="col-md-5">
+					<h1 class="game-title text-left">{{ game.name }}</h1>
+					<h5 class="text-on-back">
+						<i class="tim-icons icon-shape-star"></i>
+						{{ game.rating | number: '1.1-1' }}
+					</h5>
+
+					<div class="mt-5 mb-5 game-description text-left">
+						<p
+							*ngFor="let g of game.genres"
+							class="profile-description text-left"
+						>
+							{{ g.name }}
+						</p>
+						<hr />
+						<p *ngFor="let tag of game.tags">{{ tag.name }} ,</p>
+					</div>
+					<div class="btn-wrapper pt-3">
+						<button
+							class="btn btn-simple btn-danger mr-1"
+							href="javascript:void(0)"
+						>
+							<i class="tim-icons icon-book-bookmark"></i> Bookmark</button
+						><button class="btn btn-simple btn-info" href="javascript:void(0)">
+							<i class="tim-icons icon-bulb-63"></i> Check it!
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<app-footer></app-footer>
 </div>
-</div>
-<app-footer></app-footer>
