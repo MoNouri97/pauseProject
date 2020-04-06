@@ -23,29 +23,32 @@
 	<div class="content-center brand">
 		<div class="container">
 			<h1 class="display-1">Games List</h1>
-
-			<div class="row">
+			<hr class="line-primary" />
+			<pagination
+				class="pagination-danger"
+				[totalItems]="100"
+				(click)="pageChange($event.target.text)"
+			>
+			</pagination>
+			<div class="row" *ngIf="!loading">
 				<app-game-card
 					*ngFor="let game of games"
 					class="d-flex flex-column  mb-0 bd-highlight col-md-4"
-					(click)="onSelect(page, game)"
+					(click)="onSelect(game)"
 					[game]="game"
 				></app-game-card>
 			</div>
-
-			<!-- <ul>
-				<div *ngFor="let game of games.results">
-					<li>
-						<div>
-							{{ game.name }}
-						</div>
-					</li>
+			<div *ngIf="loading" class="row loading">
+				<div
+					*ngFor="let i of placeholders"
+					class="d-flex flex-column  mb-0 bd-highlight col-md-4"
+				>
+					<!-- <div class="card"></div> -->
+					<div class="card card-loader "></div>
 				</div>
-			</ul> -->
-
+			</div>
 			<pagination
 				class="pagination-danger"
-				[(ngModel)]="pagination"
 				[totalItems]="100"
 				(click)="pageChange($event.target.text)"
 			>

@@ -9,19 +9,21 @@ import { GameService } from './game.service';
 export class GameComponent implements OnInit {
 	public id;
 	public index;
-	public game = null;
+	public game;
+	loading: boolean;
+
 	constructor(
 		private route: ActivatedRoute,
 		private _GameService: GameService,
 	) {}
 
 	ngOnInit() {
+		this.loading = true;
 		let id = parseInt(this.route.snapshot.paramMap.get('id'));
-		let index = parseInt(this.route.snapshot.paramMap.get('index'));
-		this._GameService.getGame(id, index).subscribe(
+		this._GameService.getGame(id).subscribe(
 			data => {
-				this.game = data[0].results;
-				console.log(this.game);
+				this.game = data;
+				this.loading = false;
 			},
 			err => console.error(err),
 			() => console.log('done'),

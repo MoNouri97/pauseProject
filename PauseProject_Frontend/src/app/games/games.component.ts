@@ -9,32 +9,35 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class GamesComponent implements OnInit {
 	public games = [];
+	loading: boolean;
 	page: Number;
-
+	placeholders: string[];
 	constructor(
 		private router: Router,
 		private _GamesService: GamesService,
 		private activatedRoute: ActivatedRoute,
-	) {}
+	) {
+		this.placeholders = Array(8).fill('loading');
+	}
 
 	ngOnInit() {
 		this.pageChange(1);
 	}
 
 	pageChange(pageIndex: number) {
+		this.loading = true;
 		this._GamesService.getGames(pageIndex).subscribe(
 			data => {
 				this.games = data.results;
 				this.page = pageIndex;
+				this.loading = false;
 			},
 			err => console.error(err),
 			() => console.log('done', pageIndex),
 		);
 	}
 
-	onSelect(page, game) {
-		console.log('/game', page, game.gameID);
-
-		this.router.navigate(['/game', page, game.gameID]);
+	onSelect(game) {
+		this.router.navigate(['/game', game.gameID]);
 	}
 }
