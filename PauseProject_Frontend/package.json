@@ -75,7 +75,9 @@
     "angularfire2": "^5.4.2",
     "chart.js": "2.8.0",
     "core-js": "3.2.1",
+
     "firebase": "^7.11.0",
+
     "jw-angular-pagination": "^1.1.0",
     "jw-bootstrap-switch-ng2": "2.0.5",
     "ngx-bootstrap": "5.1.2",

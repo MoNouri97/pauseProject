@@ -1,26 +1,59 @@
-<app-header>
-
-</app-header>
-
-<div class="content-center brand">
-    <div class="container">
-        <h2> Games List</h2>
-                <ul>
-                    
-                    <div *ngFor = "let game of games.results">
-                            <li>
-                                {{game.name}}
-                            </li>
-                    </div>
-            </ul>
-   
-    <pagination
-    class="pagination-danger"
-    [(ngModel)]="pagination"
-    [totalItems]="100"
-    (click)= "pageChange($event.target.text)">
-  </pagination>
-  
+<app-header> </app-header>
+<div class="wrapper">
+	<div class="page-header header-filter">
+		<div class="squares square1"></div>
+		<div class="squares square2"></div>
+		<div class="squares square3"></div>
+		<div class="squares square4"></div>
+		<div class="squares square5"></div>
+		<div class="squares square6"></div>
+		<div class="squares square7"></div>
+		<div class="container">
+			<div class="content-center brand">
+				<h1 class="h1-seo">Games</h1>
+				<h3>
+					Explore our Games Selection
+				</h3>
+			</div>
+		</div>
+	</div>
+	<div class="main">
+		<div class="section section-basic" id="basic-elements"></div>
+	</div>
+	<div class="content-center brand">
+		<div class="container">
+			<h1 class="display-1">Games List</h1>
+			<hr class="line-primary" />
+			<pagination
+				class="pagination-danger"
+				[totalItems]="100"
+				(click)="pageChange($event.target.text)"
+			>
+			</pagination>
+			<div class="row" *ngIf="!loading">
+				<app-game-card
+					*ngFor="let game of games"
+					class="d-flex flex-column  mb-0 bd-highlight col-md-4"
+					(click)="onSelect(game)"
+					[game]="game"
+				></app-game-card>
+			</div>
+			<div *ngIf="loading" class="row loading">
+				<div
+					*ngFor="let i of placeholders"
+					class="d-flex flex-column  mb-0 bd-highlight col-md-4"
+				>
+					<!-- <div class="card"></div> -->
+					<div class="card card-loader "></div>
+				</div>
+			</div>
+			<pagination
+				class="pagination-danger"
+				[totalItems]="100"
+				(click)="pageChange($event.target.text)"
+			>
+			</pagination>
+		</div>
+	</div>
+	<app-footer></app-footer>
 </div>
-</div>
-<app-footer></app-footer>

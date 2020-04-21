@@ -50,7 +50,7 @@ namespace PauseProject.Controllers
         }
 
         // GET: api/Games/5
-        [HttpGet("{id}", Name = "Get")]
+        [HttpGet("{id}", Name = "GetGames")]
         public async Task<IActionResult> Get(int id)
         {
             using (var client = new HttpClient())
@@ -65,7 +65,7 @@ namespace PauseProject.Controllers
                     var rawGame = JsonConvert.DeserializeObject<GameDTO>(stringResult);
 
                     return Ok(new
-                    {
+                    {   page= id,
                         Count = rawGame.Count,
                         Results = rawGame.Results
                     });
@@ -77,22 +77,6 @@ namespace PauseProject.Controllers
             }
         }
 
-        // POST: api/Games
-        [HttpPost]
-        public void Post([FromBody] string value)
-        {
-        }
-
-        // PUT: api/Games/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE: api/ApiWithActions/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
+        
     }
 }

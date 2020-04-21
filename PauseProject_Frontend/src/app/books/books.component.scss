@@ -1,0 +1,37 @@
+/* You can add global styles to this file, and also import other style files */
+.zoom {
+	transition: transform 0.2s; /* Animation */
+}
+
+.zoom:hover {
+	transform: scale(1.05);
+	z-index: 1;
+	cursor: pointer;
+}
+.cont {
+	height: 150px;
+	font-size: 13px;
+	margin-bottom: 15px;
+	text-overflow: ellipsis;
+}
+
+/* width */
+::-webkit-scrollbar {
+	width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	background: #1f2251;
+	border-radius: 0.875rem;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: #32325d;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: #32325d;
+}
