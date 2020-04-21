@@ -1,3 +1,6 @@
+import {AngularFireModule}from'angularfire2'
+import{AngularFirestoreModule} from 'angularfire2/firestore';
+import{AngularFireAuthModule} from 'angularfire2/auth';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -5,7 +8,6 @@ import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
-
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { ProgressbarModule } from 'ngx-bootstrap/progressbar';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
@@ -34,6 +36,8 @@ import { MoviesService } from './movies/movies.service';
 import { SeriesService } from './series/series.service';
 import { GamesService } from './games/games.service';
 import { MusicService } from './music/music.service';
+import { environment } from 'src/environments/environment';
+import { LoginComponent } from './loginpage/login/login.component';
 import { BookComponent } from './book/book.component';
 import { SerieComponent } from './serie/serie.component';
 import { MovieComponent } from './movie/movie.component';
@@ -53,6 +57,7 @@ import { MusicElementService } from './music-element/music.service';
 		MovieComponent,
 		GameComponent,
 		MusicElementComponent,
+    LoginComponent,
 		// MoviesComponent,
 		//GamesComponent,
 		// SeriesComponent,
@@ -77,11 +82,14 @@ import { MusicElementService } from './music-element/music.service';
 		// CollapseModule.forRoot(),
 		// TabsModule.forRoot(),
 		PagesModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule,
+    AngularFirestoreModule,
 		// PaginationModule.forRoot(),
 		// AlertModule.forRoot(),
 		// BsDatepickerModule.forRoot(),
 		// CarouselModule.forRoot(),
-		// ModalModule.forRoot()
+		// ModalModule.forRoot(),
 	],
 	providers: [
 		BooksService,

@@ -20,6 +20,8 @@ import { GameComponent } from './game/game.component';
 import { MovieComponent } from './movie/movie.component';
 import { SerieComponent } from './serie/serie.component';
 import { MusicElementComponent } from './music-element/music-element.component';
+import { LoginComponent } from './loginpage/login/login.component';
+
 const routes: Routes = [
 	{ path: '', redirectTo: 'home', pathMatch: 'full' },
 	{ path: 'home', component: IndexComponent },
@@ -37,6 +39,7 @@ const routes: Routes = [
 	{ path: 'music/item/:id', component: MusicElementComponent },
 	{ path: 'games', component: GamesComponent },
 	{ path: 'game/:id', component: GameComponent },
+  { path :"login", component : LoginComponent},
 ];
 
 @NgModule({

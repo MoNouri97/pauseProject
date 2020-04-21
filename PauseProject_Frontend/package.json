@@ -72,8 +72,12 @@
     "@angular/platform-browser": "8.2.7",
     "@angular/platform-browser-dynamic": "8.2.7",
     "@angular/router": "8.2.7",
+    "angularfire2": "^5.4.2",
     "chart.js": "2.8.0",
     "core-js": "3.2.1",
+
+    "firebase": "^7.11.0",
+
     "jw-angular-pagination": "^1.1.0",
     "jw-bootstrap-switch-ng2": "2.0.5",
     "ngx-bootstrap": "5.1.2",
@@ -81,6 +85,7 @@
     "nouislider": "11.1.0",
     "npm-install-missing": "^0.1.4",
     "rxjs": "6.5.3",
+    "sweetalert2": "^9.10.3",
     "tslib": "1.10.0",
     "zone.js": "0.10.2"
   },
