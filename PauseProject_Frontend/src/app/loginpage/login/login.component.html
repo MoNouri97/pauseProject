@@ -1,4 +1,6 @@
-<app-header> </app-header>
+<app-header>
+
+</app-header>
 <div class="wrapper">
   <div class="page-header">
     <div class="page-header-image"></div>
@@ -19,11 +21,15 @@
                 <h4 class="card-title">&nbsp;Login</h4>
               </div>
               <div class="card-body">
+
                 <form class="form">
                   <div
                     class="input-group"
                     [ngClass]="{ 'input-group-focus': focus === true }"
-                  ></div>
+                  >
+                    
+                   
+                  </div>
                   <div
                     class="input-group"
                     [ngClass]="{ 'input-group-focus': focus1 === true }"
@@ -39,9 +45,7 @@
                       type="email"
                       (focus)="focus1 = true"
                       (blur)="focus1 = false"
-                      #userEmail
-                      required
-                    />
+                      #userEmail required>
                   </div>
                   <div
                     class="input-group"
@@ -58,27 +62,23 @@
                       type="password"
                       (focus)="focus2 = true"
                       (blur)="focus2 = false"
-                      #userPwd
-                      required
-                    />
+                      #userPwd required>
                   </div>
+                 
                 </form>
               </div>
               <div class="card-footer">
-                <input
-                  type="button"
-                  class="btn btn-danger btn-round btn-lg"
-                  value="Sign In"
-                  (click)="
-                    authenticationService.SignIn(userEmail.value, userPwd.value)
-                  "
-                />
-              </div>
+                <input type="button" class="btn btn-danger btn-round btn-lg" value="Sign In" (click)="authenticationService.SignIn(userEmail.value, userPwd.value)">
 
-              <p id="lowerMessage">
-                Don't have an account?
-                <a [routerLink]="['/register']">Sign Up</a>
-              </p>
+                
+              </div>
+              
+                
+
+                
+              
+              
+              <p>Don't have an account?<a [routerLink]="['/register']">Sign Up</a></p>
             </div>
           </div>
         </div>
@@ -94,3 +94,4 @@
   </div>
   <app-footer></app-footer>
 </div>
+

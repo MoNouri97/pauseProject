@@ -1,10 +1,10 @@
-import { Component, OnInit, OnDestroy } from "@angular/core";
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import noUiSlider from "nouislider";
-import { AuthenticationService } from "../authentication.service";
+import { AuthenticationService } from '../authentication.service';
 @Component({
-  selector: "app-header",
-  templateUrl: "./header.component.html",
-  styleUrls: ["./header.component.scss"],
+  selector: 'app-header',
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit, OnDestroy {
   isCollapsed = true;
@@ -29,8 +29,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
       connect: false,
       range: {
         min: 0,
-        max: 100,
-      },
+        max: 100
+      }
     });
 
     var slider2 = document.getElementById("sliderDouble");
@@ -40,8 +40,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
       connect: true,
       range: {
         min: 0,
-        max: 100,
-      },
+        max: 100
+      }
     });
   }
   ngOnDestroy() {
