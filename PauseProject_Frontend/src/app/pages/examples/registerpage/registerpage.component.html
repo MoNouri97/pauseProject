@@ -1,6 +1,4 @@
-<app-header>
-
-</app-header>
+<app-header> </app-header>
 <div class="wrapper">
   <div class="page-header">
     <div class="page-header-image"></div>
@@ -17,8 +15,7 @@
                   class="card-img"
                   src="assets/img/square1-red.png"
                 />
-
-                <h4 class="card-title">Register</h4>
+                <h4 id="registerTitle" class="card-title">Register</h4>
               </div>
               <div class="card-body">
                 <form class="form">
@@ -54,7 +51,9 @@
                       type="email"
                       (focus)="focus1 = true"
                       (blur)="focus1 = false"
-                      #userEmail required>
+                      #userEmail
+                      required
+                    />
                   </div>
                   <div
                     class="input-group"
@@ -71,15 +70,21 @@
                       type="password"
                       (focus)="focus2 = true"
                       (blur)="focus2 = false"
-                      #userPwd required>
+                      #userPwd
+                      required
+                    />
                   </div>
-                 
                 </form>
               </div>
               <div class="card-footer">
-                <input type="button" class="btn btn-danger btn-round btn-lg" value="Sign Up" (click)="authenticationService.SignUp(userEmail.value, userPwd.value)">
-
-                
+                <input
+                  type="button"
+                  class="btn btn-danger btn-round btn-lg"
+                  value="Sign Up"
+                  (click)="
+                    authenticationService.SignUp(userEmail.value, userPwd.value)
+                  "
+                />
               </div>
             </div>
           </div>
