@@ -3,7 +3,7 @@ import noUiSlider from "nouislider";
 
 @Component({
   selector: "app-tools",
-  templateUrl: "tools.component.html",
+  templateUrl: "tools.component.html"
 })
 export class ToolsComponent implements OnInit, OnDestroy {
   isCollapsed = true;
@@ -14,7 +14,7 @@ export class ToolsComponent implements OnInit, OnDestroy {
   pagination = 3;
   pagination1 = 1;
   constructor() {}
-  scrollToDownload(element: HTMLElement) {
+  scrollToDownload(element: any) {
     element.scrollIntoView({ behavior: "smooth" });
   }
   ngOnInit() {
@@ -22,26 +22,26 @@ export class ToolsComponent implements OnInit, OnDestroy {
     body.classList.add("tools-page");
 
     var slider = document.getElementById("sliderRegular");
-    if (slider != null)
-      noUiSlider.create(slider, {
-        start: 40,
-        connect: false,
-        range: {
-          min: 0,
-          max: 100,
-        },
-      });
+
+    noUiSlider.create(slider, {
+      start: 40,
+      connect: false,
+      range: {
+        min: 0,
+        max: 100
+      }
+    });
 
     var slider2 = document.getElementById("sliderDouble");
-    if (slider2 != null)
-      noUiSlider.create(slider2, {
-        start: [20, 60],
-        connect: true,
-        range: {
-          min: 0,
-          max: 100,
-        },
-      });
+
+    noUiSlider.create(slider2, {
+      start: [20, 60],
+      connect: true,
+      range: {
+        min: 0,
+        max: 100
+      }
+    });
   }
   ngOnDestroy() {
     var body = document.getElementsByTagName("body")[0];

@@ -3,7 +3,7 @@ import noUiSlider from "nouislider";
 
 @Component({
   selector: "app-index",
-  templateUrl: "index.component.html",
+  templateUrl: "index.component.html"
 })
 export class IndexComponent implements OnInit, OnDestroy {
   isCollapsed = true;
@@ -14,7 +14,6 @@ export class IndexComponent implements OnInit, OnDestroy {
   pagination = 3;
   pagination1 = 1;
   constructor() {}
-
   scrollToDownload(element: any) {
     element.scrollIntoView({ behavior: "smooth" });
   }
@@ -23,26 +22,26 @@ export class IndexComponent implements OnInit, OnDestroy {
     body.classList.add("index-page");
 
     var slider = document.getElementById("sliderRegular");
-    if (slider != null)
-      noUiSlider.create(slider, {
-        start: 40,
-        connect: false,
-        range: {
-          min: 0,
-          max: 100,
-        },
-      });
+
+    noUiSlider.create(slider, {
+      start: 40,
+      connect: false,
+      range: {
+        min: 0,
+        max: 100
+      }
+    });
 
     var slider2 = document.getElementById("sliderDouble");
-    if (slider2 != null)
-      noUiSlider.create(slider2, {
-        start: [20, 60],
-        connect: true,
-        range: {
-          min: 0,
-          max: 100,
-        },
-      });
+
+    noUiSlider.create(slider2, {
+      start: [20, 60],
+      connect: true,
+      range: {
+        min: 0,
+        max: 100
+      }
+    });
   }
   ngOnDestroy() {
     var body = document.getElementsByTagName("body")[0];
