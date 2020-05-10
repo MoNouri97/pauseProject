@@ -59,12 +59,26 @@
 
 
         <pagination
+<<<<<<< HEAD
     class="pagination-danger"
     [(ngModel)]="pagination"
     [totalItems]="100"
     (click)= "pageChange($event.target.text)">
   </pagination>
         </div>
+=======
+          class="pagination-danger"
+          [(ngModel)]="pagination"
+          [totalItems]="100"
+          (click)="pageChange($event.target.text)"
+        >
+        </pagination>
+      </div>
+    </div>
+
+    <app-footer></app-footer>
+  </div>
+>>>>>>> parent of e04b5b32... minor bug fixes 2
 </div>
 
 <app-footer></app-footer>
