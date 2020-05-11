@@ -29,6 +29,7 @@ import { SeriesComponent } from '../series/series.component';
 import { GamesComponent } from '../games/games.component';
 import { GameCardComponent } from '../games/game-card/game-card.component';
 import { MusicComponent } from '../music/music.component';
+import { ContactusComponent } from './examples/contactus/contactus.component';
 
 @NgModule({
 	imports: [
@@ -63,6 +64,7 @@ import { MusicComponent } from '../music/music.component';
 		GamesComponent,
 		GameCardComponent,
 		MusicComponent,
+		ContactusComponent,
 	],
 	exports: [
 		IndexComponent,

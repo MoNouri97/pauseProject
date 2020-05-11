@@ -2,7 +2,8 @@ import { Component, OnInit, OnDestroy } from "@angular/core";
 
 @Component({
   selector: "app-profilepage",
-  templateUrl: "profilepage.component.html"
+  templateUrl: "profilepage.component.html",
+  styleUrls: ["./profilepage.component.scss"],
 })
 export class ProfilepageComponent implements OnInit, OnDestroy {
   isCollapsed = true;
