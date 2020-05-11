@@ -1,4 +1,5 @@
 import { Component, OnInit, OnDestroy, HostListener } from "@angular/core";
+import { AuthenticationService } from 'src/app/authentication.service';
 
 @Component({
   selector: "app-registerpage",
@@ -9,7 +10,7 @@ export class RegisterpageComponent implements OnInit, OnDestroy {
   focus;
   focus1;
   focus2;
-  constructor() {}
+  constructor(public authenticationService: AuthenticationService) {}
   @HostListener("document:mousemove", ["$event"])
   onMouseMove(e) {
     var squares1 = document.getElementById("square1");

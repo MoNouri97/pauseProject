@@ -9,10 +9,9 @@
         class="navbar-brand"
         placement="bottom"
         [routerLink]="['/home']"
-        
         tooltip="Designed and Coded by Creative Tim"
       >
-        <span> Pause• </span> Multi Entertainment 
+        <span> Pause• </span> Multi Entertainment
       </a>
       <button
         aria-controls="navigation-index"
@@ -52,16 +51,13 @@
         </div>
       </div>
       <ul class="navbar-nav">
-       
         <li class="nav-item p-0">
           <a
             class="nav-link"
             [routerLink]="['/movies']"
             placement="bottom"
-            
             tooltip="View Our Movies Selection"
           >
-            
             <p class="">Movies</p>
           </a>
         </li>
@@ -70,10 +66,8 @@
             class="nav-link"
             [routerLink]="['/series']"
             placement="bottom"
-            
             tooltip="View Our Series Selection"
           >
-            
             <p class="">Series</p>
           </a>
         </li>
@@ -82,10 +76,8 @@
             class="nav-link"
             [routerLink]="['/music']"
             placement="bottom"
-            
             tooltip="View Our Music Selection"
           >
-            
             <p class="">Music</p>
           </a>
         </li>
@@ -94,10 +86,8 @@
             class="nav-link"
             routerLink="/games"
             placement="bottom"
-            
             tooltip="View Our Games Selection"
           >
-            
             <p class="">Games</p>
           </a>
         </li>
@@ -106,17 +96,16 @@
             class="nav-link"
             [routerLink]="['/books']"
             placement="bottom"
-            
             tooltip="View Our Books Selection"
           >
-            
             <p class="">Books</p>
           </a>
         </li>
-
-        <li class="dropdown nav-item" dropdown>
+        
+        
+        <li class="dropdown nav-item" dropdown *ngIf="authenticationService.isLoggedIn()">
           <a
-           [routerLink]="['/landing']"
+           
             class="dropdown-toggle nav-link dropdown-toggle"
             data-toggle="dropdown"
             dropdownToggle
@@ -125,96 +114,35 @@
             <i class="fa fa-cogs d-lg-none d-xl-none"> </i> Your Account
           </a>
           <div class="dropdown-menu dropdown-with-icons" *dropdownMenu>
-            <a
-              class="dropdown-item"
-              href="https://demos.creative-tim.com/blk-design-system-angular/#/documentation/overview"
-            >
-              <i class="tim-icons icon-paper"> </i> Documentation
-            </a>
-            <a class="dropdown-item" [routerLink]="['/register']">
-              <i class="tim-icons icon-bullet-list-67"> </i> Register Page
-            </a>
-            <a class="dropdown-item" [routerLink]="['/landing']">
-              <i class="tim-icons icon-image-02"> </i> Landing Page
-            </a>
+
             <a class="dropdown-item" [routerLink]="['/profile']">
-              <i class="tim-icons icon-single-02"> </i> Profile Page
+              <i> </i> Profile
+            </a>
+            
+            <a class="dropdown-item" (click)="authenticationService.SignOut()">
+              <i> </i> log out
             </a>
           </div>
         </li>
-        <!-- <li class="nav-item p-0">
-          <a
-            class="nav-link"
-            href="https://twitter.com/CreativeTim"
-            placement="bottom"
-            
-            tooltip="Follow us on Twitter"
-          >
-            <i class="fab fa-twitter"> </i>
-            <p class="d-lg-none d-xl-none">Twitter</p>
-          </a>
-        </li>
-        <li class="nav-item p-0">
-          <a
-            class="nav-link"
-            href="https://www.facebook.com/CreativeTim"
-            placement="bottom"
-            
-            tooltip="Like us on Facebook"
-          >
-            <i class="fab fa-facebook-square"> </i>
-            <p class="d-lg-none d-xl-none">Facebook</p>
-          </a>
-        </li>
-        <li class="nav-item p-0">
-          <a
-            class="nav-link"
-            href="https://www.instagram.com/CreativeTimOfficial"
-            placement="bottom"
-            
-            tooltip="Follow us on Instagram"
-          >
-            <i class="fab fa-instagram"> </i>
-            <p class="d-lg-none d-xl-none">Instagram</p>
-          </a>
-        </li>
-        <li class="dropdown nav-item" dropdown>
+        <li class="dropdown nav-item" dropdown *ngIf="!authenticationService.isLoggedIn()">
           <a
             class="dropdown-toggle nav-link dropdown-toggle"
             data-toggle="dropdown"
             dropdownToggle
             href="javascript:void(0)"
           >
-            <i class="fa fa-cogs d-lg-none d-xl-none"> </i> Getting started
+            <i class="fa fa-cogs d-lg-none d-xl-none"> </i> Your Account
           </a>
           <div class="dropdown-menu dropdown-with-icons" *dropdownMenu>
-            <a
-              class="dropdown-item"
-              href="https://demos.creative-tim.com/blk-design-system-angular/#/documentation/overview"
-            >
-              <i class="tim-icons icon-paper"> </i> Documentation
-            </a>
             <a class="dropdown-item" [routerLink]="['/register']">
-              <i class="tim-icons icon-bullet-list-67"> </i> Register Page
+              <i> </i> Register
             </a>
-            <a class="dropdown-item" [routerLink]="['/landing']">
-              <i class="tim-icons icon-image-02"> </i> Landing Page
-            </a>
-            <a class="dropdown-item" [routerLink]="['/profile']">
-              <i class="tim-icons icon-single-02"> </i> Profile Page
+            
+            <a class="dropdown-item" [routerLink]="['/login']">
+              <i> </i> Sign In
             </a>
           </div>
         </li>
-        <li class="nav-item">
-          <a
-            class="nav-link btn btn-default d-none d-lg-block"
-            href="javascript:void(0)"
-            (click)="scrollToDownload(target)"
-          >
-            <i class="tim-icons icon-cloud-download-93"> </i> Download
-          </a>
-        </li>
-      -->
       </ul>
     </div>
   </div>
@@ -232,17 +160,17 @@
       <div class="content-center brand">
         <h1 class="h1-seo">PAUSE•</h1>
         <h3>
-         You Only Live Once, So Make It Count
+          You Only Live Once, So Make It Count
         </h3>
       </div>
     </div>
   </div>
-   <div class="main">
+  <div class="main">
     <div class="section section-basic" id="basic-elements">
       <img class="path" src="assets/img/path1.png" />
 
       <div class="container">
-     <!-- <h2 class="title">Basic Elements</h2>
+        <!-- <h2 class="title">Basic Elements</h2>
         <h3>Buttons</h3>
         <p class="category">Pick your style</p>
         <div class="row">
@@ -1996,8 +1924,8 @@
         -->
       </div>
     </div>
-  
   </div>
+  <!--   <app-footer></app-footer> -->
   <footer class="footer">
     <div class="container">
       <div class="row">
@@ -2022,38 +1950,59 @@
             <li class="nav-item">
               <a class="nav-link" [routerLink]="['/books']"> Books </a>
             </li>
-           
           </ul>
         </div>
         <div class="col-md-3">
           <ul class="nav">
             <li class="nav-item">
-              <a class="nav-link" href="https://creative-tim.com/contact-us?ref=blkdsa-footer">
+              <a
+                class="nav-link"
+                href="https://creative-tim.com/contact-us?ref=blkdsa-footer"
+              >
                 Account
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="https://creative-tim.com/contact-us?ref=blkdsa-footer">
+              <a
+                class="nav-link"
+                href="https://creative-tim.com/contact-us?ref=blkdsa-footer"
+              >
                 About us
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="https://www.facebook.com/profile.php?id=100017206339226">
+              <a
+                class="nav-link"
+                href="https://www.facebook.com/profile.php?id=100017206339226"
+              >
                 Slama
-               </a>
-             <li class="nav-item">
-               <a class="nav-link" href="https://www.linkedin.com/in/haythem-bahri-710850146/">
-                Bahri 
-               </a>
-             </li>
-             <li class="nav-item">
-               <a class="nav-link" href="https://www.linkedin.com/in/mohamed-nouri-80396515b/">
-                 Nouri
-               </a>
-               <li class="nav-item">
-                 <a class="nav-link" href="https://www.linkedin.com/in/donia-allani/">
-                  Allani 
-                 </a>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="https://www.linkedin.com/in/haythem-bahri-710850146/"
+              >
+                Bahri
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="https://www.linkedin.com/in/mohamed-nouri-80396515b/"
+              >
+                Nouri
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="https://www.linkedin.com/in/donia-allani/"
+              >
+                Allani
+              </a>
             </li>
           </ul>
         </div>
@@ -2063,21 +2012,18 @@
             <a
               class="btn btn-icon btn-neutral btn-round btn-simple mr-1"
               href="http://www.issatso.rnu.tn/fo/index.php"
-              
             >
               <i class="fab fa-chrome"> </i>
             </a>
             <a
               class="btn btn-icon btn-neutral btn-round btn-simple mr-1"
               href="https://www.facebook.com/IssatSo"
-              
             >
               <i class="fab fa-facebook-square"> </i>
             </a>
             <a
               class="btn btn-icon btn-neutral btn-round btn-simple"
               href="https://www.youtube.com/channel/UCVbsQWnMP6ZsGy5zonJPg4Q"
-              
             >
               <i class="fab fa-youtube"> </i>
             </a>
