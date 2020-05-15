@@ -29,4 +29,8 @@ export class GameComponent implements OnInit {
 			() => console.log('done'),
 		);
 	}
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> donia
