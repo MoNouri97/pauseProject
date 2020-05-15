@@ -1,25 +1,30 @@
 {
   "format": 1,
   "restore": {
-    "/mnt/D/Download/Dev/Angular-projects/pauseProject/PauseProject_Backend/PauseProject.csproj": {}
+    "C:\\Users\\USER\\Desktop\\pauseProject-81516e456dd176ae6d5dc7f00f5599deacf86b1a\\PauseProject_Backend\\PauseProject.csproj": {}
   },
   "projects": {
-    "/mnt/D/Download/Dev/Angular-projects/pauseProject/PauseProject_Backend/PauseProject.csproj": {
+    "C:\\Users\\USER\\Desktop\\pauseProject-81516e456dd176ae6d5dc7f00f5599deacf86b1a\\PauseProject_Backend\\PauseProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/mnt/D/Download/Dev/Angular-projects/pauseProject/PauseProject_Backend/PauseProject.csproj",
+        "projectUniqueName": "C:\\Users\\USER\\Desktop\\pauseProject-81516e456dd176ae6d5dc7f00f5599deacf86b1a\\PauseProject_Backend\\PauseProject.csproj",
         "projectName": "PauseProject",
-        "projectPath": "/mnt/D/Download/Dev/Angular-projects/pauseProject/PauseProject_Backend/PauseProject.csproj",
-        "packagesPath": "/home/monouri/.nuget/packages/",
-        "outputPath": "/mnt/D/Download/Dev/Angular-projects/pauseProject/PauseProject_Backend/obj/",
+        "projectPath": "C:\\Users\\USER\\Desktop\\pauseProject-81516e456dd176ae6d5dc7f00f5599deacf86b1a\\PauseProject_Backend\\PauseProject.csproj",
+        "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\USER\\Desktop\\pauseProject-81516e456dd176ae6d5dc7f00f5599deacf86b1a\\PauseProject_Backend\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "c:\\program files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "/home/monouri/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -85,7 +90,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.1.101/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "c:\\program files\\dotnet\\sdk\\3.1.102\\RuntimeIdentifierGraph.json"
         }
       }
     }
