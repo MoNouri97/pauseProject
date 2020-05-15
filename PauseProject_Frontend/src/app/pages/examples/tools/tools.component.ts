@@ -3,7 +3,11 @@ import noUiSlider from "nouislider";
 
 @Component({
   selector: "app-tools",
+<<<<<<< HEAD
   templateUrl: "tools.component.html",
+=======
+  templateUrl: "tools.component.html"
+>>>>>>> 81516e456dd176ae6d5dc7f00f5599deacf86b1a
 })
 export class ToolsComponent implements OnInit, OnDestroy {
   isCollapsed = true;
@@ -23,6 +27,7 @@ export class ToolsComponent implements OnInit, OnDestroy {
 
     var slider = document.getElementById("sliderRegular");
 
+<<<<<<< HEAD
     if (slider != null)
       noUiSlider.create(slider, {
         start: 40,
@@ -44,6 +49,27 @@ export class ToolsComponent implements OnInit, OnDestroy {
           max: 100,
         },
       });
+=======
+    noUiSlider.create(slider, {
+      start: 40,
+      connect: false,
+      range: {
+        min: 0,
+        max: 100
+      }
+    });
+
+    var slider2 = document.getElementById("sliderDouble");
+
+    noUiSlider.create(slider2, {
+      start: [20, 60],
+      connect: true,
+      range: {
+        min: 0,
+        max: 100
+      }
+    });
+>>>>>>> 81516e456dd176ae6d5dc7f00f5599deacf86b1a
   }
   ngOnDestroy() {
     var body = document.getElementsByTagName("body")[0];

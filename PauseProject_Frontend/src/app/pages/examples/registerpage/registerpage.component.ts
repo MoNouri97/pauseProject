@@ -4,7 +4,6 @@ import { AuthenticationService } from "src/app/authentication.service";
 @Component({
   selector: "app-registerpage",
   templateUrl: "registerpage.component.html",
-  styleUrls: ["./registerpage.component.scss"],
 })
 export class RegisterpageComponent implements OnInit, OnDestroy {
   isCollapsed = true;
