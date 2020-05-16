@@ -1,9 +1,9 @@
 import { Component, OnInit, OnDestroy } from "@angular/core";
 import noUiSlider from "nouislider";
-
-@Component({
+import { AuthenticationService } from '../../../authentication.service';
+@Component({ 
   selector: "app-index",
-  templateUrl: "index.component.html",
+  templateUrl: "index.component.html"
 })
 export class IndexComponent implements OnInit, OnDestroy {
   isCollapsed = true;
@@ -13,7 +13,7 @@ export class IndexComponent implements OnInit, OnDestroy {
   date = new Date();
   pagination = 3;
   pagination1 = 1;
-  constructor() {}
+  constructor(public authenticationService: AuthenticationService) {}
   scrollToDownload(element: any) {
     element.scrollIntoView({ behavior: "smooth" });
   }

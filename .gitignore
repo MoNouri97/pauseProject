@@ -1,3 +1,12 @@
 /node_modules
 /PauseProject_Backend/.vs
 .vscode
+/.vscode/*
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*

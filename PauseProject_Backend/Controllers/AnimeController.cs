@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
+using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -64,36 +65,57 @@ namespace PauseProject.Controllers
                     int i = (id - 1) * 20;
                     int j = 0;
 
-                    do
+                    while(j <20)
                     {
-                        var response = await client.GetAsync("/api/edge/anime/" + i);
-                        //
-                        if (response.IsSuccessStatusCode)
+                    var handle = new EventWaitHandle(false, EventResetMode.ManualReset);
+
+                    var thread = new Thread(async () =>
+                    {
+
+                        try
                         {
-                            Console.Write(response.StatusCode);
-
-                            var stringResult = await response.Content.ReadAsStringAsync();
-
-                            var rawBook = JsonConvert.DeserializeObject<BooksDTO>(stringResult);
-                            //if (rawBook.MusicID != 0)
-                            //{
-                            i++;
-                            j++;
-                            Objects.Add(new
+                            var response = await client.GetAsync("/api/edge/anime/" + i);
+                            //
+                            if (response.IsSuccessStatusCode)
                             {
-                                rawBook.data,
+                                Console.Write(response.StatusCode);
+
+                                var stringResult = await response.Content.ReadAsStringAsync();
+
+                                var rawBook = JsonConvert.DeserializeObject<BooksDTO>(stringResult);
+                                //if (rawBook.MusicID != 0)
+                                //{
+                               
+                                j++;
+                                Objects.Add(new
+                                {
+                                    rawBook.data,
 
 
-                            });
-                            //}
-                        }
-                        else
-                        {
+                                });
+                                Console.WriteLine("Thread{0} exits", i);
+                                handle.Set();
+                                j++;
+                                //}
+                            }
+
                             i++;
-                        }
-                    } while (j < 20);
 
-                    return Ok(Objects);
+                        }
+                     
+                     catch (Exception e)
+                    {
+                        Console.WriteLine(e.Message);
+                    }
+                });
+                i++;
+
+                thread.Start();
+
+            }
+
+            Console.WriteLine("Main thread exits");
+            return Ok(Objects);
                     // }
 
                     // catch (HttpRequestException http)
