@@ -29,11 +29,7 @@ namespace PauseProject.DTOs
         public List<Platforms> Platforms { get; set; }
         public List<Genre> Genres { get; set; }
         public List<Tag> Tags { get; set; }
-        
-        
-        
-
-
+       
     }
 
     public class Tag

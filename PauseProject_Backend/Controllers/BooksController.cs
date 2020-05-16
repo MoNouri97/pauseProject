@@ -24,7 +24,6 @@ namespace PauseProject.Controllers
         }
         // GET: api/Books
         [HttpGet]
-
         public async Task<IActionResult> Get()
         {
             using (var client = new HttpClient())

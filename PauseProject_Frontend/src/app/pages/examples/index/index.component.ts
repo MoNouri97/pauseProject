@@ -23,25 +23,27 @@ export class IndexComponent implements OnInit, OnDestroy {
 
     var slider = document.getElementById("sliderRegular");
 
-    noUiSlider.create(slider, {
-      start: 40,
-      connect: false,
-      range: {
-        min: 0,
-        max: 100
-      }
-    });
+    if (slider != null)
+      noUiSlider.create(slider, {
+        start: 40,
+        connect: false,
+        range: {
+          min: 0,
+          max: 100,
+        },
+      });
 
     var slider2 = document.getElementById("sliderDouble");
 
-    noUiSlider.create(slider2, {
-      start: [20, 60],
-      connect: true,
-      range: {
-        min: 0,
-        max: 100
-      }
-    });
+    if (slider2 != null)
+      noUiSlider.create(slider2, {
+        start: [20, 60],
+        connect: true,
+        range: {
+          min: 0,
+          max: 100,
+        },
+      });
   }
   ngOnDestroy() {
     var body = document.getElementsByTagName("body")[0];

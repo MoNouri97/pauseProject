@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
 # compiled output
@@ -44,3 +45,8 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+=======
+/node_modules
+/PauseProject_Backend/.vs
+.vscode
+>>>>>>> 951695287cdd000bd06034b46a4ad5ed582bb555

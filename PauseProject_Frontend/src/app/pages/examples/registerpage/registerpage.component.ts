@@ -1,9 +1,10 @@
 import { Component, OnInit, OnDestroy, HostListener } from "@angular/core";
-import { AuthenticationService } from 'src/app/authentication.service';
+import { AuthenticationService } from "src/app/authentication.service";
 
 @Component({
   selector: "app-registerpage",
-  templateUrl: "registerpage.component.html"
+  templateUrl: "registerpage.component.html",
+  styleUrls: ["registerpage.component.scss"],
 })
 export class RegisterpageComponent implements OnInit, OnDestroy {
   isCollapsed = true;
