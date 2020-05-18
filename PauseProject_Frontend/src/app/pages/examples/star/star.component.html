@@ -1,0 +1,21 @@
+<div class="container">
+  <h3>Rate this item</h3>
+  <div>
+    <rating
+      [max]="max"
+      [(ngModel)]="rating"
+      [customTemplate]="tt"
+      style="font-size: 60px;"
+      (click)="rate()"
+    ></rating>
+    <ng-template #tt let-i="index" let-v="value">
+      <span class="stars">
+        {{ i < v ? "&#9733;" : "&#9734;" }}
+      </span>
+    </ng-template>
+  </div>
+  <br />
+  <button class="btn btn-warning" (click)="resetStars()">
+    Reset rating
+  </button>
+</div>

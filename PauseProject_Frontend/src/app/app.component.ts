@@ -1,9 +1,10 @@
+import { Router, NavigationEnd } from "@angular/router";
 import {
   Component,
   OnInit,
   Renderer,
   HostListener,
-  Inject
+  Inject,
 } from "@angular/core";
 import { Location } from "@angular/common";
 import { DOCUMENT } from "@angular/common";
@@ -11,10 +12,11 @@ import { DOCUMENT } from "@angular/common";
 @Component({
   selector: "app-root",
   templateUrl: "./app.component.html",
-  styleUrls: ["./app.component.scss"]
+  styleUrls: ["./app.component.scss"],
 })
 export class AppComponent implements OnInit {
   constructor(
+    private router: Router,
     private renderer: Renderer,
     public location: Location,
     @Inject(DOCUMENT) document
@@ -36,6 +38,12 @@ export class AppComponent implements OnInit {
     }
   }
   ngOnInit() {
-    this.onWindowScroll(event);
+    //this.onWindowScroll(event);
+    this.router.events.subscribe((evt) => {
+      if (!(evt instanceof NavigationEnd)) {
+        return;
+      }
+      window.scrollTo(0, 0);
+    });
   }
 }

@@ -1,5 +1,10 @@
+import { StarService } from "./pages/examples/star/star.service";
+import { StarComponent } from "./pages/examples/star/star.component";
 import { AngularFireModule } from "angularfire2";
-import { AngularFirestoreModule } from "angularfire2/firestore";
+import {
+  AngularFirestoreModule,
+  AngularFirestore,
+} from "angularfire2/firestore";
 import { AngularFireAuthModule } from "angularfire2/auth";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { NgModule } from "@angular/core";
@@ -14,7 +19,7 @@ import { TooltipModule } from "ngx-bootstrap/tooltip";
 import { CollapseModule } from "ngx-bootstrap/collapse";
 import { TabsModule } from "ngx-bootstrap/tabs";
 import { PaginationModule } from "ngx-bootstrap/pagination";
-import { AlertModule } from "ngx-bootstrap/alert";
+import { RatingModule } from "ngx-bootstrap/rating";
 import { BsDatepickerModule } from "ngx-bootstrap/datepicker";
 import { CarouselModule } from "ngx-bootstrap/carousel";
 import { ModalModule } from "ngx-bootstrap/modal";
@@ -58,6 +63,7 @@ import { MusicElementService } from "./music-element/music.service";
     GameComponent,
     MusicElementComponent,
     LoginComponent,
+    StarComponent,
   ],
   imports: [
     BrowserAnimationsModule,
@@ -65,11 +71,11 @@ import { MusicElementService } from "./music-element/music.service";
     HttpClientModule,
     RouterModule,
     AppRoutingModule,
-
     PagesModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
     AngularFirestoreModule,
+    RatingModule.forRoot(), //to check
   ],
   providers: [
     BooksService,
@@ -82,6 +88,8 @@ import { MusicElementService } from "./music-element/music.service";
     SerieService,
     GameService,
     MusicElementService,
+    StarService,
+    AngularFirestore,
   ],
   bootstrap: [AppComponent],
 })
