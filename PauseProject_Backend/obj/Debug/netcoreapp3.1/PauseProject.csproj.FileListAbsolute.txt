@@ -250,6 +250,7 @@ E:\pauseProject-master2\pauseProject-master\PauseProject_Backend\obj\Debug\netco
 E:\pauseProject-master2\pauseProject-master\PauseProject_Backend\obj\Debug\netcoreapp3.1\PauseProject.dll
 E:\pauseProject-master2\pauseProject-master\PauseProject_Backend\obj\Debug\netcoreapp3.1\PauseProject.pdb
 E:\pauseProject-master2\pauseProject-master\PauseProject_Backend\obj\Debug\netcoreapp3.1\PauseProject.genruntimeconfig.cache
+<<<<<<< HEAD
 C:\Users\USER\Desktop\pauseProject-81516e456dd176ae6d5dc7f00f5599deacf86b1a\PauseProject_Backend\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\USER\Desktop\pauseProject-81516e456dd176ae6d5dc7f00f5599deacf86b1a\PauseProject_Backend\bin\Debug\netcoreapp3.1\appsettings.json
 C:\Users\USER\Desktop\pauseProject-81516e456dd176ae6d5dc7f00f5599deacf86b1a\PauseProject_Backend\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
@@ -374,3 +375,5 @@ C:\Users\USER\Desktop\pauseProject-81516e456dd176ae6d5dc7f00f5599deacf86b1a\Paus
 C:\Users\USER\Desktop\pauseProject-81516e456dd176ae6d5dc7f00f5599deacf86b1a\PauseProject_Backend\obj\Debug\netcoreapp3.1\staticwebassets\PauseProject.StaticWebAssets.xml
 C:\Users\USER\Desktop\pauseProject-81516e456dd176ae6d5dc7f00f5599deacf86b1a\PauseProject_Backend\obj\Debug\netcoreapp3.1\PauseProject.dll
 C:\Users\USER\Desktop\pauseProject-81516e456dd176ae6d5dc7f00f5599deacf86b1a\PauseProject_Backend\obj\Debug\netcoreapp3.1\PauseProject.pdb
+=======
+>>>>>>> 31d25ba7a78de1576667be5bca0825b5bfa7f389
