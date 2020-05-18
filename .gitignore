@@ -47,6 +47,7 @@ Thumbs.db
 
 /node_modules
 /PauseProject_Backend/.vs
+/PauseProject_Frontend/documentation
 .vscode
 /.vscode/*
 
