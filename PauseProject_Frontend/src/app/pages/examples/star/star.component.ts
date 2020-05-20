@@ -1,3 +1,4 @@
+import { MovieService } from "./../../../movie/movie.service";
 import { MusicElementService } from "./../../../music-element/music.service";
 import { BookService } from "./../../../book/book.service";
 import { Observable } from "rxjs";
@@ -18,6 +19,7 @@ export class StarComponent implements OnInit {
   gameService: GameService;
   bookService: BookService;
   musicService: MusicElementService;
+  movieService: MovieService;
   service;
   serviceID;
 
@@ -29,10 +31,10 @@ export class StarComponent implements OnInit {
 
   ngOnInit() {
     this._StarService.setCollectionName(this.collectionName);
-
     if (this.collectionName === "game") {
-      this.gameService = <GameService>this.injector.get(GameService);
-      this.service = this.gameService;
+      this.service = this.gameService = <GameService>(
+        this.injector.get(GameService)
+      );
       this.service.game.subscribe((data) => (this.serviceID = data.id));
 
       this.service.getGameObservable().subscribe((data) => {
@@ -43,8 +45,9 @@ export class StarComponent implements OnInit {
           });
       });
     } else if (this.collectionName === "book") {
-      this.bookService = <BookService>this.injector.get(BookService);
-      this.service = this.bookService;
+      this.service = this.bookService = <BookService>(
+        this.injector.get(BookService)
+      );
       this.service.book.subscribe((data) => (this.serviceID = data[0].data.id));
 
       this.service.getBookObservable().subscribe((data) => {
@@ -66,6 +69,19 @@ export class StarComponent implements OnInit {
       this.service.getMusicObservable().subscribe((data) => {
         this._StarService
           .getUserStar(this._AuthService.getUserID(), data[0].musicID)
+          .subscribe((data) => {
+            if (data.length != 0) this.rating = (data[0] as Star).value;
+          });
+      });
+    } else if (this.collectionName === "movie") {
+      this.service = this.movieService = <MovieService>(
+        this.injector.get(MovieService)
+      );
+      this.service.movie.subscribe((data) => (this.serviceID = data[0].id));
+
+      this.service.getMovieObservable().subscribe((data) => {
+        this._StarService
+          .getUserStar(this._AuthService.getUserID(), data[0].id)
           .subscribe((data) => {
             if (data.length != 0) this.rating = (data[0] as Star).value;
           });
