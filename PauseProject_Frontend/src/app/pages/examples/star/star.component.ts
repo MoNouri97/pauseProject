@@ -1,3 +1,4 @@
+import { SerieService } from "./../../../serie/serie.service";
 import { MovieService } from "./../../../movie/movie.service";
 import { MusicElementService } from "./../../../music-element/music.service";
 import { BookService } from "./../../../book/book.service";
@@ -20,6 +21,7 @@ export class StarComponent implements OnInit {
   bookService: BookService;
   musicService: MusicElementService;
   movieService: MovieService;
+  serieService: SerieService;
   service;
   serviceID;
 
@@ -82,6 +84,21 @@ export class StarComponent implements OnInit {
       this.service.getMovieObservable().subscribe((data) => {
         this._StarService
           .getUserStar(this._AuthService.getUserID(), data[0].id)
+          .subscribe((data) => {
+            if (data.length != 0) this.rating = (data[0] as Star).value;
+          });
+      });
+    } else if (this.collectionName === "serie") {
+      this.service = this.serieService = <SerieService>(
+        this.injector.get(SerieService)
+      );
+      this.service.serie.subscribe(
+        (data) => (this.serviceID = data[0].data.id)
+      );
+
+      this.service.getSerieObservable().subscribe((data) => {
+        this._StarService
+          .getUserStar(this._AuthService.getUserID(), data[0].data.id)
           .subscribe((data) => {
             if (data.length != 0) this.rating = (data[0] as Star).value;
           });

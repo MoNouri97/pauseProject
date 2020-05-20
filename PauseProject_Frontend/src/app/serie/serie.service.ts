@@ -1,17 +1,19 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Injectable } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root",
 })
 export class SerieService {
-  data1 : any;
-  constructor(private http : HttpClient) { }
-  getSerie(i: any) : any {
-    let URL =`http://localhost:5000/api/serie/${i}`;
-    this.data1 =  this.http.get(URL) ;
-      
-      
-    return this.data1;
+  serie: any;
+  serieData: any;
+  constructor(private http: HttpClient) {}
+  getSerie(i: any): any {
+    let URL = `http://localhost:5000/api/serie/${i}`;
+    this.serie = this.http.get(URL);
+    return this.serie;
+  }
+  getSerieObservable() {
+    return this.serie;
   }
 }

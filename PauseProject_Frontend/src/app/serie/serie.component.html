@@ -23,7 +23,7 @@
   <div class="content-center brand">
     <div class="container">
       <div class="card zoom">
-        <div class="container">
+        <div class="container" *ngIf="serie">
           <h1 class="card-header">
             {{ serie[0].data.attributes.canonicalTitle }}
           </h1>
@@ -43,5 +43,7 @@
     </div>
   </div>
 </div>
-
+<br />
+<app-star collectionName="serie"></app-star>
+<br />
 <app-footer></app-footer>
