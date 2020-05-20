@@ -78,6 +78,10 @@ export class AuthenticationService {
     const user = JSON.parse(localStorage.getItem("user"));
     return user !== null ? true : false;
   }
+  getUserID(): string {
+    const user = JSON.parse(localStorage.getItem("user"));
+    return user !== null ? user.uid : false;
+  }
   SignOut() {
     return this.afAuth.auth.signOut().then(() => {
       localStorage.removeItem("user");

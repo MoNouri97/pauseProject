@@ -1,34 +1,60 @@
+import { Observable, BehaviorSubject } from "rxjs";
 import {
   AngularFirestore,
   AngularFirestoreDocument,
   AngularFirestoreCollection,
 } from "angularfire2/firestore";
-import { Injectable } from "@angular/core";
-
+import { Injectable, Input } from "@angular/core";
 export interface Star {
-  gameID: number;
+  collectionID: number;
   userID: string;
   value: number;
 }
 
 @Injectable()
 export class StarService {
-  constructor(private afs: AngularFirestore) {}
+  private collectionNameString: string;
+  private collectionName = new BehaviorSubject("");
+  collectionNameObservable = this.collectionName.asObservable();
+
+  constructor(private afs: AngularFirestore) {
+    this.collectionNameObservable.subscribe((data) => {
+      this.collectionNameString = data;
+    });
+  }
   getUserStars(userID) {
-    const starsRef = this.afs.collection("gameStars", (ref) =>
-      ref.where("userID", "==", userID)
+    const starsRef = this.afs.collection(
+      this.collectionNameString + "Stars",
+      (ref) => ref.where("userID", "==", userID)
     );
     return starsRef.valueChanges();
   }
 
-  setStar(userID, gameID, value) {
-    let star: Star = { userID, gameID, value };
-    const starPath = `gameStars/${star.userID}_${star.gameID}`;
+  getUserStar(userID, collectionID) {
+    const starsRef = this.afs.collection(
+      this.collectionNameString + "Stars",
+      (ref) =>
+        ref
+          .where("userID", "==", userID)
+          .where("collectionID", "==", collectionID)
+    );
+    return starsRef.valueChanges();
+  }
+
+  setStar(userID, collectionID, value) {
+    let star: Star = { userID, collectionID, value };
+    const starPath =
+      this.collectionNameString + `Stars/${star.userID}_${star.collectionID}`;
     return this.afs.doc(starPath).set(star);
   }
 
-  deleteStar(userID, gameID) {
-    const starPath = `gameStars/${userID}_${gameID}`;
+  deleteStar(userID, collectionID) {
+    const starPath =
+      this.collectionNameString + `Stars/${userID}_${collectionID}`;
     return this.afs.doc(starPath).delete();
+  }
+
+  setCollectionName(collectionName: string) {
+    this.collectionName.next(collectionName);
   }
 }

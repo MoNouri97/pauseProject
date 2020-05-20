@@ -10,8 +10,10 @@ export class GameService {
   constructor(private http: HttpClient) {}
   getGame(j: number): any {
     let URL = `http://localhost:5000/api/Game/${j} `;
-
     this.game = this.http.get(URL);
+    return this.game;
+  }
+  getGameObservable() {
     return this.game;
   }
 }

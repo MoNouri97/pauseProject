@@ -7,8 +7,7 @@ import { GameService } from "./game.service";
   styleUrls: ["./game.component.scss"],
 })
 export class GameComponent implements OnInit {
-  public id;
-  public index;
+  public gameid;
   public game;
   loading: boolean;
 
@@ -19,15 +18,13 @@ export class GameComponent implements OnInit {
 
   ngOnInit() {
     this.loading = true;
-    let id = parseInt(this.route.snapshot.paramMap.get("id"));
-    this._GameService.getGame(id).subscribe(
+    this.gameid = parseInt(this.route.snapshot.paramMap.get("id"));
+    this._GameService.getGame(this.gameid).subscribe(
       (data) => {
-        this.game = data;
-        this._GameService.gameData = this.game;
+        this._GameService.gameData = this.game = data;
         this.loading = false;
       },
-      (err) => console.error(err),
-      () => console.log("done")
+      (err) => console.error(err)
     );
   }
 }
