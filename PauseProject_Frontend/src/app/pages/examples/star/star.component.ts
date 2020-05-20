@@ -1,3 +1,4 @@
+import { MusicElementService } from "./../../../music-element/music.service";
 import { BookService } from "./../../../book/book.service";
 import { Observable } from "rxjs";
 import { GameService } from "./../../../game/game.service";
@@ -16,6 +17,7 @@ export class StarComponent implements OnInit {
   rating: number = 0;
   gameService: GameService;
   bookService: BookService;
+  musicService: MusicElementService;
   service;
   serviceID;
 
@@ -48,6 +50,22 @@ export class StarComponent implements OnInit {
       this.service.getBookObservable().subscribe((data) => {
         this._StarService
           .getUserStar(this._AuthService.getUserID(), data[0].data.id)
+          .subscribe((data) => {
+            if (data.length != 0) this.rating = (data[0] as Star).value;
+          });
+      });
+    } else if (this.collectionName === "music") {
+      this.service = this.musicService = <MusicElementService>(
+        this.injector.get(MusicElementService)
+      );
+
+      this.service.music.subscribe(
+        (data) => (this.serviceID = data[0].musicID)
+      );
+
+      this.service.getMusicObservable().subscribe((data) => {
+        this._StarService
+          .getUserStar(this._AuthService.getUserID(), data[0].musicID)
           .subscribe((data) => {
             if (data.length != 0) this.rating = (data[0] as Star).value;
           });
