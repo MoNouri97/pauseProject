@@ -34,17 +34,16 @@
 
 			<pagination
 				class="pagination-danger"
-				[(ngModel)]="pagination"
 				[totalItems]="100"
 				(click)="pageChange($event.target.text)"
 			>
 			</pagination>
 			<div class="row" *ngIf="!loading">
 				<app-music-card
-					*ngFor="let music of musics"
-					class="d-flex flex-column mb-0 bd-highlight col-md-4"
-					(click)="onSelect(music)"
-					[music]="music"
+					*ngFor="let song of music"
+					class="d-flex flex-column mb-0 bd-highlight col-md-3"
+					(click)="onSelect(song)"
+					[song]="song"
 				></app-music-card>
 			</div>
 			<div *ngIf="loading" class="row loading">

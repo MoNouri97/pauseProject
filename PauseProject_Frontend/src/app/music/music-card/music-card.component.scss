@@ -1,0 +1,25 @@
+.noImage {
+	background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+	// background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.img-fluid {
+	max-width: 120%;
+	min-width: 100%;
+	filter: blur(1px);
+}
+
+.zoom {
+	// background: #fff;
+	transition: all 0.2s ease-in-out;
+	overflow: hidden;
+}
+.zoom:hover {
+	transform: scale(1.05);
+	z-index: 1;
+	cursor: pointer;
+}
+
+.post-body {
+	white-space: pre-wrap;
+}

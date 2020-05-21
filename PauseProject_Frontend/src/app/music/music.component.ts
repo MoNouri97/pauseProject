@@ -30,11 +30,14 @@ export class MusicComponent implements OnInit {
 		this._MusicService.getMusic(1).subscribe(
 			(data) => {
 				console.log(data);
-
 				this.music = data;
+				this.loading = false;
 			},
 			(err) => console.error(err),
-			() => console.log('done'),
+			() => {
+				console.log('done');
+				this.loading = false;
+			},
 		);
 	}
 
@@ -44,7 +47,10 @@ export class MusicComponent implements OnInit {
 				this.music = data;
 			},
 			(err) => console.error(err),
-			() => console.log('done'),
+			() => {
+				console.log('done');
+				this.loading = false;
+			},
 		);
 	}
 

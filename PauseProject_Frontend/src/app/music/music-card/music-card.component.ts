@@ -6,9 +6,11 @@ import { Component, OnInit, Input } from '@angular/core';
 	styleUrls: ['./music-card.component.scss'],
 })
 export class MusicCardComponent implements OnInit {
-	@Input() music;
+	@Input() song;
 
 	constructor() {}
 
-	ngOnInit() {}
+	ngOnInit() {
+		console.log(this.song);
+	}
 }
