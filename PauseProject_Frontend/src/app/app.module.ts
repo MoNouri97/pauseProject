@@ -53,6 +53,7 @@ import { MovieService } from "./movie/movie.service";
 import { SerieService } from "./serie/serie.service";
 import { GameService } from "./game/game.service";
 import { MusicElementService } from "./music-element/music.service";
+import { MusicCardComponent } from './music/music-card/music-card.component';
 
 @NgModule({
   declarations: [
@@ -64,6 +65,7 @@ import { MusicElementService } from "./music-element/music.service";
     MusicElementComponent,
     LoginComponent,
     StarComponent,
+    MusicCardComponent,
   ],
   imports: [
     BrowserAnimationsModule,
