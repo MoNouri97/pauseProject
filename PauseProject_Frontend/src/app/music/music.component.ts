@@ -27,24 +27,16 @@ export class MusicComponent implements OnInit {
 		this.activatedRoute.params.subscribe((paramsId) => {
 			this.id = paramsId.id;
 		});
-		this._MusicService.getMusic(1).subscribe(
+		this.pageChange(1);
+	}
+
+	pageChange(ind) {
+		this.loading = true;
+		this._MusicService.getMusic(ind).subscribe(
 			(data) => {
 				console.log(data);
 				this.music = data;
 				this.loading = false;
-			},
-			(err) => console.error(err),
-			() => {
-				console.log('done');
-				this.loading = false;
-			},
-		);
-	}
-
-	pageChange(ind) {
-		this._MusicService.getMusic(ind).subscribe(
-			(data) => {
-				this.music = data;
 			},
 			(err) => console.error(err),
 			() => {

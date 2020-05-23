@@ -24,14 +24,6 @@
 		<div class="container">
 			<h1 class="display-1">Music List</h1>
 			<hr class="line-primary" />
-			<ul>
-				<div *ngFor="let mus of music">
-					<li (click)="onSelect(mus.musicID)">
-						{{ mus.title }}
-					</li>
-				</div>
-			</ul>
-
 			<pagination
 				class="pagination-danger"
 				[totalItems]="100"
@@ -42,14 +34,14 @@
 				<app-music-card
 					*ngFor="let song of music"
 					class="d-flex flex-column mb-0 bd-highlight col-md-3"
-					(click)="onSelect(song)"
+					(click)="onSelect(song.musicID)"
 					[song]="song"
 				></app-music-card>
 			</div>
 			<div *ngIf="loading" class="row loading">
 				<div
 					*ngFor="let i of placeholders"
-					class="d-flex flex-column mb-0 bd-highlight col-md-4"
+					class="d-flex flex-column mb-0 bd-highlight col-md-3"
 				>
 					<!-- <div class="card"></div> -->
 					<div class="card card-loader"></div>

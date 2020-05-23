@@ -11,6 +11,6 @@ export class MusicCardComponent implements OnInit {
 	constructor() {}
 
 	ngOnInit() {
-		console.log(this.song);
+		// console.log(this.song);
 	}
 }
