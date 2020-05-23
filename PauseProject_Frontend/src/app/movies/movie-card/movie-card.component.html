@@ -1,0 +1,20 @@
+<div class="card zoom">
+	<p class="d-block" style="height: 250px; overflow: hidden;">
+		<img class="img-fluid" src="{{ movie.img }}" />
+	</p>
+	<div class="post-text p-4">
+		<p *ngFor="let genre of movie.genres" class="badge badge-warning mr-1">
+			{{ genre.name }}
+		</p>
+		<br />
+		<span class="post-meta text-Success">
+			<i class="tim-icons icon-shape-star"></i>
+			{{ movie.rating }}</span
+		>
+		<h2 class="text-primary">
+			{{ movie.title }}
+		</h2>
+		<p>Released on {{ movie.release_date | date }}</p>
+		<p class="btn btn-link btn-primary mr-1">Read more</p>
+	</div>
+</div>
