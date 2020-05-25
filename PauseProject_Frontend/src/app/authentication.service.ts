@@ -1,3 +1,4 @@
+import { Observable } from "rxjs";
 import { Injectable, NgZone } from "@angular/core";
 import { auth } from "firebase/app";
 import { AngularFireAuth } from "@angular/fire/auth";
@@ -13,7 +14,7 @@ import { User } from "./user";
 })
 export class AuthenticationService {
   userData: any;
-
+  userName: any;
   constructor(
     public afs: AngularFirestore,
     public afAuth: AngularFireAuth,
@@ -60,10 +61,10 @@ export class AuthenticationService {
       });
   }
   SetUserData(user) {
-    const userRef: AngularFirestoreDocument<any> = this.afs.doc(
+    let userRef: AngularFirestoreDocument<any> = this.afs.doc(
       `users/${user.uid}`
     );
-    const userData: User = {
+    let userData: User = {
       uid: user.uid,
       email: user.email,
       displayName: user.displayName,
@@ -82,6 +83,19 @@ export class AuthenticationService {
     const user = JSON.parse(localStorage.getItem("user"));
     return user !== null ? user.uid : false;
   }
+  fetch(userID) {
+    let user = this.afs.collection("users", (ref) =>
+      ref.where("uid", "==", userID)
+    );
+    return user.valueChanges();
+  }
+  getUserName(): string {
+    return this.userName;
+  }
+  setUserName(name: string) {
+    this.userName = name;
+  }
+
   SignOut() {
     return this.afAuth.auth.signOut().then(() => {
       localStorage.removeItem("user");

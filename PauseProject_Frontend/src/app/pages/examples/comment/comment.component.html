@@ -1,0 +1,27 @@
+<div class="form-group container">
+  <h3 class="mt-5 mb-5">Comments Section</h3>
+  <textarea
+    [(ngModel)]="comment"
+    id="commentTextarea"
+    rows="7"
+    placeholder="Write something here..."
+  ></textarea>
+  <button class="btn btn-neutral" (click)="postComment()">add comment</button>
+</div>
+<div class="container" *ngFor="let comment of comments; let i = index">
+  <span>
+    <h4>{{ comment.userName }} :</h4>
+  </span>
+  <div class="flex card container">
+    <p class="m-3 mr-auto">
+      {{ comment.comment }}
+    </p>
+    <button
+      [hidden]="!showDelete(i)"
+      (click)="deleteComment(i)"
+      class="btn btn-danger btn-round mr-1 col-2 ml-auto"
+    >
+      Delete
+    </button>
+  </div>
+</div>

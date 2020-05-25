@@ -6818,24 +6818,30 @@
     ]
   },
   "packageFolders": {
-    "/home/mono/.nuget/packages/": {}
+    "C:\\Users\\USER\\.nuget\\packages\\": {},
+    "c:\\program files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/mnt/988CFC348CFC0E8E/Download/Dev/Angular-projects/pauseProject/PauseProject_Backend/PauseProject.csproj",
+      "projectUniqueName": "C:\\Users\\USER\\Desktop\\pauseProject-81516e456dd176ae6d5dc7f00f5599deacf86b1a\\PauseProject_Backend\\PauseProject.csproj",
       "projectName": "PauseProject",
-      "projectPath": "/mnt/988CFC348CFC0E8E/Download/Dev/Angular-projects/pauseProject/PauseProject_Backend/PauseProject.csproj",
-      "packagesPath": "/home/mono/.nuget/packages/",
-      "outputPath": "/mnt/988CFC348CFC0E8E/Download/Dev/Angular-projects/pauseProject/PauseProject_Backend/obj/",
+      "projectPath": "C:\\Users\\USER\\Desktop\\pauseProject-81516e456dd176ae6d5dc7f00f5599deacf86b1a\\PauseProject_Backend\\PauseProject.csproj",
+      "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\USER\\Desktop\\pauseProject-81516e456dd176ae6d5dc7f00f5599deacf86b1a\\PauseProject_Backend\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "c:\\program files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "/home/mono/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -6893,12 +6899,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[3.1.2, 3.1.2]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -6907,7 +6907,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.1.300/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "c:\\program files\\dotnet\\sdk\\3.1.102\\RuntimeIdentifierGraph.json"
       }
     }
   }
