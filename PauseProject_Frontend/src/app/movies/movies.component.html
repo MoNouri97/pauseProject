@@ -34,7 +34,7 @@
 				<app-movie-card
 					*ngFor="let movie of movies"
 					class="d-flex flex-column mb-0 bd-highlight col-md-4"
-					(click)="onSelect(movie)"
+					(click)="onSelect(movie.id)"
 					[movie]="movie"
 				></app-movie-card>
 			</div>
