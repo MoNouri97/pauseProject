@@ -31,6 +31,7 @@ import { GameCardComponent } from '../games/game-card/game-card.component';
 import { MusicComponent } from '../music/music.component';
 import { ContactusComponent } from './examples/contactus/contactus.component';
 import { MusicCardComponent } from '../music/music-card/music-card.component';
+import { MovieCardComponent } from '../movies/movie-card/movie-card.component';
 
 @NgModule({
 	imports: [
@@ -67,6 +68,7 @@ import { MusicCardComponent } from '../music/music-card/music-card.component';
 		MusicComponent,
 		ContactusComponent,
 		MusicCardComponent,
+		MovieCardComponent,
 	],
 	exports: [
 		IndexComponent,
