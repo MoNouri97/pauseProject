@@ -45,16 +45,18 @@ export class AuthenticationService {
         window.alert(error.message);
       });
   }
-  SignUp(email, password) {
+  SignUp(email, password, userName) {
     return this.afAuth.auth
       .createUserWithEmailAndPassword(email, password)
       .then((result) => {
+        result.user.updateProfile({
+          displayName: userName,
+        });
         /* Call the SendVerificaitonMail() function when new user sign 
         up and returns promise */
-        /*this.SendVerificationMail();*/
-        alert("User Registered successfully!!");
-        this.router.navigate(["/profile"]);
+        //this.SendVerificationMail();
         this.SetUserData(result.user);
+        this.router.navigate(["/profile"]);
       })
       .catch((error) => {
         window.alert(error.message);
@@ -64,10 +66,11 @@ export class AuthenticationService {
     let userRef: AngularFirestoreDocument<any> = this.afs.doc(
       `users/${user.uid}`
     );
+
     let userData: User = {
       uid: user.uid,
       email: user.email,
-      displayName: user.displayName,
+      displayName: this.userData.displayName,
       photoURL: user.photoURL,
       emailVerified: user.emailVerified,
     };

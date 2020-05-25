@@ -1,3 +1,5 @@
+import { User } from "./../../../user";
+import { AuthenticationService } from "./../../../authentication.service";
 import { Component, OnInit, OnDestroy } from "@angular/core";
 
 @Component({
@@ -7,7 +9,12 @@ import { Component, OnInit, OnDestroy } from "@angular/core";
 })
 export class ProfilepageComponent implements OnInit, OnDestroy {
   isCollapsed = true;
-  constructor() {}
+  userData: User;
+  constructor(private auth: AuthenticationService) {
+    this.auth.fetch(this.auth.getUserID()).subscribe((data) => {
+      this.userData = data[0] as User;
+    });
+  }
 
   ngOnInit() {
     var body = document.getElementsByTagName("body")[0];

@@ -35,6 +35,7 @@
                       type="text"
                       (focus)="focus = true"
                       (blur)="focus = false"
+                      #userName
                     />
                   </div>
                   <div
@@ -83,7 +84,7 @@
                   class="btn btn-danger btn-round btn-lg"
                   value="Sign Up"
                   (click)="
-                    authenticationService.SignUp(userEmail.value, userPwd.value)
+                    SignUp(userEmail.value, userPwd.value, userName.value)
                   "
                 />
               </div>

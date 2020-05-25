@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy, HostListener } from "@angular/core";
 import { AuthenticationService } from "src/app/authentication.service";
+import { EventEmitter } from "protractor";
 
 @Component({
   selector: "app-registerpage",
@@ -85,5 +86,9 @@ export class RegisterpageComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     var body = document.getElementsByTagName("body")[0];
     body.classList.remove("register-page");
+  }
+
+  SignUp(mail, pwd, userName) {
+    this.authenticationService.SignUp(mail, pwd, userName);
   }
 }

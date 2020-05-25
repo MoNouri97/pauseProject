@@ -4,4 +4,8 @@ export interface User {
   displayName: string;
   photoURL: string;
   emailVerified: boolean;
+  description?: string;
+  createdAt?: number;
+  lastLoginAt?: number;
+  totalLikes?: number;
 }

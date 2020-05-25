@@ -8,7 +8,9 @@
     <div class="container align-items-center">
       <div class="row">
         <div class="col-lg-6 col-md-6">
-          <h1 class="profile-title text-left">username</h1>
+          <h1 class="profile-title text-left" *ngIf="userData">
+            {{ userData.displayName }}
+          </h1>
 
           <p id="description" class="profile-description">
             (description)Offices parties lasting outward nothing age few
