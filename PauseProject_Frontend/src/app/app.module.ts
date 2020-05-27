@@ -18,7 +18,7 @@ import { ProgressbarModule } from "ngx-bootstrap/progressbar";
 import { TooltipModule } from "ngx-bootstrap/tooltip";
 import { CollapseModule } from "ngx-bootstrap/collapse";
 import { TabsModule } from "ngx-bootstrap/tabs";
-import { PaginationModule } from "ngx-bootstrap/pagination";
+
 import { RatingModule } from "ngx-bootstrap/rating";
 import { BsDatepickerModule } from "ngx-bootstrap/datepicker";
 import { CarouselModule } from "ngx-bootstrap/carousel";
@@ -53,6 +53,8 @@ import { MovieService } from "./movie/movie.service";
 import { SerieService } from "./serie/serie.service";
 import { GameService } from "./game/game.service";
 import { MusicElementService } from "./music-element/music.service";
+//import { SearchComponent } from './search/search.component';
+
 
 @NgModule({
   declarations: [
@@ -64,7 +66,9 @@ import { MusicElementService } from "./music-element/music.service";
     MusicElementComponent,
     LoginComponent,
     StarComponent,
+   // SearchComponent,
   ],
+
   imports: [
     BrowserAnimationsModule,
     FormsModule,
@@ -91,6 +95,7 @@ import { MusicElementService } from "./music-element/music.service";
     StarService,
     AngularFirestore,
   ],
+  
   bootstrap: [AppComponent],
 })
 export class AppModule {}

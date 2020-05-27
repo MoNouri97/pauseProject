@@ -12,18 +12,16 @@ public books = [];
 items = [];
 pageOfItems: Array<any>;
 id;
+page=1;
 show = false;
   constructor(private _BooksService : BooksService, private activatedRoute: ActivatedRoute, private router : Router ) { }
 
   ngOnInit() {
     this.activatedRoute.params.subscribe(paramsId => {
       this.id = paramsId.id; });
-      this._BooksService.getBooks(1)
-      .subscribe(
-      data => {  this.books = data;},err => console.error(err),()=>console.log('done') 
-       ) }
+      this.pageChanged(1) }
   
-       pageChange(ind) {
+       pageChanged(ind) {
         
         this._BooksService.getBooks(ind)
         .subscribe(

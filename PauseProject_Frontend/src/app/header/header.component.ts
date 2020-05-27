@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from "@angular/core";
 import noUiSlider from "nouislider";
 import { AuthenticationService } from "../authentication.service";
+
 @Component({
   selector: "app-header",
   templateUrl: "./header.component.html",
@@ -14,6 +15,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   date = new Date();
   pagination = 3;
   pagination1 = 1;
+  
   constructor(public authenticationService: AuthenticationService) {}
   scrollToDownload(element: any) {
     element.scrollIntoView({ behavior: "smooth" });
@@ -50,4 +52,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
     var body = document.getElementsByTagName("body")[0];
     body.classList.remove("index-page");
   }
+  
+  
+  
 }

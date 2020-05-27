@@ -22,7 +22,7 @@ namespace PauseProject.Controllers
         }
 
         // GET: api/Book/5
-        [HttpGet("{id}", Name = "Get")]
+        [HttpGet("{id}", Name = "GetBook")]
         public async Task<IActionResult> Get(int id)
         {
             using (var client = new HttpClient())
@@ -62,8 +62,41 @@ namespace PauseProject.Controllers
             }
         }
 
+        // GET: api/BookTitle/5
+        [HttpGet("title/{id}", Name = "GetBookTitle")]
+        public async Task<IActionResult> Get2(int id)
+        {
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri("https://kitsu.io/api/edge/manga/" + id);
+                List<Object> Objects = new List<Object>();
 
+                var response = await client.GetAsync("");
+
+                if (response.IsSuccessStatusCode)
+                {
+                    var stringResult = await response.Content.ReadAsStringAsync();
+                    var rawBooks = JsonConvert.DeserializeObject<BookTitleDTO>(stringResult);
+                    rawBooks.data.type = "book";
+                    Objects.Add(new
+                    {
+                        rawBooks.data.id,
+                        rawBooks.data.attributes.canonicalTitle,
+                        rawBooks.data.type
+                      
+
+                    });
+                }
+
+
+
+                    return Ok(Objects);
+                }
+            }
+
+        }
     }
 
+
     // POST: api/Book
-}
+

@@ -30,13 +30,16 @@ import { GamesComponent } from "../games/games.component";
 import { GameCardComponent } from "../games/game-card/game-card.component";
 import { MusicComponent } from "../music/music.component";
 import { ContactusComponent } from "./examples/contactus/contactus.component";
-
+import { SearchComponent } from '../search/search.component';
+//import { JwPaginationComponent } from 'jw-angular-pagination';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   imports: [
     CommonModule,
     BrowserModule,
     FormsModule,
     RouterModule,
+    NgbModule,
     BsDropdownModule.forRoot(),
     ProgressbarModule.forRoot(),
     TooltipModule.forRoot(),
@@ -49,6 +52,7 @@ import { ContactusComponent } from "./examples/contactus/contactus.component";
     BsDatepickerModule.forRoot(),
     CarouselModule.forRoot(),
     ModalModule.forRoot(),
+    
   ],
   declarations: [
     IndexComponent,
@@ -65,6 +69,8 @@ import { ContactusComponent } from "./examples/contactus/contactus.component";
     GameCardComponent,
     MusicComponent,
     ContactusComponent,
+    SearchComponent,
+   // JwPaginationComponent,
   ],
   exports: [
     IndexComponent,
@@ -79,6 +85,9 @@ import { ContactusComponent } from "./examples/contactus/contactus.component";
     SeriesComponent,
     GamesComponent,
     MusicComponent,
+    SearchComponent,
+    PaginationModule,
+    //JwPaginationComponent,
   ],
   providers: [],
 })

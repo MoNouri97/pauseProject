@@ -64,6 +64,35 @@ namespace PauseProject.Controllers
             }
         }
 
+        [HttpGet("title/{id}", Name = "GetAnimeTitle")]
+        public async Task<IActionResult> Get2(int id)
+        {
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri("https://kitsu.io/api/edge/anime/" + id);
+                List<Object> Objects = new List<Object>();
+
+                var response = await client.GetAsync("");
+
+                if (response.IsSuccessStatusCode)
+                {
+                    var stringResult = await response.Content.ReadAsStringAsync();
+                    var rawBooks = JsonConvert.DeserializeObject<BookTitleDTO>(stringResult);
+                    rawBooks.data.type = "Serie";
+                    Objects.Add(new
+                    {
+                        rawBooks.data.id,
+                        rawBooks.data.attributes.canonicalTitle,
+                        rawBooks.data.type
+
+                    });
+                }
+
+
+
+                return Ok(Objects);
+            }
+        }
 
     }
 }

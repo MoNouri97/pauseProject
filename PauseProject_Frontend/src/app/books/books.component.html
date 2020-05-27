@@ -35,7 +35,7 @@
                 <div class="card-header">
                     {{book.data.attributes.canonicalTitle}}
                 </div>
-                <div class="card-body" style=" overflow: auto;">
+                <div class="card-body">
                 <img
                   alt="book img"
                   class="img-fluid rounded shadow-lg "
@@ -58,13 +58,16 @@
 
 
 
-        <pagination
-    class="pagination-danger"
-    [(ngModel)]="pagination"
-    [totalItems]="100"
-    (click)= "pageChange($event.target.text)">
-  </pagination>
-        </div>
+<ngb-pagination 
+[collectionSize]="500"
+ [(page)]="page"
+ (pageChange)="pageChanged($event)"
+ [maxSize]="5" 
+ [rotate]="true"
+ [ellipses]="false"
+[boundaryLinks]="true">
+</ngb-pagination>
+ </div>
 </div>
 
 <app-footer></app-footer>

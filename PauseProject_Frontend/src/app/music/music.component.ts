@@ -8,6 +8,7 @@ import { MusicService } from './music.service';
 })
 export class MusicComponent implements OnInit {
   public music=[];
+  page=1;
 
   items = [];
   pageOfItems: Array<any>;
@@ -17,12 +18,9 @@ export class MusicComponent implements OnInit {
   ngOnInit() {
     this.activatedRoute.params.subscribe(paramsId => {
       this.id = paramsId.id; });
-      this._MusicService.getMusic(1)
-      .subscribe(
-      data => {  this.music = data;},err => console.error(err),()=>console.log('done') 
-       ) }
+      this.pageChanged(1); }
   
-       pageChange(ind) {
+       pageChanged(ind) {
         
         this._MusicService.getMusic(ind)
         .subscribe(
