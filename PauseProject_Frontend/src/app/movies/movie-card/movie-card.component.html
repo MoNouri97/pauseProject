@@ -1,0 +1,21 @@
+<div class="card zoom">
+	<p *ngIf="movie.img" class="d-block" style="height: 400px; overflow: hidden;">
+		<img class="img-fluid" src="{{ movie.img }}" />
+	</p>
+	<div
+		*ngIf="!movie.img"
+		class="noImage d-flex align-items-center text-center"
+		style="width: 100%; height: 400px;"
+	></div>
+	<div class="post-text p-4">
+		<p *ngFor="let genre of movie.genres" class="badge badge-warning mr-1">
+			{{ genre.name }}
+		</p>
+		<br />
+		<h2 class="text-primary">
+			{{ movie.title }}
+		</h2>
+		<p>Released on {{ movie.release_date | date }}</p>
+		<p class="btn btn-link btn-primary mr-1">Read more</p>
+	</div>
+</div>

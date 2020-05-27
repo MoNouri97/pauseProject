@@ -1,54 +1,65 @@
-<app-header>
-</app-header>
+<app-header> </app-header>
 <div class="wrapper">
-    <div class="page-header header-filter">
-      <div class="squares square1"></div>
-      <div class="squares square2"></div>
-      <div class="squares square3"></div>
-      <div class="squares square4"></div>
-      <div class="squares square5"></div>
-      <div class="squares square6"></div>
-      <div class="squares square7"></div>
-      <div class="container">
-        <div class="content-center brand">
-          <h1 class="h1-seo">Movies</h1>
-          <h3>
-          Explore our Movies Selection
-          </h3>
-        </div>
-      </div>
-    </div>
-     <div class="main">
-      <div class="section section-basic" id="basic-elements">
-  </div>
-  </div>
-<div class="content-center brand">
-<div class="container">
-    <h2> Movies List</h2>
-    <ul>
-        
-        <div *ngFor = "let movie of movies">
-                <li (click)=onSelect(movie.id)>
-                    {{movie.title}} {{movie.id}}
-                    <img src="{{movie.img}}" height="60">
-                </li>
-        </div>
-</ul>
-
-
-
-<ngb-pagination 
-[collectionSize]="500"
-
-
- [(page)]="page"
- (pageChange)="pageChanged($event)"
- [maxSize]="5" 
- [rotate]="true"
- [ellipses]="false"
-[boundaryLinks]="true">
-</ngb-pagination>
-
+	<div class="page-header header-filter">
+		<div class="squares square1"></div>
+		<div class="squares square2"></div>
+		<div class="squares square3"></div>
+		<div class="squares square4"></div>
+		<div class="squares square5"></div>
+		<div class="squares square6"></div>
+		<div class="squares square7"></div>
+		<div class="container">
+			<div class="content-center brand">
+				<h1 class="h1-seo">Movies</h1>
+				<h3>
+					Explore our Movies Selection
+				</h3>
+			</div>
+		</div>
+	</div>
+	<div class="main">
+		<div class="section section-basic" id="basic-elements"></div>
+	</div>
+	<div class="content-center brand">
+		<div class="container">
+			<h1 class="display-1">Movies List</h1>
+			<hr class="line-primary" />
+			<ngb-pagination 
+			[collectionSize]="500"
+			 [(page)]="page"
+			 (pageChange)="pageChanged($event)"
+			 [maxSize]="5" 
+			 [rotate]="true"
+			 [ellipses]="false"
+			[boundaryLinks]="true">
+			</ngb-pagination>
+			<div class="row" *ngIf="!loading">
+				<app-movie-card
+					*ngFor="let movie of movies"
+					class="d-flex flex-column mb-0 bd-highlight col-md-4"
+					(click)="onSelect(movie.id)"
+					[movie]="movie"
+				></app-movie-card>
+			</div>
+			<div *ngIf="loading" class="row loading">
+				<div
+					*ngFor="let i of placeholders"
+					class="d-flex flex-column mb-0 bd-highlight col-md-4"
+				>
+					<!-- <div class="card"></div> -->
+					<div class="card card-loader"></div>
+				</div>
+			</div>
+			<ngb-pagination 
+			[collectionSize]="500"
+			[(page)]="page"
+			(pageChange)="pageChanged($event)"
+			[maxSize]="5" 
+			[rotate]="true"
+			[ellipses]="false"
+			[boundaryLinks]="true">
+			</ngb-pagination>
+		</div>
+	</div>
+	<app-footer></app-footer>
 </div>
-</div>
-<app-footer> </app-footer>

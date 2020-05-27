@@ -1,3 +1,4 @@
+import { CommentComponent } from "./pages/examples/comment/comment.component";
 import { StarService } from "./pages/examples/star/star.service";
 import { StarComponent } from "./pages/examples/star/star.component";
 import { AngularFireModule } from "angularfire2";
@@ -67,6 +68,7 @@ import { MusicElementService } from "./music-element/music.service";
     LoginComponent,
     StarComponent,
    // SearchComponent,
+    CommentComponent,
   ],
 
   imports: [

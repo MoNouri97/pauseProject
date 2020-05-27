@@ -1,0 +1,19 @@
+<div class="card zoom">
+	<p class="d-block" style="height: 250px; overflow: hidden;">
+		<img
+			class="img-fluid"
+			src="{{ song.album.cover_xl || song.album.cover }}"
+		/>
+	</p>
+	<div class="post-text p-4">
+		<p class="badge badge-warning mr-1">
+			{{ song.artist.name }}
+		</p>
+		<br />
+		<h6 class="text-primary">
+			{{ song.title }}
+		</h6>
+		<p>Released on {{ song.release_date | date }}</p>
+		<p class="btn btn-link btn-primary mr-1">Read more</p>
+	</div>
+</div>

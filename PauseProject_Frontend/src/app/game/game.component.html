@@ -1,72 +1,72 @@
 <app-header> </app-header>
 <div class="wrapper">
-  <div class="main">
-    <div class="section section-basic" id="basic-elements"></div>
-  </div>
-  <div class="content-center brand">
-    <div class="container section-safe" *ngIf="!loading">
-      <div class="row justify-content-between">
-        <div class="col-md-6">
-          <img class="img-fluid" src="{{ game.background_image }}" />
-          <div class="card card-stats bg-success">
-            <div class="card-body">
-              <div class="justify-content-center">
-                <div class="numbers">
-                  <p class="card-title">{{ game.metacritic || game.rating }}</p>
-                  <p class="card-category text-white">Reviews</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="card card-stats bg-danger">
-            <div class="card-body">
-              <div class="justify-content-center">
-                <div class="numbers">
-                  <p class="card-title">{{ game.esrb_rating.name }}</p>
-                  <p class="card-category text-white">ESRB rating</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-5">
-          <h1 class="display-2 game-title text-left text-primary">
-            {{ game.name }}
-          </h1>
-          <h5 class="text-on-back">
-            <i class="tim-icons icon-shape-star"></i>
-            {{ game.rating | number: "1.1-1" }}
-          </h5>
-          <div class="row mt-5">
-            <div *ngFor="let dev of game.developers" class="p-1 mr-1">
-              <p class="badge badge-default">{{ dev.name }}</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row mt-5 p-3 card">
-        <p [innerHTML]="game.description"></p>
-      </div>
-    </div>
-
-    <!-- Loading -->
-    <div *ngIf="loading" class="container">
-      <div class="row loading">
-        <div class="col-md-6 card card-loader m"></div>
-        <div class="col-md-5 offset-1">
-          <div class="card card-loader s"></div>
-          <div class="card card-loader s"></div>
-        </div>
-      </div>
-      <div class="row loading">
-        <div class="col-md-12 card card-loader s"></div>
-        <div class="col-md-12 card card-loader s"></div>
-        <div class="col-md-12 card card-loader s"></div>
-      </div>
-    </div>
-  </div>
-  <br />
-  <app-star></app-star>
-  <br />
-  <app-footer></app-footer>
+	<div class="main">
+		<div class="section section-basic" id="basic-elements"></div>
+	</div>
+	<div class="content-center brand">
+		<div class="container section-safe" *ngIf="!loading">
+			<div class="row justify-content-between">
+				<div class="col-md-6">
+					<img class="img-fluid" src="{{ game.background_image }}" />
+					<div class="card card-stats bg-success">
+						<div class="card-body">
+							<div class="justify-content-center">
+								<div class="numbers">
+									<p class="card-title">{{ game.metacritic || game.rating }}</p>
+									<p class="card-category text-white">Reviews</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="card card-stats bg-danger" *ngIf="game.esrb_rating">
+						<div class="card-body">
+							<div class="justify-content-center">
+								<div class="numbers">
+									<p class="card-title">{{ game.esrb_rating.name }}</p>
+									<p class="card-category text-white">ESRB rating</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-5">
+					<h1 class="display-2 game-title text-left text-primary">
+						{{ game.name }}
+					</h1>
+					<h5 class="text-on-back">
+						<i class="tim-icons icon-shape-star"></i>
+						{{ game.rating | number: '1.1-1' }}
+					</h5>
+					<div class="row mt-5">
+						<div *ngFor="let dev of game.developers" class="p-1 mr-1">
+							<p class="badge badge-default">{{ dev.name }}</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row mt-5 p-3 card">
+				<p [innerHTML]="game.description"></p>
+			</div>
+		</div>
+		<!-- Loading -->
+		<div *ngIf="loading" class="container">
+			<div class="row loading">
+				<div class="col-md-6 card card-loader m"></div>
+				<div class="col-md-5 offset-1">
+					<div class="card card-loader s"></div>
+					<div class="card card-loader s"></div>
+				</div>
+			</div>
+			<div class="row loading">
+				<div class="col-md-12 card card-loader s"></div>
+				<div class="col-md-12 card card-loader s"></div>
+				<div class="col-md-12 card card-loader s"></div>
+			</div>
+		</div>
+	</div>
+	<br />
+	<app-star collectionName="game"></app-star>
+	<app-comment></app-comment>
+	<br />
+	<app-footer></app-footer>
 </div>

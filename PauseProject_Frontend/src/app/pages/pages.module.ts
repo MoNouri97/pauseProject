@@ -1,8 +1,8 @@
-import { BrowserModule } from "@angular/platform-browser";
-import { NgModule } from "@angular/core";
-import { CommonModule } from "@angular/common";
-import { FormsModule } from "@angular/forms";
-import { RouterModule } from "@angular/router";
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 import { BsDropdownModule } from "ngx-bootstrap/dropdown";
 import { ProgressbarModule } from "ngx-bootstrap/progressbar";
@@ -31,6 +31,8 @@ import { GameCardComponent } from "../games/game-card/game-card.component";
 import { MusicComponent } from "../music/music.component";
 import { ContactusComponent } from "./examples/contactus/contactus.component";
 import { SearchComponent } from '../search/search.component';
+import { MusicCardComponent } from '../music/music-card/music-card.component';
+import { MovieCardComponent } from '../movies/movie-card/movie-card.component';
 //import { JwPaginationComponent } from 'jw-angular-pagination';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
@@ -70,6 +72,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     MusicComponent,
     ContactusComponent,
     SearchComponent,
+    MusicCardComponent,
+		MovieCardComponent,
    // JwPaginationComponent,
   ],
   exports: [
