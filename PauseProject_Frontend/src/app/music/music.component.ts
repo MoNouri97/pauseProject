@@ -7,7 +7,9 @@ import { MusicService } from './music.service';
 	styleUrls: ['./music.component.scss'],
 })
 export class MusicComponent implements OnInit {
-	public music = [];
+  public music=[];
+  page=1;
+
 	loading: boolean;
 	placeholders: string[];
 
@@ -27,15 +29,16 @@ export class MusicComponent implements OnInit {
 		this.activatedRoute.params.subscribe((paramsId) => {
 			this.id = paramsId.id;
 		});
-		this.pageChange(1);
+		this.pageChanged(1);
 	}
 
-	pageChange(ind) {
+	pageChanged(ind) {
 		this.loading = true;
 		this._MusicService.getMusic(ind).subscribe(
 			(data) => {
 				console.log(data);
 				this.music = data;
+				this.page = ind;
 				this.loading = false;
 			},
 			(err) => console.error(err),

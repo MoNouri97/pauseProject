@@ -24,12 +24,17 @@
 		<div class="container">
 			<h1 class="display-1">Music List</h1>
 			<hr class="line-primary" />
-			<pagination
-				class="pagination-danger"
-				[totalItems]="100"
-				(click)="pageChange($event.target.text)"
-			>
-			</pagination>
+			<ngb-pagination 
+            [collectionSize]="500"
+
+
+            [(page)]="page"
+            (pageChange)="pageChanged($event)"
+            [maxSize]="5" 
+            [rotate]="true"
+            [ellipses]="false"
+            [boundaryLinks]="true">
+     		</ngb-pagination>
 			<div class="row" *ngIf="!loading">
 				<app-music-card
 					*ngFor="let song of music"
@@ -47,6 +52,17 @@
 					<div class="card card-loader"></div>
 				</div>
 			</div>
+			<ngb-pagination 
+            [collectionSize]="500"
+
+
+            [(page)]="page"
+            (pageChange)="pageChanged($event)"
+            [maxSize]="5" 
+            [rotate]="true"
+            [ellipses]="false"
+			[boundaryLinks]="true">
+			</ngb-pagination>
 		</div>
 	</div>
 	<app-footer></app-footer>

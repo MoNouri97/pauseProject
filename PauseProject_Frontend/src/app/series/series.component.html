@@ -47,13 +47,17 @@
           <div></div>
         </div>
 
-        <pagination
-          class="pagination-danger"
-          [(ngModel)]="pagination"
-          [totalItems]="100"
-          (click)="pageChange($event.target.text)"
-        >
-        </pagination>
+        <ngb-pagination 
+            [collectionSize]="500"
+
+
+            [(page)]="page"
+            (pageChange)="pageChanged($event)"
+            [maxSize]="5" 
+            [rotate]="true"
+            [ellipses]="false"
+            [boundaryLinks]="true">
+        </ngb-pagination>
       </div>
     </div>
 

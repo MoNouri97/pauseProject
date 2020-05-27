@@ -74,9 +74,38 @@ namespace PauseProject.Controllers
 				}
 			}
 		}
+		[HttpGet("title/{id}", Name = "GetMovieTitle")]
+		public async Task<IActionResult> GetTitle(int id)
+		{
+			using (var client = new HttpClient())
+			{
+				client.BaseAddress = new Uri("https://api.themoviedb.org");
+				List<Object> Objects = new List<Object>();
+				var response = await client.GetAsync("/3/movie/" + id + "?api_key=24b8faff37938fbb8b0d9ef7baec7a09");
 
+				if (response.IsSuccessStatusCode)
+				{
 
+					var stringResult = await response.Content.ReadAsStringAsync();
 
+					var rawMovie = JsonConvert.DeserializeObject<MoviesDTO>(stringResult);
+					rawMovie.type = "movie";
+
+					Objects.Add(new
+					{
+						rawMovie.id,
+
+						rawMovie.title,
+						rawMovie.type
+
+					});
+
+				}
+				return Ok(Objects);
+
+			}
+
+		}
 
 
 	}

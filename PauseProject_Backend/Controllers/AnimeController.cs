@@ -50,6 +50,67 @@ namespace PauseProject.Controllers
 
         // PUT: api/Anime/5
         [HttpGet("{id}", Name = "GetAnimes")]
+        public async Task<IEnumerable<BooksDTO>> GetBookssInParallelInWithBatches(int id)
+        {
+            var tasks = new List<Task<BooksDTO>>();
+            int i;
+            int j = (id - 1) * 20;
+            for (i = j; i < j + 40; i++)
+            {
+                tasks.Add(GetBooks(i));
+            }
+
+            // two loops are essentiel cuz one doesn't verify all , in fact we can have i and i+1 empty so it's safer to go with two loops , it doesn't take much time 
+            for (i = 0; i < tasks.Count(); i++)
+            {
+                if (tasks[i].Result.data == null) // || tasks[i].Result.Equals(bookR))
+                {
+                    tasks.RemoveAt(i);
+                    Console.WriteLine(i);
+                }
+
+            }
+            for (i = 0; i < tasks.Count(); i++)
+            {
+                if (tasks[i].Result.data == null) // || tasks[i].Result.Equals(bookR))
+                {
+                    tasks.RemoveAt(i);
+                    Console.WriteLine(i);
+                }
+
+            }
+
+            //Console.WriteLine( "num is " + tasks.Count());
+
+            Console.WriteLine("num is " + tasks.Count());
+            if (tasks.Count() > 20)
+                return (await Task.WhenAll(tasks)).ToList().GetRange(0, 20);
+            else
+                return (await Task.WhenAll(tasks)).ToList();
+        }
+
+        public async Task<BooksDTO> GetBooks(int ids)
+        {
+
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri("https://kitsu.io");
+                var response = await client.GetAsync("/api/edge/anime/" + ids);
+                if (response.IsSuccessStatusCode)
+                {
+                    string s = await response.Content.ReadAsStringAsync();
+                    var books = JsonConvert.DeserializeObject<BooksDTO>(s);
+                    return books;
+                }
+
+                else
+                {
+                    BooksDTO book = new BooksDTO();
+                    return book;
+                }
+
+            }
+        }
         public async Task<IActionResult> Get(int id)
         {
             

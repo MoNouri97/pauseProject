@@ -16,7 +16,7 @@ namespace PauseProject.DTOs
     public class Result
     {
         [JsonProperty("id")]
-        public int GameID { get; set; }
+        public int gameId { get; set; }
         [JsonProperty("name")]
         public string Name { get; set; }
         public DateTime Released { get; set; }

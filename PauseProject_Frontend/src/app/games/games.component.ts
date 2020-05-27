@@ -21,10 +21,10 @@ export class GamesComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		this.pageChange(1);
+		this.pageChanged(1);
 	}
 
-	pageChange(pageIndex: number) {
+	pageChanged(pageIndex: number) {
 		this.loading = true;
 		this._GamesService.getGames(pageIndex).subscribe(
 			data => {
@@ -38,6 +38,7 @@ export class GamesComponent implements OnInit {
 	}
 
 	onSelect(game) {
-		this.router.navigate(['/game', game.gameID]);
+		console.log(game.gameId);
+		this.router.navigate(['/game', game.gameId]);
 	}
 }

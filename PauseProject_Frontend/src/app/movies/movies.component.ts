@@ -11,6 +11,7 @@ export class MoviesComponent implements OnInit {
   public movies = [];
   loading: boolean;
   placeholders: string[];
+  page: Number;
 
   items = [];
   pageOfItems: Array<any>;
@@ -26,19 +27,21 @@ export class MoviesComponent implements OnInit {
     this.activatedRoute.params.subscribe((paramsId) => {
       this.id = paramsId.id;
     });
-    this.pageChange(1);
+    this.pageChanged(1);
   }
 
-  pageChange(ind) {
+  pageChanged(pageIndex: number) {
     this.loading = true;
-    this._MoviesService.getMovies(ind).subscribe(
+    console.log(pageIndex);
+    this._MoviesService.getMovies(pageIndex).subscribe(
       (data) => {
         this.movies = data;
+        this.page = pageIndex;
       },
       (err) => console.error(err),
       () => {
         this.loading = false;
-        //console.log('done');
+        console.log("done");
       }
     );
   }

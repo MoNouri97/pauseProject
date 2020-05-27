@@ -50,6 +50,39 @@ namespace PauseProject.Controllers
 			}
 		}
 
+		[HttpGet("title/{index}", Name = "GetGameTitle")]
+		public async Task<IActionResult> Gettitle(int index)
+		{
+			using (var client = new HttpClient())
+			{
+				List<Object> Objects = new List<Object>();
+
+				try
+				{
+					setParamaters(client);
+					var response = await client.GetAsync("/games/" + index);
+					if (response.IsSuccessStatusCode)
+					{
+
+						var stringResult = await response.Content.ReadAsStringAsync();
+						var rawGame = JsonConvert.DeserializeObject<GameTitle>(stringResult);
+						rawGame.type = "game";
+						Objects.Add(new
+						{
+							rawGame.gameId,
+							rawGame.name,
+							rawGame.type,
+						});
+					}
+					//int i = Objects.Find(e => Objects[1]);*/
+					return Ok(Objects);
+				}
+				catch (HttpRequestException http)
+				{
+					return BadRequest("bad request : " + http.Message);
+				}
+			}
+		}
 
 	}
 

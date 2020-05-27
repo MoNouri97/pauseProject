@@ -1,0 +1,38 @@
+<div
+class="input-group"
+[ngClass]="{ 'input-group-focus': focus === true }"
+data-toggle="dropdown"
+dropdownToggle
+href="javascript:void(0)"
+>
+<div class="input-group-prepend">
+  <span class="input-group-text">
+    <i class="tim-icons icon-zoom-split icon"></i>
+  </span>
+</div>
+<input
+#box
+  class="form-control"
+  (keyup)="onKey(box.value)"
+  
+  placeholder="Search"
+  type="text"
+  (focus)="focus = true"
+  (blur)="focus = false"
+/>
+</div>
+
+
+<!--(keydown.backspace)="onKeyD(box.value)"-->
+<div *ngIf="show">
+<div  style=" overflow-y: auto;"    class="card res dropdown-menu" *dropdownMenu>
+
+<div   *ngFor="let val of result">
+    <div  class="liste dropdown-item ">
+      
+    <div class="resultItem" (click)="onSelect(val)"> <i class="tim-icons icon-zoom-split"></i><b>{{val.bt}}</b> <sub> in {{val.type}}</sub>  </div>
+
+    </div>
+</div>
+</div>
+</div>

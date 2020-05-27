@@ -17,6 +17,7 @@ namespace PauseProject.DTOs
         public int Duration { get; set; }
         public Artist Artist { get; set; }
         public Album Album { get; set; }
+        public string type { set; get; }
     }
 
     public class Album

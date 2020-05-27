@@ -10,18 +10,16 @@ export class SeriesComponent implements OnInit {
   public series = [];
   items = [];
   pageOfItems: Array<any>;
+  page=1;
   id;
     constructor( private router : Router,private _SeriesService : SeriesService, private activatedRoute: ActivatedRoute ) { }
   
     ngOnInit() {
       this.activatedRoute.params.subscribe(paramsId => {
         this.id = paramsId.id; });
-        this._SeriesService.getSeries(1)
-        .subscribe(
-        data => {  this.series = data;},err => console.error(err),()=>console.log('done') 
-         ) }
+        this.pageChanged(1);}
     
-         pageChange(ind) {
+         pageChanged(ind) {
           
           this._SeriesService.getSeries(ind)
           .subscribe(

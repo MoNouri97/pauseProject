@@ -17,6 +17,7 @@ namespace PauseProject.DTOs
 		public string release_date { get; set; }
 		[JsonProperty("title")]
 		public string title { get; set; }
+		public string type { set; get; }
 
 
 	}

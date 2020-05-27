@@ -63,5 +63,45 @@ namespace PauseProject.Controllers
         }
 
 
+
+        [HttpGet("title/{id}", Name = "GetMusicTitle")]
+        public async Task<IActionResult> GetTitle(int id)
+        {
+            using (var client = new HttpClient())
+            {
+
+                try
+                {
+                    setParamaters(client);
+                    List<Object> Objects = new List<Object>();
+
+
+                    var response = await client.GetAsync("/track/" + 1000000 + id);
+                    if (response.IsSuccessStatusCode)
+                    {
+
+                        var stringResult = await response.Content.ReadAsStringAsync();
+                        var rawMusic = JsonConvert.DeserializeObject<MusicDTO>(stringResult);
+                        rawMusic.type = "music";
+                        Objects.Add(new
+                        {
+                            rawMusic.MusicID,
+                            rawMusic.title,
+                            rawMusic.type
+
+                        });
+
+                    }
+                   
+
+
+                    return Ok(Objects);
+                }
+                catch (HttpRequestException http)
+                {
+                    return BadRequest("bad request : " + http.Message);
+                }
+            }
+        }
     }
 }
