@@ -11,8 +11,16 @@ export class ProfilepageComponent implements OnInit, OnDestroy {
   isCollapsed = true;
   userData: User;
   constructor(private auth: AuthenticationService) {
-    this.auth.fetch(this.auth.getUserID()).subscribe((data) => {
-      this.userData = data[0] as User;
+    auth.getCurrentUser().subscribe((data) => {
+      this.auth.userData = data;
+      this.auth.getCurrentUser().subscribe((data) => {
+        this.auth.afs
+          .collection("users", (ref) => ref.where("uid", "==", data.uid))
+          .valueChanges()
+          .subscribe((data) => {
+            this.userData = data[0] as User;
+          });
+      });
     });
   }
 

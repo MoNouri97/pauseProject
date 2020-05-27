@@ -8,4 +8,5 @@ export interface User {
   createdAt?: number;
   lastLoginAt?: number;
   totalLikes?: number;
+  fullName?: string;
 }
