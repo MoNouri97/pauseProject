@@ -51,7 +51,6 @@ export class AuthenticationService {
           this.SetUserData(result.user);
         });*/
         this.SetUserData(result.user);
-        //console.log("user" + result.user);
         this.router.navigate(["profile"]);
       })
       .catch((error) => {
@@ -66,6 +65,7 @@ export class AuthenticationService {
         result.user.updateProfile({
           displayName: userName,
         });
+        console.log(result.user);
         this.SetUserData(result.user);
         this.router.navigate(["/profile"]);
       })
@@ -107,14 +107,14 @@ export class AuthenticationService {
         displayName: user.displayName,
         photoURL: user.photoURL,
         emailVerified: user.emailVerified,
-        fullName: user.fullName,
+        fullName: this.userName,
         totalLikes: user.totalLikes,
         description: "no description",
         createdAt: this.createdAtDate,
         lastLoginAt: this.lastLoginDate,
       };
       this.user = userData;
-      return userRef.set(userData, {
+      return userRef.set(this.user, {
         merge: true,
       });
     });
@@ -151,7 +151,7 @@ export class AuthenticationService {
   SignOut() {
     return this.afAuth.auth.signOut().then(() => {
       //this.userData = null;
-      //this.user = null;
+      this.user = null;
       localStorage.removeItem("user");
       this.router.navigate(["home"]);
     });

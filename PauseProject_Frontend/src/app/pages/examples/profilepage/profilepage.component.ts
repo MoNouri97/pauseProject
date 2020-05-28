@@ -18,7 +18,10 @@ export class ProfilepageComponent implements OnInit, OnDestroy {
           .collection("users", (ref) => ref.where("uid", "==", data.uid))
           .valueChanges()
           .subscribe((data) => {
-            this.userData = data[0] as User;
+            if (data.length == 0) {
+              this.auth.SetUserData(this.auth.userData);
+              this.userData = this.auth.user;
+            } else this.userData = data[0] as User;
           });
       });
     });
