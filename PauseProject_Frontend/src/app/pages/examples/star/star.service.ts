@@ -13,8 +13,8 @@ export interface Star {
 
 @Injectable()
 export class StarService {
-  private collectionNameString: string;
-  private collectionName = new BehaviorSubject("");
+  public collectionNameString: string;
+  public collectionName = new BehaviorSubject("");
   collectionNameObservable = this.collectionName.asObservable();
 
   constructor(private afs: AngularFirestore) {

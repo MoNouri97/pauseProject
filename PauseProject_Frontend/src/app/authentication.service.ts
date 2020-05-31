@@ -128,12 +128,18 @@ export class AuthenticationService {
     return this.afAuth.authState;
   }
 
-  getUserID() {
+  userConnected() {
     const user = JSON.parse(localStorage.getItem("user"));
-    //to change return type (null) to exception if the user is null
+    return user;
+  }
+
+  getUserID() {
+    //to check user by local storage
+    const user = JSON.parse(localStorage.getItem("user"));
+    return user.uid;
     //return this.afAuth.authState;
-    //return user.uid;
-    return this.user !== undefined ? this.user.uid : null;
+    //to change return type (null) to exception if the user is null
+    //return this.user !== undefined ? this.user.uid : null;
   }
   fetch(userID) {
     let user = this.afs.collection("users", (ref) =>
