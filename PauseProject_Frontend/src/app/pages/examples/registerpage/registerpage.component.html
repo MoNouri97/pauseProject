@@ -16,7 +16,7 @@
                   src="assets/img/square1-red.png"
                 />
 
-                <h4 id="registerTitle" class="card-title">Register</h4>
+                <h4 id="registerTitle" class="card-title">{{ 'demo.register' | translate }}</h4>
               </div>
               <div class="card-body">
                 <form class="form">
@@ -31,7 +31,7 @@
                     </div>
                     <input
                       class="form-control"
-                      placeholder="Full Name"
+                      placeholder="{{ 'demo.Full Name' | translate }}"
                       type="text"
                       (focus)="focus = true"
                       (blur)="focus = false"
@@ -49,7 +49,7 @@
                     </div>
                     <input
                       class="form-control"
-                      placeholder="Email"
+                      placeholder="{{ 'demo.Email' | translate }}"
                       type="email"
                       (focus)="focus1 = true"
                       (blur)="focus1 = false"
@@ -68,7 +68,7 @@
                     </div>
                     <input
                       class="form-control"
-                      placeholder="Password"
+                      placeholder="{{ 'demo.Password' | translate }}"
                       type="password"
                       (focus)="focus2 = true"
                       (blur)="focus2 = false"
@@ -82,7 +82,7 @@
                 <input
                   type="button"
                   class="btn btn-danger btn-round btn-lg"
-                  value="Sign Up"
+                  value="{{ 'demo.sign Up' | translate }}"
                   (click)="
                     SignUp(userEmail.value, userPwd.value, userName.value)
                   "

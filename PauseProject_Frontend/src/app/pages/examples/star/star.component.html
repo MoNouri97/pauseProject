@@ -1,5 +1,5 @@
 <div class="container">
-  <h3>Rate this item</h3>
+  <h3>{{ 'demo.rate' | translate }}</h3>
   <div>
     <rating
       [max]="max"
@@ -16,6 +16,6 @@
   </div>
   <br />
   <button class="btn btn-warning" (click)="resetStars()">
-    Reset rating
+    {{ 'demo.Rrate' | translate }}
   </button>
 </div>

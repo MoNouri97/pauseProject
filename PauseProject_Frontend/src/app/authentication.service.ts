@@ -9,6 +9,7 @@ import {
 } from "@angular/fire/firestore";
 import { Router } from "@angular/router";
 import { User } from "./user";
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: "root",
@@ -43,6 +44,7 @@ export class AuthenticationService {
       this.createdAtDate = +JSON.parse(localStorage.getItem("user")).createdAt;
     }
   }
+ 
   SignIn(email, password) {
     return this.afAuth.auth
       .signInWithEmailAndPassword(email, password)
