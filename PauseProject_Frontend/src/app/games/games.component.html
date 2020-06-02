@@ -1,69 +1,65 @@
 <app-header> </app-header>
 <div class="wrapper">
-	<div class="page-header header-filter">
-		<div class="squares square1"></div>
-		<div class="squares square2"></div>
-		<div class="squares square3"></div>
-		<div class="squares square4"></div>
-		<div class="squares square5"></div>
-		<div class="squares square6"></div>
-		<div class="squares square7"></div>
-		<div class="container">
-			<div class="content-center brand">
-				<h1 class="h1-seo">Games</h1>
-				<h3>
-					Explore our Games Selection
-				</h3>
-			</div>
-		</div>
-	</div>
-	<div class="main">
-		<div class="section section-basic" id="basic-elements"></div>
-	</div>
-	<div class="content-center brand">
-		<div class="container">
-			<h1 class="display-1">Games List</h1>
-			<hr class="line-primary" />
-			<ngb-pagination 
-            [collectionSize]="500"
-
-
-            [(page)]="page"
-            (pageChange)="pageChanged($event)"
-            [maxSize]="5" 
-            [rotate]="true"
-            [ellipses]="false"
-            [boundaryLinks]="true">
-        </ngb-pagination>
-			<div class="row" *ngIf="!loading">
-				<app-game-card
-					*ngFor="let game of games"
-					class="d-flex flex-column  mb-0 bd-highlight col-md-4"
-					(click)="onSelect(game)"
-					[game]="game"
-				></app-game-card>
-			</div>
-			<div *ngIf="loading" class="row loading">
-				<div
-					*ngFor="let i of placeholders"
-					class="d-flex flex-column  mb-0 bd-highlight col-md-4"
-				>
-					<!-- <div class="card"></div> -->
-					<div class="card card-loader "></div>
-				</div>
-			</div>
-			<ngb-pagination 
-			[collectionSize]="500"
-
-
-			[(page)]="page"
-			(pageChange)="pageChanged($event)"
-			[maxSize]="5" 
-			[rotate]="true"
-			[ellipses]="false"
-			[boundaryLinks]="true">
-			</ngb-pagination>
-		</div>
-	</div>
-	<app-footer></app-footer>
+  <div class="page-header header-filter">
+    <div class="squares square1"></div>
+    <div class="squares square2"></div>
+    <div class="squares square3"></div>
+    <div class="squares square4"></div>
+    <div class="squares square5"></div>
+    <div class="squares square6"></div>
+    <div class="squares square7"></div>
+    <div class="container mr-0 ml-0">
+      <div class="content-center brand">
+        <h2 class="h2-seo mb-5 mr-5">Game recommendations for you:</h2>
+      </div>
+      <app-recommendations></app-recommendations>
+    </div>
+  </div>
+  <div class="main">
+    <div class="section section-basic" id="basic-elements"></div>
+  </div>
+  <div class="content-center brand">
+    <div class="container">
+      <h1 class="display-1">Games List</h1>
+      <hr class="line-primary" />
+      <ngb-pagination
+        [collectionSize]="500"
+        [(page)]="page"
+        (pageChange)="pageChanged($event)"
+        [maxSize]="5"
+        [rotate]="true"
+        [ellipses]="false"
+        [boundaryLinks]="true"
+      >
+      </ngb-pagination>
+      <div class="row" *ngIf="!loading">
+        <app-game-card
+          *ngFor="let game of games"
+          class="d-flex flex-column mb-0 bd-highlight col-md-4"
+          (click)="onSelect(game)"
+          [game]="game"
+        ></app-game-card>
+      </div>
+      <div *ngIf="loading" class="row loading">
+        <div
+          *ngFor="let i of placeholders"
+          class="d-flex flex-column mb-0 bd-highlight col-md-4"
+        >
+          <!-- <div class="card"></div> -->
+          <div class="card card-loader"></div>
+        </div>
+      </div>
+      <ngb-pagination
+        [collectionSize]="500"
+        [(page)]="page"
+        (pageChange)="pageChanged($event)"
+        [maxSize]="5"
+        [rotate]="true"
+        [ellipses]="false"
+        [boundaryLinks]="true"
+      >
+      </ngb-pagination>
+    </div>
+  </div>
+  <app-footer></app-footer>
 </div>

@@ -1,34 +1,35 @@
 .loading .card {
-	height: 450px;
+  height: 450px;
 }
+
 .card-loader {
-	transition: 0.3s all ease;
-	background-size: 400% 400%;
-	// animation: loader-animate infinite 0.5s ease-in-out alternate;
-	background: linear-gradient(270deg, #171941, #1f2251);
-	background-size: 400% 400%;
+  transition: 0.3s all ease;
+  background-size: 400% 400%;
+  // animation: loader-animate infinite 0.5s ease-in-out alternate;
+  background: linear-gradient(270deg, #171941, #1f2251);
+  background-size: 400% 400%;
 
-	animation: loading 2s ease infinite alternate;
+  animation: loading 2s ease infinite alternate;
 
-	@keyframes loading {
-		0% {
-			background-position: 0% 49%;
-		}
-		50% {
-			background-position: 100% 52%;
-		}
-		100% {
-			background-position: 0% 49%;
-		}
-	}
+  @keyframes loading {
+    0% {
+      background-position: 0% 49%;
+    }
+    50% {
+      background-position: 100% 52%;
+    }
+    100% {
+      background-position: 0% 49%;
+    }
+  }
 }
 
 // Loader animation
 @keyframes loader-animate {
-	0% {
-		opacity: 10%;
-	}
-	100% {
-		opacity: 100%;
-	}
+  0% {
+    opacity: 10%;
+  }
+  100% {
+    opacity: 100%;
+  }
 }

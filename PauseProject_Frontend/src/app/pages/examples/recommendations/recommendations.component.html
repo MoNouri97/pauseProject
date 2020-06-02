@@ -1,0 +1,11 @@
+<div class="mt-5 row full-width-div">
+  <div class="col w-auto" *ngFor="let game of games">
+    <div>
+      <img
+        *ngIf="games"
+        class="w-100 img-fluid rounded shadow"
+        src="{{ game.background_image }}"
+      />
+    </div>
+  </div>
+</div>
