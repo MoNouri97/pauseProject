@@ -35,6 +35,10 @@ import { MusicCardComponent } from '../music/music-card/music-card.component';
 import { MovieCardComponent } from '../movies/movie-card/movie-card.component';
 //import { JwPaginationComponent } from 'jw-angular-pagination';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {ChatbotComponent} from '../chatbot/chatbot.component';
+//import { NbLayoutModule, NbChatModule, NbSpinnerModule } from '@nebular/theme';
+//import { NbEvaIconsModule } from '@nebular/eva-icons';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -54,6 +58,10 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     BsDatepickerModule.forRoot(),
     CarouselModule.forRoot(),
     ModalModule.forRoot(),
+ 
+  
+   
+
     
   ],
   declarations: [
@@ -73,7 +81,9 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     ContactusComponent,
     SearchComponent,
     MusicCardComponent,
-		MovieCardComponent,
+    MovieCardComponent,
+    ChatbotComponent,
+  
    // JwPaginationComponent,
   ],
   exports: [
@@ -91,6 +101,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     MusicComponent,
     SearchComponent,
     PaginationModule,
+    ChatbotComponent,
     //JwPaginationComponent,
   ],
   providers: [],
