@@ -35,10 +35,14 @@ import { MusicCardComponent } from '../music/music-card/music-card.component';
 import { MovieCardComponent } from '../movies/movie-card/movie-card.component';
 //import { JwPaginationComponent } from 'jw-angular-pagination';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+<<<<<<< HEAD
 import {ChatbotComponent} from '../chatbot/chatbot.component';
 //import { NbLayoutModule, NbChatModule, NbSpinnerModule } from '@nebular/theme';
 //import { NbEvaIconsModule } from '@nebular/eva-icons';
 
+=======
+import { RecommendationsComponent } from './examples/recommendations/recommendations.component';
+>>>>>>> 92f5cb1b779c43daf7d2bc07534a2b854c4823ce
 @NgModule({
   imports: [
     CommonModule,
@@ -81,9 +85,14 @@ import {ChatbotComponent} from '../chatbot/chatbot.component';
     ContactusComponent,
     SearchComponent,
     MusicCardComponent,
+<<<<<<< HEAD
     MovieCardComponent,
     ChatbotComponent,
   
+=======
+		MovieCardComponent,
+		RecommendationsComponent,
+>>>>>>> 92f5cb1b779c43daf7d2bc07534a2b854c4823ce
    // JwPaginationComponent,
   ],
   exports: [

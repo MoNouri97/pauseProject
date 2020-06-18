@@ -82,7 +82,7 @@ namespace PauseProject.Controllers
                         }
                         catch (Exception e)
                         {
-
+                            Console.WriteLine(e);
                         }
 
                         try

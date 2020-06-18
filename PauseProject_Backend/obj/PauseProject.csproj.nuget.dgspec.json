@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "E:\\pauseProject\\PauseProject_Backend\\PauseProject.csproj": {}
+    "C:\\Users\\USER\\Desktop\\pauseProject-81516e456dd176ae6d5dc7f00f5599deacf86b1a\\PauseProject_Backend\\PauseProject.csproj": {}
   },
   "projects": {
-    "E:\\pauseProject\\PauseProject_Backend\\PauseProject.csproj": {
+    "C:\\Users\\USER\\Desktop\\pauseProject-81516e456dd176ae6d5dc7f00f5599deacf86b1a\\PauseProject_Backend\\PauseProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\pauseProject\\PauseProject_Backend\\PauseProject.csproj",
+        "projectUniqueName": "C:\\Users\\USER\\Desktop\\pauseProject-81516e456dd176ae6d5dc7f00f5599deacf86b1a\\PauseProject_Backend\\PauseProject.csproj",
         "projectName": "PauseProject",
-        "projectPath": "E:\\pauseProject\\PauseProject_Backend\\PauseProject.csproj",
-        "packagesPath": "C:\\Users\\adad1\\.nuget\\packages\\",
-        "outputPath": "E:\\pauseProject\\PauseProject_Backend\\obj\\",
+        "projectPath": "C:\\Users\\USER\\Desktop\\pauseProject-81516e456dd176ae6d5dc7f00f5599deacf86b1a\\PauseProject_Backend\\PauseProject.csproj",
+        "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\USER\\Desktop\\pauseProject-81516e456dd176ae6d5dc7f00f5599deacf86b1a\\PauseProject_Backend\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "c:\\program files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\adad1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -41,6 +41,14 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "ChoETL.JSON.NETStandard": {
+              "target": "Package",
+              "version": "[1.2.0.3, )"
+            },
+            "Google.Cloud.Firestore": {
+              "target": "Package",
+              "version": "[2.0.0, )"
+            },
             "Microsoft.AspNetCore.Cors": {
               "target": "Package",
               "version": "[2.2.0, )"
@@ -59,9 +67,17 @@
               "target": "Package",
               "version": "[3.1.2, )"
             },
+            "Microsoft.ML": {
+              "target": "Package",
+              "version": "[1.5.0, )"
+            },
+            "Microsoft.ML.Recommender": {
+              "target": "Package",
+              "version": "[0.17.0, )"
+            },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
-              "version": "[3.1.2, )"
+              "version": "[3.1.3, )"
             },
             "NuGet.Frameworks": {
               "target": "Package",
@@ -90,7 +106,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "c:\\program files\\dotnet\\sdk\\3.1.102\\RuntimeIdentifierGraph.json"
         }
       }
     }

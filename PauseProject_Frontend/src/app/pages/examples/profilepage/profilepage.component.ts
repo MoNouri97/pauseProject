@@ -1,3 +1,5 @@
+import { User } from "./../../../user";
+import { AuthenticationService } from "./../../../authentication.service";
 import { Component, OnInit, OnDestroy } from "@angular/core";
 
 @Component({
@@ -7,7 +9,23 @@ import { Component, OnInit, OnDestroy } from "@angular/core";
 })
 export class ProfilepageComponent implements OnInit, OnDestroy {
   isCollapsed = true;
-  constructor() {}
+  userData: User;
+  constructor(private auth: AuthenticationService) {
+    auth.getCurrentUser().subscribe((data) => {
+      this.auth.userData = data;
+      this.auth.getCurrentUser().subscribe((data) => {
+        this.auth.afs
+          .collection("users", (ref) => ref.where("uid", "==", data.uid))
+          .valueChanges()
+          .subscribe((data) => {
+            if (data.length == 0) {
+              this.auth.SetUserData(this.auth.userData);
+              this.userData = this.auth.user;
+            } else this.userData = data[0] as User;
+          });
+      });
+    });
+  }
 
   ngOnInit() {
     var body = document.getElementsByTagName("body")[0];

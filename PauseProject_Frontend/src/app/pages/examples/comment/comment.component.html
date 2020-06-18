@@ -1,4 +1,4 @@
-<div class="form-group container">
+<div class="form-group container" *ngIf="!userNotConnected">
   <h3 class="mt-5 mb-5">Comments Section</h3>
   <textarea
     [(ngModel)]="comment"
@@ -7,6 +7,11 @@
     placeholder="Write something here..."
   ></textarea>
   <button class="btn btn-neutral" (click)="postComment()">add comment</button>
+</div>
+<div class="container">
+  <div class="alert alert-danger mt-3" role="alert" *ngIf="userNotConnected">
+    The user must be connected to comment on items
+  </div>
 </div>
 <div class="container" *ngFor="let comment of comments; let i = index">
   <span>

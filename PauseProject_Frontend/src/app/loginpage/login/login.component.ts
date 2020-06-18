@@ -1,10 +1,11 @@
-import { Component, OnInit, HostListener, OnDestroy } from '@angular/core';
-import { AuthenticationService } from 'src/app/authentication.service';
+import { Component, OnInit, HostListener, OnDestroy } from "@angular/core";
+import { AuthenticationService } from "src/app/authentication.service";
+import { User } from "src/app/user";
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  selector: "app-login",
+  templateUrl: "./login.component.html",
+  styleUrls: ["./login.component.scss"],
 })
 export class LoginComponent implements OnInit, OnDestroy {
   isCollapsed = true;
@@ -83,8 +84,16 @@ export class LoginComponent implements OnInit, OnDestroy {
     this.onMouseMove(event);
   }
   ngOnDestroy() {
+    this.authenticationService.afAuth.authState.subscribe((data) => {
+      this.authenticationService.afs
+        .collection("users", (ref) => ref.limit(1).where("uid", "==", data.uid))
+        .valueChanges()
+        .subscribe((data) => {
+          this.authenticationService.user = data[0] as User;
+        });
+    });
+
     var body = document.getElementsByTagName("body")[0];
     body.classList.remove("register-page");
   }
 }
-

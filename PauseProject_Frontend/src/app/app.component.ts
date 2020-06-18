@@ -41,6 +41,9 @@ export class AppComponent implements OnInit {
     //this.onWindowScroll(event);
     this.router.events.subscribe((evt) => {
       if (!(evt instanceof NavigationEnd)) {
+        if (JSON.parse(localStorage.getItem("user")) == null) {
+          localStorage.clear();
+        }
         return;
       }
       window.scrollTo(0, 0);
