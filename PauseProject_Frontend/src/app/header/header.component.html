@@ -13,7 +13,7 @@
         
         tooltip="Designed and Coded by Creative Tim"
       >
-        <span> Pause• </span> Multi Entertainment 
+        <span> Pause• </span>{{ 'demo.title' | translate }}
       </a>
       <button
         aria-controls="navigation-index"
@@ -67,10 +67,10 @@
             [routerLink]="['/movies']"
             placement="bottom"
             
-            tooltip="View Our Movies Selection"
+            tooltip="{{ 'demo.tooltiF' | translate }}"
           >
             
-            <p class="">Movies</p>
+            <p class="">{{ 'demo.movies' | translate }}</p>
           </a>
         </li>
         <li class="nav-item p-0">
@@ -79,10 +79,10 @@
             [routerLink]="['/series']"
             placement="bottom"
             
-            tooltip="View Our Series Selection"
+            tooltip="{{ 'demo.tooltipS' | translate }}"
           >
             
-            <p class="">Series</p>
+            <p class="">{{ 'demo.series' | translate }}</p>
           </a>
         </li>
         <li class="nav-item p-0">
@@ -91,10 +91,10 @@
             [routerLink]="['/music']"
             placement="bottom"
             
-            tooltip="View Our Music Selection"
+            tooltip="{{ 'demo.tooltipM' | translate }}"
           >
             
-            <p class="">Music</p>
+            <p class="">{{ 'demo.music' | translate }}</p>
           </a>
         </li>
         <li class="nav-item p-0">
@@ -103,10 +103,10 @@
             routerLink="/games"
             placement="bottom"
             
-            tooltip="View Our Games Selection"
+            tooltip="{{ 'demo.tooltipG' | translate }}"
           >
             
-            <p class="">Games</p>
+            <p class="">{{ 'demo.games' | translate }}</p>
           </a>
         </li>
         <li class="nav-item p-0">
@@ -115,10 +115,10 @@
             [routerLink]="['/books']"
             placement="bottom"
             
-            tooltip="View Our Books Selection"
+            tooltip="{{ 'demo.tooltipB' | translate }}"
           >
             
-            <p class="">Books</p>
+            <p class="">{{ 'demo.books' | translate }}</p>
           </a>
         </li>
        
@@ -130,16 +130,16 @@
             dropdownToggle
             href="javascript:void(0)"
           >
-            <i class="fa fa-cogs d-lg-none d-xl-none"> </i> Your Account
+            <i class="fa fa-cogs d-lg-none d-xl-none"> </i>{{ 'demo.account' | translate }}
           </a>
           <div class="dropdown-menu dropdown-with-icons" *dropdownMenu>
 
             <a class="dropdown-item" [routerLink]="['/profile']">
-              <i> </i> Profile
+              <i> </i>  {{ 'demo.profile' | translate }}
             </a>
             
             <a class="dropdown-item" (click)="authenticationService.SignOut()">
-              <i> </i> log out
+              <i> </i> {{ 'demo.log out' | translate }}
             </a>
           </div>
         </li>
@@ -150,18 +150,22 @@
             dropdownToggle
             href="javascript:void(0)"
           >
-            <i class="fa fa-cogs d-lg-none d-xl-none"> </i> Your Account
+            <i class="fa fa-cogs d-lg-none d-xl-none"> </i> {{ 'demo.account' | translate }}
           </a>
           <div class="dropdown-menu dropdown-with-icons" *dropdownMenu>
             <a class="dropdown-item" [routerLink]="['/register']">
-              <i> </i> Register
+              <i> </i> {{ 'demo.register' | translate }}
             </a>
             
             <a class="dropdown-item" [routerLink]="['/login']">
-              <i> </i> Sign In
+              <i> </i> {{ 'demo.sign In' | translate }}
             </a>
           </div>
         </li>
+        <select #langselect (change)="useLanguage(langselect.value)">
+          <option *ngFor="let lang of translate.getLangs()" [value]="lang">{{ lang }}</option>
+        </select>
+        
         <!-- <li class="nav-item p-0">
           <a
             class="nav-link"

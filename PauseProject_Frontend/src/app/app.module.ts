@@ -13,12 +13,14 @@ import { FormsModule } from "@angular/forms";
 import { RouterModule } from "@angular/router";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
-import { HttpClientModule } from "@angular/common/http";
+import { HttpClient,HttpClientModule } from "@angular/common/http";
 import { BsDropdownModule } from "ngx-bootstrap/dropdown";
 import { ProgressbarModule } from "ngx-bootstrap/progressbar";
 import { TooltipModule } from "ngx-bootstrap/tooltip";
 import { CollapseModule } from "ngx-bootstrap/collapse";
 import { TabsModule } from "ngx-bootstrap/tabs";
+import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 
 import { RatingModule } from "ngx-bootstrap/rating";
 import { BsDatepickerModule } from "ngx-bootstrap/datepicker";
@@ -81,7 +83,13 @@ import { MusicElementService } from "./music-element/music.service";
     AngularFireAuthModule,
     AngularFirestoreModule,
     RatingModule.forRoot(), //to check
-   
+    TranslateModule.forRoot({
+      loader: {
+          provide: TranslateLoader,
+          useFactory: HttpLoaderFactory,
+          deps: [HttpClient]
+      }
+  })
   ],
   providers: [
     BooksService,
@@ -101,3 +109,6 @@ import { MusicElementService } from "./music-element/music.service";
   bootstrap: [AppComponent],
 })
 export class AppModule {}
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}

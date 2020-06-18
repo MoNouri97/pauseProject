@@ -1,0 +1,57 @@
+{
+    "demo": {
+        "title": "Multi Entertainment",
+        "text": "You Only Live Once, So Make It Count",
+        "home":"Home",
+        "movies": "Movies",
+        "books": "Books" ,
+        "series":"Series",
+        "music": "Music",
+        "games": "Games",
+        "account": "Your Account",
+        "profile":"Profile",
+        "log out":"Log out",
+        "register":"Register",
+        "sign In":"Sign In",
+        "sign Up":"Sign Up",
+        "compte":"Account",
+        "About Us":"About Us",
+        "tooltipS":"View Our Series Selection",
+        "tooltipB":"View Our Books Selection",
+        "tooltipG":"View Our Games Selection",
+        "tooltipM":"View Our Music Selection",
+        "tooltiF":"View Our Movies Selection" ,
+        "search":"Search",
+        "EXF":"Explore our Movies Selection",
+        "EXB":"Explore our Books Selection",
+        "EXG":"Explore our Games Selection",
+        "EXM":"Explore our Music Selection",
+        "EXS":"Explore our Series Selection",
+        "listF":"Movies List",
+        "listS":"Series List",
+        "listB":"Books List",
+        "listM":"Music List",
+        "listG":"Games List",
+        "Full Name":"Full Name",
+        "Email":"Email",
+        "Password":"Password",
+        "Login":"Login",
+        "DHA":"Don't have an account?",
+        "titreF":"Title",
+        "Released":"Released",
+        "Artist":"Artist",
+        "Read more":"Read more",
+        "rate":"Rate this item",
+        "Rrate":"Reset rating",
+        "com":"Comments section",
+        "add":"Add comment",
+        "Delete":"Delete",
+        "write":"Write something here..."
+
+
+
+
+
+
+    }
+}

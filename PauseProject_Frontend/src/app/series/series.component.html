@@ -10,9 +10,9 @@
     <div class="squares square7"></div>
     <div class="container">
       <div class="content-center brand">
-        <h1 class="h1-seo">series</h1>
+        <h1 class="h1-seo">{{ 'demo.series' | translate }}</h1>
         <h3>
-          explore our series Selection
+          {{ 'demo.EXS' | translate }}
         </h3>
       </div>
     </div>
@@ -22,7 +22,7 @@
   </div>
   <div class="content-center brand">
     <div class="container">
-      <h2>series List</h2>
+      <h2>{{ 'demo.listS' | translate }}</h2>
       <div class="row">
         <div class="col-md-6" *ngFor="let serie of series">
           <div class="card zoom">

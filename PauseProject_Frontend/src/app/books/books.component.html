@@ -1,19 +1,23 @@
 <app-header> </app-header>
 <div class="wrapper">
-  <div class="page-header header-filter">
-    <div class="squares square1"></div>
-    <div class="squares square2"></div>
-    <div class="squares square3"></div>
-    <div class="squares square4"></div>
-    <div class="squares square5"></div>
-    <div class="squares square6"></div>
-    <div class="squares square7"></div>
-    <div class="container">
-      <div class="content-center brand">
-        <h1 class="h1-seo">Books</h1>
-        <h3>
-          explore our Books Selection
-        </h3>
+
+    <div class="page-header header-filter">
+      <div class="squares square1"></div>
+      <div class="squares square2"></div>
+      <div class="squares square3"></div>
+      <div class="squares square4"></div>
+      <div class="squares square5"></div>
+      <div class="squares square6"></div>
+      <div class="squares square7"></div>
+      <div class="container">
+        <div class="content-center brand">
+          <h1 class="h1-seo">{{ 'demo.books' | translate }}</h1>
+          <h3>
+            {{ 'demo.EXB' | translate }}
+          </h3>
+        </div>
+
+  
       </div>
     </div>
   </div>
@@ -22,8 +26,11 @@
   </div>
   <div class="content-center brand">
     <div class="container">
-      <h2>Books List</h2>
-      <div class="row">
+        <h2> {{ 'demo.listB' | translate }}</h2>
+        <div class="row">
+
+     
+
         <div class="col-md-6" *ngFor="let book of books">
           <div class="card zoom">
             <div (click)="onSelect(book.data)" class="container">
@@ -62,4 +69,4 @@
 
     <app-footer></app-footer>
   </div>
-</div>
+
