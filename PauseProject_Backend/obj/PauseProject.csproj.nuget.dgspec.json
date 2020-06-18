@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\USER\\Desktop\\pauseProject-81516e456dd176ae6d5dc7f00f5599deacf86b1a\\PauseProject_Backend\\PauseProject.csproj": {}
+    "E:\\pauseProject\\PauseProject_Backend\\PauseProject.csproj": {}
   },
   "projects": {
-    "C:\\Users\\USER\\Desktop\\pauseProject-81516e456dd176ae6d5dc7f00f5599deacf86b1a\\PauseProject_Backend\\PauseProject.csproj": {
+    "E:\\pauseProject\\PauseProject_Backend\\PauseProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\USER\\Desktop\\pauseProject-81516e456dd176ae6d5dc7f00f5599deacf86b1a\\PauseProject_Backend\\PauseProject.csproj",
+        "projectUniqueName": "E:\\pauseProject\\PauseProject_Backend\\PauseProject.csproj",
         "projectName": "PauseProject",
-        "projectPath": "C:\\Users\\USER\\Desktop\\pauseProject-81516e456dd176ae6d5dc7f00f5599deacf86b1a\\PauseProject_Backend\\PauseProject.csproj",
-        "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\USER\\Desktop\\pauseProject-81516e456dd176ae6d5dc7f00f5599deacf86b1a\\PauseProject_Backend\\obj\\",
+        "projectPath": "E:\\pauseProject\\PauseProject_Backend\\PauseProject.csproj",
+        "packagesPath": "C:\\Users\\adad1\\.nuget\\packages\\",
+        "outputPath": "E:\\pauseProject\\PauseProject_Backend\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "c:\\program files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\adad1\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -106,7 +106,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "c:\\program files\\dotnet\\sdk\\3.1.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
         }
       }
     }
