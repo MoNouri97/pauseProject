@@ -56,7 +56,6 @@ import { GameService } from "./game/game.service";
 import { MusicElementService } from "./music-element/music.service";
 //import { SearchComponent } from './search/search.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -82,6 +81,7 @@ import { MusicElementService } from "./music-element/music.service";
     AngularFireAuthModule,
     AngularFirestoreModule,
     RatingModule.forRoot(), //to check
+   
   ],
   providers: [
     BooksService,
