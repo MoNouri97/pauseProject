@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Net.Http;
 using Newtonsoft.Json;
 using PauseProject.DTOs;
+using System.IO;
 
 namespace PauseProject.Controllers
 {
@@ -14,6 +15,7 @@ namespace PauseProject.Controllers
     [ApiController]
     public class GamesController : ControllerBase
     {
+        List<System.Collections.Generic.List<PauseProject.DTOs.Result>> gameList = new List<System.Collections.Generic.List<PauseProject.DTOs.Result>>();
         private void setParamaters(HttpClient client)
         {
             client.DefaultRequestHeaders.Add("x-rapidapi-host", "rawg-video-games-database.p.rapidapi.com");
@@ -60,10 +62,18 @@ namespace PauseProject.Controllers
                     setParamaters(client);
                     var response = await client.GetAsync("/games?page="+id);
                     response.EnsureSuccessStatusCode();
-
                     var stringResult = await response.Content.ReadAsStringAsync();
                     var rawGame = JsonConvert.DeserializeObject<GameDTO>(stringResult);
-
+                    //Convert json into file
+                    /*
+                    gameList.Add(rawGame.Results);
+                    string path = AppDomain.CurrentDomain.BaseDirectory;
+                    using (StreamWriter file = new System.IO.StreamWriter(path+ @"\..\..\..\Data\gameList"+id+".json"))
+                    {
+                        JsonSerializer serializer = new JsonSerializer();
+                        serializer.Serialize(file, rawGame.Results);
+                    }
+                    */
                     return Ok(new
                     {   page= id,
                         Count = rawGame.Count,

@@ -1,5 +1,7 @@
-<div class="form-group container">
-  <h3 class="mt-5 mb-5"> {{ 'demo.com' | translate }}</h3>
+
+<div class="form-group container" *ngIf="!userNotConnected">
+  <h3 class="mt-5 mb-5">{{ 'demo.com' | translate }}</h3>
+
   <textarea
     [(ngModel)]="comment"
     id="commentTextarea"
@@ -7,6 +9,11 @@
     placeholder=" {{ 'demo.write' | translate }}"
   ></textarea>
   <button class="btn btn-neutral" (click)="postComment()"> {{ 'demo.add' | translate }}</button>
+</div>
+<div class="container">
+  <div class="alert alert-danger mt-3" role="alert" *ngIf="userNotConnected">
+    The user must be connected to comment on items
+  </div>
 </div>
 <div class="container" *ngFor="let comment of comments; let i = index">
   <span>

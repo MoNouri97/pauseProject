@@ -18,4 +18,7 @@
   <button class="btn btn-warning" (click)="resetStars()">
     {{ 'demo.Rrate' | translate }}
   </button>
+  <div class="alert alert-danger mt-3" role="alert" *ngIf="userNotConnected">
+    The user must be connected to rate items
+  </div>
 </div>

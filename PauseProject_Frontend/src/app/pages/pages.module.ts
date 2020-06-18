@@ -38,6 +38,7 @@ import { MusicCardComponent } from '../music/music-card/music-card.component';
 import { MovieCardComponent } from '../movies/movie-card/movie-card.component';
 //import { JwPaginationComponent } from 'jw-angular-pagination';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { RecommendationsComponent } from './examples/recommendations/recommendations.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -84,6 +85,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     SearchComponent,
     MusicCardComponent,
 		MovieCardComponent,
+		RecommendationsComponent,
    // JwPaginationComponent,
   ],
   exports: [

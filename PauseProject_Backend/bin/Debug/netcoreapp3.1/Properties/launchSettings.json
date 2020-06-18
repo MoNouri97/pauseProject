@@ -18,13 +18,13 @@
       }
     },
     "PauseProject": {
-      "commandName": "Project",
-      "launchBrowser": true,
-      "launchUrl": "api/Musics/1",
-      "applicationUrl": "http://localhost:5000",
-      "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
-      }
+        "commandName": "Project",
+        "launchBrowser": true,
+        "launchUrl": "api/Recommender",
+        "applicationUrl": "http://localhost:5000",
+        "environmentVariables": {
+            "ASPNETCORE_ENVIRONMENT": "Development"
+        }
     }
   }
 }
