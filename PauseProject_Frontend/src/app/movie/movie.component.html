@@ -1,67 +1,68 @@
 <app-header> </app-header>
 <div class="wrapper">
-  <div class="page-header header-filter">
-    <div class="squares square1"></div>
-    <div class="squares square2"></div>
-    <div class="squares square3"></div>
-    <div class="squares square4"></div>
-    <div class="squares square5"></div>
-    <div class="squares square6"></div>
-    <div class="squares square7"></div>
-    <div class="container">
-      <div class="content-center brand">
-        <h1 class="h1-seo">Movies</h1>
-        <h3>
-          Explore our Movies Selection
-        </h3>
-      </div>
-    </div>
-  </div>
-  <div class="main">
-    <div class="section section-basic" id="basic-elements"></div>
-  </div>
-  <div class="content-center brand">
-    <div class="container">
-      <div class="container" *ngIf="movie">
-        <div class="row justify-content-between">
-          <div class="col-md-6">
-            <img
-              *ngIf="movie.poster_path"
-              src="https://image.tmdb.org/t/p/w600_and_h900_bestv2{{
-                movie.poster_path
-              }}"
-              style="max-height: 80vh;"
-            />
-            <div
-              *ngIf="!movie.poster_path"
-              class="noImage d-flex align-items-center text-center"
-              style="width: 100%; height: 80vh;"
-            ></div>
-          </div>
-          <div class="col-md-5">
-            <h1 class="display-4 text-left text-primary">
-              <span class="text-secondary">Title:</span> {{ movie.title }}
-            </h1>
-            <h1 class="display-4 text-left text-primary">
-              <span class="text-secondary">Released:</span>
-              {{ movie.release_date | date }}
-            </h1>
-            <div class="row mt-5">
-              <div *ngFor="let genre of movie.genres" class="p-1 mr-1">
-                <p class="badge badge-default">{{ genre.name }}</p>
-              </div>
-            </div>
-            <div class="row mt-5 p-3 card">
-              <p [innerHTML]="movie.overview"></p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <br />
-  <app-star collectionName="movie"></app-star>
-  <app-comment collectionName="movie"></app-comment>
-  <br />
-  <app-footer> </app-footer>
+
+	<div class="page-header header-filter">
+		<div class="squares square1"></div>
+		<div class="squares square2"></div>
+		<div class="squares square3"></div>
+		<div class="squares square4"></div>
+		<div class="squares square5"></div>
+		<div class="squares square6"></div>
+		<div class="squares square7"></div>
+		<div class="container">
+			<div class="content-center brand">
+				<h1 class="h1-seo">{{ 'demo.movies' | translate }}</h1>
+				<h3>
+					{{ 'demo.EXF' | translate }}
+				</h3>
+			</div>
+		</div>
+	</div>
+	<div class="main">
+		<div class="section section-basic" id="basic-elements"></div>
+	</div>
+	<div class="content-center brand">
+		<div class="container">
+			<div class="container" *ngIf="movie">
+				<div class="row justify-content-between">
+					<div class="col-md-6">
+						<img
+							*ngIf="movie.poster_path"
+							src="https://image.tmdb.org/t/p/w600_and_h900_bestv2{{
+								movie.poster_path
+							}}"
+							style="max-height: 80vh;"
+						/>
+						<div
+							*ngIf="!movie.poster_path"
+							class="noImage d-flex align-items-center text-center"
+							style="width: 100%; height: 80vh;"
+						></div>
+					</div>
+					<div class="col-md-5">
+						<h1 class="display-4 text-left text-primary">
+							<span class="text-secondary">{{ 'demo.titreF' | translate }}:</span> {{ movie.title }}
+						</h1>
+						<h1 class="display-4 text-left text-primary">
+							<span class="text-secondary">{{ 'demo.Released' | translate }}:</span>
+							{{ movie.release_date | date }}
+						</h1>
+						<div class="row mt-5">
+							<div *ngFor="let genre of movie.genres" class="p-1 mr-1">
+								<p class="badge badge-default">{{ genre.name }}</p>
+							</div>
+						</div>
+						<div class="row mt-5 p-3 card">
+							<p [innerHTML]="movie.overview"></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<br />
+	<app-star collectionName="movie"></app-star>
+	<br />
+	<app-footer> </app-footer>
+
 </div>

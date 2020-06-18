@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from "@angular/core";
 import noUiSlider from "nouislider";
 import { AuthenticationService } from "../authentication.service";
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: "app-header",
@@ -16,7 +17,13 @@ export class HeaderComponent implements OnInit, OnDestroy {
   pagination = 3;
   pagination1 = 1;
   
-  constructor(public authenticationService: AuthenticationService) {}
+  constructor(public authenticationService: AuthenticationService,private translate: TranslateService) {
+    translate.setDefaultLang('en');
+    translate.addLangs(['en','fr']);
+  const browserLang= translate.getBrowserLang ();
+  
+//this.translate.use(browserLang.match(/en|fr/) ? browserLang : 'en') ;
+  }
   scrollToDownload(element: any) {
     element.scrollIntoView({ behavior: "smooth" });
   }
@@ -47,12 +54,18 @@ export class HeaderComponent implements OnInit, OnDestroy {
           max: 100,
         },
       });
+    
+    
   }
   ngOnDestroy() {
     var body = document.getElementsByTagName("body")[0];
     body.classList.remove("index-page");
   }
-  
-  
+
+  useLanguage(language: string) {
+    this.translate.use(language);
+
+    console.log(language);
+}
   
 }

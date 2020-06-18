@@ -77,12 +77,15 @@ export class RegisterpageComponent implements OnInit, OnDestroy {
       posY * -0.02 +
       "deg)";
   }
+  
 
   ngOnInit() {
+    
     var body = document.getElementsByTagName("body")[0];
     body.classList.add("register-page");
 
     this.onMouseMove(event);
+  
   }
   ngOnDestroy() {
     /*this.authenticationService.afAuth.authState.subscribe((data) => {

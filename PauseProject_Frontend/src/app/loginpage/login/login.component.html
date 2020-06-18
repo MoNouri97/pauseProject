@@ -16,7 +16,7 @@
                   src="assets/img/square1-red.png"
                 />
 
-                <h4 class="card-title">&nbsp;Login</h4>
+                <h4 class="card-title">&nbsp;{{ 'demo.Login' | translate }}</h4>
               </div>
               <div class="card-body">
                 <form class="form">
@@ -35,7 +35,7 @@
                     </div>
                     <input
                       class="form-control"
-                      placeholder="Email"
+                      placeholder="{{ 'demo.Email' | translate }}"
                       type="email"
                       (focus)="focus1 = true"
                       (blur)="focus1 = false"
@@ -54,7 +54,7 @@
                     </div>
                     <input
                       class="form-control"
-                      placeholder="Password"
+                      placeholder="{{ 'demo.Password' | translate }}"
                       type="password"
                       (focus)="focus2 = true"
                       (blur)="focus2 = false"
@@ -68,7 +68,7 @@
                 <input
                   type="button"
                   class="btn btn-danger btn-round btn-lg"
-                  value="Sign In"
+                  value="{{ 'demo.sign In' | translate }}"
                   (click)="
                     authenticationService.SignIn(userEmail.value, userPwd.value)
                   "
@@ -76,8 +76,8 @@
               </div>
 
               <p id="lowerMessage">
-                Don't have an account?
-                <a [routerLink]="['/register']">Sign Up</a>
+                {{ 'demo.DHA' | translate }}
+                <a [routerLink]="['/register']">{{ 'demo.sign Up' | translate }}</a>
               </p>
             </div>
           </div>

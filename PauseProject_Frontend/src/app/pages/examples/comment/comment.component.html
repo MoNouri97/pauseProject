@@ -1,12 +1,14 @@
+
 <div class="form-group container" *ngIf="!userNotConnected">
-  <h3 class="mt-5 mb-5">Comments Section</h3>
+  <h3 class="mt-5 mb-5">{{ 'demo.com' | translate }}</h3>
+
   <textarea
     [(ngModel)]="comment"
     id="commentTextarea"
     rows="7"
-    placeholder="Write something here..."
+    placeholder=" {{ 'demo.write' | translate }}"
   ></textarea>
-  <button class="btn btn-neutral" (click)="postComment()">add comment</button>
+  <button class="btn btn-neutral" (click)="postComment()"> {{ 'demo.add' | translate }}</button>
 </div>
 <div class="container">
   <div class="alert alert-danger mt-3" role="alert" *ngIf="userNotConnected">
@@ -26,7 +28,7 @@
       (click)="deleteComment(i)"
       class="btn btn-danger btn-round mr-1 col-2 ml-auto"
     >
-      Delete
+    {{ 'demo.Delete' | translate }}
     </button>
   </div>
 </div>
