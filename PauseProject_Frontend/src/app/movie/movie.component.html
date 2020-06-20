@@ -1,5 +1,6 @@
 <app-header> </app-header>
 <div class="wrapper">
+
 	<div class="page-header header-filter">
 		<div class="squares square1"></div>
 		<div class="squares square2"></div>
@@ -10,9 +11,9 @@
 		<div class="squares square7"></div>
 		<div class="container">
 			<div class="content-center brand">
-				<h1 class="h1-seo">Movies</h1>
+				<h1 class="h1-seo">{{ 'demo.movies' | translate }}</h1>
 				<h3>
-					Explore our Movies Selection
+					{{ 'demo.EXF' | translate }}
 				</h3>
 			</div>
 		</div>
@@ -40,10 +41,10 @@
 					</div>
 					<div class="col-md-5">
 						<h1 class="display-4 text-left text-primary">
-							<span class="text-secondary">Title:</span> {{ movie.title }}
+							<span class="text-secondary">{{ 'demo.titreF' | translate }}:</span> {{ movie.title }}
 						</h1>
 						<h1 class="display-4 text-left text-primary">
-							<span class="text-secondary">Released:</span>
+							<span class="text-secondary">{{ 'demo.Released' | translate }}:</span>
 							{{ movie.release_date | date }}
 						</h1>
 						<div class="row mt-5">
@@ -63,4 +64,5 @@
 	<app-star collectionName="movie"></app-star>
 	<br />
 	<app-footer> </app-footer>
+
 </div>

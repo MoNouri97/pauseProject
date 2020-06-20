@@ -1,0 +1,35 @@
+<div class="mt-5 row full-width-div">
+	<!-- <div class="col w-auto" *ngFor="let game of games">
+		<div>
+			<img
+				*ngIf="games"
+				class="w-100 img-fluid rounded shadow"
+				src="{{ game.background_image }}"
+			/>
+		</div>
+	</div> -->
+	<div
+		*ngFor="let game of games"
+		class="d-flex flex-column mb-0 bd-highlight col-md-4"
+	>
+		<div class="card zoom" [routerLink]="['/game', game.gameId]">
+			<p class="d-block" style="height: 250px; overflow: hidden;">
+				<img class="img-fluid" src="{{ game.background_image }}" />
+			</p>
+			<div class="post-text p-4">
+				<p *ngFor="let genre of game.genres" class="badge badge-warning mr-1">
+					{{ genre.name }}
+				</p>
+				<br />
+				<span class="post-meta text-Success">
+					<i class="tim-icons icon-shape-star"></i>
+					{{ game.rating }}</span
+				>
+				<h2 class="text-primary">
+					{{ game.name }}
+				</h2>
+				<p>Released on {{ game.released | date }}</p>
+			</div>
+		</div>
+	</div>
+</div>

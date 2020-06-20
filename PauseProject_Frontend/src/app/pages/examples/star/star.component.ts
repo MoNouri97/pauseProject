@@ -24,6 +24,7 @@ export class StarComponent implements OnInit {
   serieService: SerieService;
   service;
   serviceID;
+  userNotConnected: boolean;
 
   constructor(
     private _StarService: StarService,
@@ -32,6 +33,11 @@ export class StarComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    if (this._AuthService.userConnected() == null) {
+      this.userNotConnected = true;
+    } else {
+      this.userNotConnected = false;
+    }
     this._StarService.setCollectionName(this.collectionName);
     if (this.collectionName === "game") {
       this.service = this.gameService = <GameService>(
@@ -107,6 +113,9 @@ export class StarComponent implements OnInit {
   }
 
   resetStars() {
+    if (this.userNotConnected) {
+      return;
+    }
     this.rating = 0;
     //delete item from menu
     this._StarService.deleteStar(
@@ -116,6 +125,9 @@ export class StarComponent implements OnInit {
   }
 
   rate() {
+    if (this.userNotConnected) {
+      return;
+    }
     this._StarService.setStar(
       this._AuthService.userData.uid,
       this.serviceID,

@@ -1,5 +1,6 @@
 <app-header> </app-header>
 <div class="wrapper">
+
 	<div class="page-header header-filter">
 		<div class="squares square1"></div>
 		<div class="squares square2"></div>
@@ -10,11 +11,13 @@
 		<div class="squares square7"></div>
 		<div class="container">
 			<div class="content-center brand">
-				<h1 class="h1-seo">Games</h1>
-				<h3>
-					Explore our Games Selection
-				</h3>
+			
+				<h2 style="padding-bottom: 20px !important;">{{ 'demo.games' | translate }} recommendation</h2>
 			</div>
+			
+			
+			<app-recommendations></app-recommendations>
+
 		</div>
 	</div>
 	<div class="main">
@@ -22,7 +25,7 @@
 	</div>
 	<div class="content-center brand">
 		<div class="container">
-			<h1 class="display-1">Games List</h1>
+			<h1 class="display-1">{{ 'demo.listG' | translate }}</h1>
 			<hr class="line-primary" />
 			<ngb-pagination 
             [collectionSize]="500"
@@ -66,4 +69,5 @@
 		</div>
 	</div>
 	<app-footer></app-footer>
+
 </div>

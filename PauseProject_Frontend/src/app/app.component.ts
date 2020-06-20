@@ -8,6 +8,8 @@ import {
 } from "@angular/core";
 import { Location } from "@angular/common";
 import { DOCUMENT } from "@angular/common";
+import {TranslateService} from '@ngx-translate/core';
+
 
 @Component({
   selector: "app-root",
@@ -41,6 +43,9 @@ export class AppComponent implements OnInit {
     //this.onWindowScroll(event);
     this.router.events.subscribe((evt) => {
       if (!(evt instanceof NavigationEnd)) {
+        if (JSON.parse(localStorage.getItem("user")) == null) {
+          localStorage.clear();
+        }
         return;
       }
       window.scrollTo(0, 0);

@@ -1,0 +1,54 @@
+<div *ngIf="showBt">
+<button
+class="btn btn-primary btn-icon btn-round mr-1 avenue"
+type="button"
+(click)="showChat()"
+>
+<i class="tim-icons icon-chat-33"> </i>
+</button>
+</div>
+<div *ngIf="show">
+<section class="avenue-messenger">
+  <div class="menu">
+   <div class="items"><span>
+     <a href="#" title="Minimize">&mdash;</a><br>
+<!--     
+     <a href="">enter email</a><br>
+     <a href="">email transcript</a><br>-->
+     <a href="#" title="End Chat">&#10005;</a>
+     
+     </span></div>
+    <div (click)="hideChat()" class="button">-</div>
+  </div>
+  <div class="agent-face">
+    <div class="half">
+     <img class="agent circle" src="assets/img/bot.jpg" alt="bot"></div>
+  </div>
+<div class="chat">
+  <div class="chat-title">
+    <h1 style="color:black;">ChatBot</h1>
+   <!--<h2>RE/MAX</h2>--> 
+   <!--<figure class="avatar">
+      <img src="assets/img/bot.jpg" /></figure>-->
+  </div>
+  <div class="messages">
+    <div class="messages-content space"  style=" overflow-y: auto;">
+        <div class="mCSB_container" >
+          <div *ngIf="show1">
+            <div  *ngFor="let mg of affichage">
+        <div class="message new message-personal"> {{mg.msg}}</div>
+        <div class="message new"><figure class="avatar"><img src="assets/img/bot.jpg" /></figure>  {{mg.res}} </div>
+            </div>
+          </div>
+          
+    </div>
+    </div>
+  </div>
+  <div class="message-box">
+    <textarea #msg  type="text" class="message-input"  placeholder="Type message..." (keydown.enter)="insertMessage(msg.value);  msg.value='' " >{{valMsg}}</textarea>
+    <button (click)="insertMessage(msg.value); msg.value='' " type="submit" class="message-submit">Send</button>
+  </div>
+</div>
+</section>
+</div>
+<!--<div class="bg"></div>-->
