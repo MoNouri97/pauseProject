@@ -76,7 +76,7 @@
     "@ngx-translate/core": "^12.1.2",
     "@ngx-translate/http-loader": "^4.0.0",
     "angularfire2": "^5.4.2",
-    "chart.js": "2.8.0",
+    "chart.js": "2.9.4",
     "core-js": "3.2.1",
     "firebase": "^7.11.0",
     "jw-angular-pagination": "^1.1.0",
